@@ -1,5 +1,5 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh                    # Path to oh-my-zsh installation
+export DOTFILES=$HOME/dotfiles  # path to dotfiles
 
 #==============================================================================
 # ZSH SETTINGS
@@ -39,7 +39,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias zshconfig="subl ~/dotfiles/zsh/.zshrc"     # open zshrc with sublime
 alias envconfig="subl ~/Projects/config/env.sh"  # open env with sublime
-alias dotfiles="cd ~/dotfiles"                   # open dotefiles with sublime
+alias dotfiles="cd ~/dotfiles"                   # open dotfiles
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app' # show hidden files
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'  # hide hidden files
 
