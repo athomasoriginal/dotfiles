@@ -10,7 +10,7 @@
 
 [core]
     # insanely beautiful diffs
-    pager = /usr/local/Cellar/git/2.8.1/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
+    pager = /usr/local/Cellar/git/2.9.3/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 
 [color]
     ui = always
