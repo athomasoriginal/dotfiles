@@ -19,3 +19,9 @@ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local
 
 # clone dotfiles repo & set origin
 git -C ~/.dotfiles remote add origin https://github.com/tkjone/dotfiles.git
+
+# replace the sublime text 3 icon
+rm -rf /Applications/Sublime\ Text.app/Contents/Resources/Sublime\ Text.icns
+ln -s ~/dotfiles/sublime/Sublime\ Text.icns /Applications/Sublime\ Text.app/Contents/Resources/
+open ~/dotfiles/sublime
+killall dock
