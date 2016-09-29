@@ -37,9 +37,11 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 #==============================================================================
 
-alias zshconfig="subl ~/dotfiles/zsh/.zshrc"
-alias envconfig="subl ~/Projects/config/env.sh"
-alias dotfiles="cd ~/dotfiles"
+alias zshconfig="subl ~/dotfiles/zsh/.zshrc"     # open zshrc with sublime
+alias envconfig="subl ~/Projects/config/env.sh"  # open env with sublime
+alias dotfiles="cd ~/dotfiles"                   # open dotefiles with sublime
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app' # show hidden files
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'  # hide hidden files
 
 #==============================================================================
 # PYTHON
