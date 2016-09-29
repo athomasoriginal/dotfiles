@@ -1,0 +1,36 @@
+{
+    "Seti_blue_tab_label": true,
+    "always_show_minimap_viewport": true,
+    "bold_folder_labels": true,
+    "color_scheme": "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
+    "ensure_newline_at_eof_on_save": true,
+    "fade_fold_buttons": false,
+    "folder_exclude_patterns":
+    [
+        ".svn",
+        ".hg",
+        "CVS",
+        "target",
+        ".git",
+        ".vagrant"
+    ],
+    "font_face": "Menlo",
+    "font_size": 12,
+    "ignored_packages":
+    [
+        "Markdown",
+        "Seti_UX",
+        "Vintage"
+    ],
+    "indent_guide_options":
+    [
+        "draw_active",
+        "draw_normal"
+    ],
+    "line_padding_bottom": 3,
+    "line_padding_top": 3,
+    "overlay_scroll_bars": "enabled",
+    "theme": "Material-Theme-Darker.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true
+}
