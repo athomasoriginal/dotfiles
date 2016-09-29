@@ -56,7 +56,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 # NODE
 #==============================================================================
 
-export NVM_DIR="/Users/thomasmattacchione/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #==============================================================================
