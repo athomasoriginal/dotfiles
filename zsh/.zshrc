@@ -67,4 +67,8 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 #==============================================================================
 # RUBY
 #==============================================================================
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"    # Add RVM to PATH 
+
+export PATH="$HOME/.rbenv/bin:$PATH"  # Add rbenv to PATH
+eval "$(rbenv init -)"
+

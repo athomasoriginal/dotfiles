@@ -9,7 +9,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " pathogen runtime
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-execute pathogen#infect('bundle/{}', '~/dotfiles/vim/bundle/{}')
+execute pathogen#infect('bundle/{}', '$DOTFILES/vim/bundle/{}')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " base settings
