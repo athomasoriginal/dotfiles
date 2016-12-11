@@ -43,6 +43,8 @@ alias dotfiles="cd ~/dotfiles"                   # open dotfiles
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app' # show hidden files
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'  # hide hidden files
 
+alias emacs="/usr/local/Cellar/emacs-plus/25.1/Emacs.app/Contents/MacOS/Emacs"
+
 #==============================================================================
 # PYTHON
 #==============================================================================
@@ -67,8 +69,21 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 #==============================================================================
 # RUBY
 #==============================================================================
-export PATH="$PATH:$HOME/.rvm/bin"    # Add RVM to PATH 
+export PATH="$PATH:$HOME/.rvm/bin"    # Add RVM to PATH
 
 export PATH="$HOME/.rbenv/bin:$PATH"  # Add rbenv to PATH
 eval "$(rbenv init -)"
+
+#==============================================================================
+# JAVA
+#==============================================================================
+eval "$(jenv init -)"
+
+#==============================================================================
+# LOCAL MACHINE ONLY
+#==============================================================================
+
+alias scompler="cd ~/source/scompler" # move to scompler directory
+alias scompler_run="cd ~/source/scompler && bundle exec foreman start -f Procfile.dev"
+alias show_scompler_coverage="cd ~/source/scompler/client && open coverage/lcov-report/index.html"
 
