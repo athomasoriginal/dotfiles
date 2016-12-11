@@ -25,6 +25,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("d5c073edd9a97b8821cc2e11bc60c84c1da7622e1bf952e37e0e0495cb5c136f" "0329193aa6a36d25039e5588febd207c29f68203f743a639fdbbd7bf89c07891" "0bd765b5d1c8bf6028e3280b31601c7e1cd745118920ab9dc0a6a14fe9b92804" default)))
  '(package-selected-packages
    (quote
     (exec-path-from-shell which-key use-package try helm color-theme))))

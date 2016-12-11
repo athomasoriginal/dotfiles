@@ -66,6 +66,11 @@
    ("melpa" . "https://melpa.org/packages/")
    ("org"   . "https://orgmode.org/elpa/")))
 
+;; tell emacs where to look for themes
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+
+;; default theme for kong
+(load-theme 'kong t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bootstrap

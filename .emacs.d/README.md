@@ -47,6 +47,22 @@ What would it look like if we create a *minor-mode* that hides the mode line whe
 
 Please note that the reason `kong-hide-mode-line-mode` is set inside of `core-ui-elements` is because it is a minor-mode that can be used throughout Kong.
 
+## Custom Themes
+
+Good resource for learning about custom themes http://batsov.com/articles/2012/02/19/color-theming-in-emacs-reloaded/
+
+Please note that when adding themes to this configuration, you need to end them in `theme`.  For example, 
+
+```bash
+# good
+kong-theme.el
+
+# bad
+kong-one.el
+```
+
+Find the them `M-x custom-theme`
+
 ## TO DO:
 
 Next steps I would like to take with this setup:
