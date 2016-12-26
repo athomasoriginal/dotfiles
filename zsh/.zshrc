@@ -81,11 +81,3 @@ eval "$(rbenv init -)"
 #==============================================================================
 eval "$(jenv init -)"
 
-#==============================================================================
-# LOCAL MACHINE ONLY
-#==============================================================================
-
-alias scompler="cd ~/source/scompler" # move to scompler directory
-alias scompler_run="cd ~/source/scompler && bundle exec foreman start -f Procfile.dev"
-alias show_scompler_coverage="cd ~/source/scompler/client && open coverage/lcov-report/index.html"
-
