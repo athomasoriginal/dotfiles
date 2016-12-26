@@ -86,8 +86,31 @@ ln -s ~/dotfiles/sublime/Sublime\ Text.icns /Applications/Sublime\ Text.app/Cont
 open ~/dotfiles/sublime
 killall dock
 
+# python
+# =============================================================================
+info "python - installing virtualenvwrapper"
+pip install virtualenvwrapper
+
+# java
+# =============================================================================
+
+info "java - add jdk to jenv"
+jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home
+
+info "java - set the global version of Java with jenv"
+jenv global oracle64-1.8.0.112
+
+# node
+# =============================================================================
+
+info "node - installing nvm"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+
 # macOS
 # =============================================================================
 
 info "macOS - setting up macOS preferences"
 source .macos
+
+
+# npm install -g react-native-cli

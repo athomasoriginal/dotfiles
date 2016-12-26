@@ -20,6 +20,7 @@ plugins=(                 # plugins to load.
     brew
     osx
     zsh-syntax-highlighting
+    zsh-nvm
 )
 
 #==============================================================================
@@ -38,7 +39,6 @@ source $ZSH/oh-my-zsh.sh
 #==============================================================================
 
 alias zshconfig="subl ~/dotfiles/zsh/.zshrc"     # open zshrc with sublime
-alias envconfig="subl ~/Projects/config/env.sh"  # open env with sublime
 alias dotfiles="cd ~/dotfiles"                   # open dotfiles
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app' # show hidden files
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'  # hide hidden files
@@ -58,13 +58,15 @@ source /usr/local/bin/virtualenvwrapper.sh
 # NODE
 #==============================================================================
 
+# uncomment the following if you want to manually setup zsh in this file
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #==============================================================================
 # ANDROID
 #==============================================================================
-export ANDROID_HOME=/usr/local/opt/android-sdk
+# uncomment the following if you want to start android development
+# export ANDROID_HOME=/usr/local/opt/android-sdk
 
 #==============================================================================
 # RUBY

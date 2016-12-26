@@ -13,6 +13,10 @@ brew "findutils"
 brew "bash"
 brew "wget"
 brew "diff-so-fancy"
+brew "python"
+brew "watchman"
+brew "jenv"
+brew "rbenv"
 
 # Apps - Regular Installs
 cask "google-chrome"
@@ -26,6 +30,8 @@ cask "virtualbox-extension-pack"
 cask "vlc"
 cask "atom"
 cask "sublime-text"
+cask "vagrant-manager"
+cask "java"
 
 # Apps - Appstore Install
 mas "Sip", id: 507257563
