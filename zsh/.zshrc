@@ -43,8 +43,6 @@ alias dotfiles="cd ~/dotfiles"                   # open dotfiles
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app' # show hidden files
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'  # hide hidden files
 
-alias emacs="/usr/local/Cellar/emacs-plus/25.1/Emacs.app/Contents/MacOS/Emacs"
-
 #==============================================================================
 # PYTHON
 #==============================================================================
@@ -61,20 +59,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 # uncomment the following if you want to manually setup zsh in this file
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-#==============================================================================
-# ANDROID
-#==============================================================================
-# uncomment the following if you want to start android development
-# export ANDROID_HOME=/usr/local/opt/android-sdk
-
-#==============================================================================
-# RUBY
-#==============================================================================
-export PATH="$PATH:$HOME/.rvm/bin"    # Add RVM to PATH
-
-export PATH="$HOME/.rbenv/bin:$PATH"  # Add rbenv to PATH
-eval "$(rbenv init -)"
 
 #==============================================================================
 # JAVA

@@ -8,4 +8,3 @@ for file in ~/.{path,extras}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
