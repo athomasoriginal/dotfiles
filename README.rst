@@ -12,27 +12,34 @@ Before you run the install script, please make sure you complete the following s
 **1.  Update macOS**
 
 **2.  Install Xcode Command Line Tools**
-```bash
-xcode-select --install
-```
+
+.. code-block:: bash
+
+    xcode-select --install
 
 Quickstart
 ==========
 
 **1.  move into your home directory**
-```bash
-cd ~/
-```
+
+.. code-block:: bash
+
+    cd ~/
+
 
 **2.  clone this repo**
-```bash
-git clone https://github.com/tkjone/dotfiles
-```
+
+.. code-block:: bash
+
+    git clone https://github.com/tkjone/dotfiles
+
 
 **3.  run the setup script**
-```bash
-source setup.sh
-```
+
+.. code-block:: bash
+
+    source setup.sh
+
 
 Setup Examined
 ==============
