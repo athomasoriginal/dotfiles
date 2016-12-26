@@ -107,11 +107,11 @@ jenv global oracle64-1.8.0.112
 info "node - installing nvm"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 
-# macOS
+# macOS init
 # =============================================================================
 
-info "macOS - setting up macOS preferences"
-source .macos
+info "macOS - init macOS preferences"
+source ~/dotfiles/.macos
 
-
-# npm install -g react-native-cli
+info "macOS - init zshrc"
+source ~/.zshrc

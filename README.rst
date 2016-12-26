@@ -88,12 +88,12 @@ The `setup.sh` file is going to do all the heavy lifting and automate as many th
 Customization
 =============
 
-There may be ``.zshrc`` aliases or configurations that you may want to keep private, you can create a file called ``.extras`` to the ``zsh`` directory and this will be picked up by the ``.zshrc`` file.
+There may be ``.zshrc`` aliases or configurations that you may want to keep private, you can create a file called ``.extras`` to the ``zsh`` directory and this will be picked up by ``.zsh_profile``.
 
 Dev Environments
 ================
 
-This section will outline different development languages / environments that this setup supports.  These are the languages that I tend to work with.  However, you will notice that the setups are usually just some king of package manager.  This is because I use vagrant or docker and do not need specific version of the following languages installed.
+This section will outline different development languages / environments that this setup supports.  These are the languages that I tend to work with.  However, you will notice that the setups are usually package managers.  This is because I use vagrant or docker and do not need specific versions of the following languages installed.
 
 Python
 ------
@@ -105,23 +105,9 @@ Node
 
 - nvm
 
-React Native
-------------
-
-- android setup in zshrc - it's commented out
-
 Clojure
 -------
 
 - jenv
 - basic java setup
-
-Ruby
-----
-
-- rbenv
-
-
-
-
 
