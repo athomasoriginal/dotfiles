@@ -10,7 +10,7 @@
 
 [core]
     # insanely beautiful diffs
-    pager = /usr/local/Cellar/git/2.10.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
+    pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 	editor = /usr/bin/vim
 
 [color]

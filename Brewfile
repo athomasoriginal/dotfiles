@@ -12,7 +12,7 @@ brew "coreutils"
 brew "findutils"
 brew "bash"
 brew "wget"
-brew "diff-highlight"
+brew "diff-so-fancy"
 
 # Apps - Regular Installs
 cask "google-chrome"
