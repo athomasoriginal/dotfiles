@@ -48,18 +48,6 @@ info "Brew - installing all the brew 'tings"
 brew tap homebrew/bundle
 brew bundle
 
-# zsh
-# =============================================================================
-
-info "Zsh - setting zsh as the default shell environment"
-chsh -s $(which zsh)
-
-# macOS
-# =============================================================================
-
-info "macOS - setting up macOS preferences"
-source .macos
-
 # dotfile setup
 # =============================================================================
 
@@ -80,14 +68,26 @@ ln -s ~/dotfiles/git/.gitconfig               ~/.gitconfig
 ln -s ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
 ln -s ~/dotfiles/vim/.vimrc                   ~/.vimrc
 
-# # subl - shortcut for sublime
-# ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+# zsh
+# =============================================================================
 
-# # clone dotfiles repo & set origin
-# git -C ~/.dotfiles remote add origin https://github.com/tkjone/dotfiles.git
+info "Zsh - setting zsh as the default shell environment"
+chsh -s $(which zsh)
 
-# # replace the sublime text 3 icon
-# rm -rf /Applications/Sublime\ Text.app/Contents/Resources/Sublime\ Text.icns
-# ln -s ~/dotfiles/sublime/Sublime\ Text.icns /Applications/Sublime\ Text.app/Contents/Resources/
-# open ~/dotfiles/sublime
-# killall dock
+# sublime text
+# =============================================================================
+
+info "sublime text - setup shortcut: subl"
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+
+info "sublime text - replace default sublime text icon"
+rm -rf /Applications/Sublime\ Text.app/Contents/Resources/Sublime\ Text.icns
+ln -s ~/dotfiles/sublime/Sublime\ Text.icns /Applications/Sublime\ Text.app/Contents/Resources/
+open ~/dotfiles/sublime
+killall dock
+
+# macOS
+# =============================================================================
+
+info "macOS - setting up macOS preferences"
+source .macos
