@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "# Please include a useful commit message!" > $1
+# echo "# Please include a useful commit message!" > $1

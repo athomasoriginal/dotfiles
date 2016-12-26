@@ -58,6 +58,8 @@ rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
 rm -rf ~/.gitcommitmessage
 rm -rf ~/.vimrc
+rm -rf ~/.extras
+rm -rf ~/.oh-my-zsh/themes/thomas.zsh-theme
 
 info "dotfiles - symlinking dotfiles"
 ln -s ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
@@ -68,12 +70,6 @@ ln -s ~/dotfiles/git/.gitconfig               ~/.gitconfig
 ln -s ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
 ln -s ~/dotfiles/vim/.vimrc                   ~/.vimrc
 ln -s ~/dotfiles/zsh/.extras                  ~/.extras
-
-# zsh
-# =============================================================================
-
-info "Zsh - setting zsh as the default shell environment"
-chsh -s $(which zsh)
 
 # sublime text
 # =============================================================================
@@ -111,7 +107,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | b
 # =============================================================================
 
 info "macOS - init macOS preferences"
-source ~/dotfiles/.macos
+source ~/dotfiles/.macOS
 
 info "macOS - init zshrc"
 source ~/.zshrc

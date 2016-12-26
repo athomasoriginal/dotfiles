@@ -88,7 +88,7 @@ The `setup.sh` file is going to do all the heavy lifting and automate as many th
 Customization
 =============
 
-There may be ``.zshrc`` aliases or configurations that you may want to keep private, you can create a file called ``.extras`` to the ``zsh`` directory and this will be picked up by ``.zsh_profile``.
+There may be ``.zshrc`` aliases or configurations that you may want to keep private, you can create a file called ``.extras`` in the ``zsh`` directory and this will be picked up by ``.zsh_profile``.
 
 Dev Environments
 ================
