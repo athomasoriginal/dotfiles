@@ -78,6 +78,9 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
+# Speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0.3
+
 
 # =============================================================================
 # SCREEN
