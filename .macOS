@@ -184,7 +184,7 @@ defaults write com.apple.Safari IncludeInternalDebugMenu 1
 # =============================================================================
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-    "Dock" "Finder" "SystemUIServer" "Terminal" "iterm" "Safari"; do
+    "Dock" "Finder" "SystemUIServer" "Terminal" "iTerm" "iTerm2" "Safari"; do
     killall "${app}" &> /dev/null
 done
 

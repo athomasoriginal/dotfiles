@@ -77,7 +77,7 @@ ln -s ~/dotfiles/git/.gitconfig               ~/.gitconfig
 ln -s ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
 ln -s ~/dotfiles/vim/.vimrc                   ~/.vimrc
 ln -s ~/dotfiles/zsh/.extras                  ~/.extras
-ln -s ~/dotfiles/zsh/.duti                    ~/.duti
+ln -s ~/dotfiles/.duti                        ~/.duti
 
 # sublime text
 # =============================================================================
