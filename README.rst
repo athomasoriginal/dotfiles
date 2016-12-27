@@ -123,3 +123,11 @@ Clojure
 - jenv
 - basic java setup
 
+iterm2
+------
+
+- I activate scroll functionality so you can just use the trackpad for long pieces of text - e.g. ``man defaults``
+- solarized color scheme - well thought out color scheme
+- ``command + d`` will bring up iterm2 when in the background - very handy when you are an active terminal user - something I picked up from linux, quake terminal
+- 
+
