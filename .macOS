@@ -92,6 +92,13 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
+# ask for password immediatley after the computer sleeps
+defaults write com.apple.screensaver askForPassword -bool true
+defaults write com.apple.screensaver askForPasswordDelay 0
+
+# set the screen saver delay in seconds, 120 = 2 minutes
+defaults -currentHost write com.apple.screensaver idleTime 120
+
 
 # =============================================================================
 # DOCK, DASHBOARD and HOT CORNERS
@@ -192,5 +199,7 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+
 
 
