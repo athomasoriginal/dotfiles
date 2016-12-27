@@ -163,6 +163,15 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 
 # =============================================================================
+# ITERM2
+# =============================================================================
+
+# tell iterm where to find preferences
+defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "~/dotfiles/iterm2/profiles"
+defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
+
+
+# =============================================================================
 # KILL AFFECTED APPLICATIONS
 # =============================================================================
 
