@@ -7,6 +7,8 @@ Welcome to my dotfiles.  You are very welcome to use them, but I recommend readi
 Housekeeping
 ============
 
+This setup is for OSX.  Tested on macOS
+
 Before you run the install script, please make sure you complete the following steps:
 
 **1.  Update macOS**

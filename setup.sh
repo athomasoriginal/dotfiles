@@ -51,6 +51,7 @@ brew bundle
 # oh-my-zsh
 # =============================================================================
 
+info "oh-my-zsh - installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # dotfile setup
@@ -86,7 +87,7 @@ info "sublime text - replace default sublime text icon"
 rm -rf /Applications/Sublime\ Text.app/Contents/Resources/Sublime\ Text.icns
 ln -s ~/dotfiles/sublime/Sublime\ Text.icns /Applications/Sublime\ Text.app/Contents/Resources/
 open ~/dotfiles/sublime
-killall dock
+killall -KILL Dock
 
 # python
 # =============================================================================
