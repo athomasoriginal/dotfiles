@@ -17,6 +17,7 @@ brew "python"
 brew "watchman"
 brew "jenv"
 brew "rbenv"
+brew "duti"
 
 # Apps - Regular Installs
 cask "google-chrome"

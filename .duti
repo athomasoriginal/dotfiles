@@ -1,0 +1,11 @@
+# List of Uniform Type Identifiers in OS X: http://mths.be/utis
+
+# Format:
+# [Bundle ID] [UTI or `.extension`] [role]
+
+org.videolan.vlc .avi all
+org.videolan.vlc .mkv all
+org.videolan.vlc .mp4 all
+
+com.sublimetext.3 public.plain-text  all
+com.sublimetext.3 public.source-code all

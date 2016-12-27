@@ -66,6 +66,7 @@ rm -rf ~/.gitcommitmessage
 rm -rf ~/.vimrc
 rm -rf ~/.extras
 rm -rf ~/.oh-my-zsh/themes/thomas.zsh-theme
+rm -rf ~/.duti
 
 info "dotfiles - symlinking dotfiles"
 ln -s ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
@@ -76,6 +77,7 @@ ln -s ~/dotfiles/git/.gitconfig               ~/.gitconfig
 ln -s ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
 ln -s ~/dotfiles/vim/.vimrc                   ~/.vimrc
 ln -s ~/dotfiles/zsh/.extras                  ~/.extras
+ln -s ~/dotfiles/zsh/.duti                    ~/.duti
 
 # sublime text
 # =============================================================================
@@ -117,3 +119,6 @@ source ~/dotfiles/.macOS
 
 info "macOS - init zshrc"
 source ~/.zshrc
+
+info "macOS - running duti"
+source ~/.duti
