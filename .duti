@@ -1,17 +1,37 @@
-# List of Uniform Type Identifiers in OS X: http://mths.be/utis
-
+# =============================================================================
+# Uuniform Type Identifiers Syntax Explained
+# https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_conc/understand_utis_conc.html 
+#
+# List of Uniform Type Identifiers in OS X
+# https://developer.apple.com/library/content//documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html 
+#
+#
+# This file will help us manage things like the default system
+# browsers and which file types are opened by which applications.
+# you can see the updates take effect by running:
+#
+# defaults read ~/Library/preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist
+#
+#
 # Format:
 # [Bundle ID] [UTI or `.extension`] [role]
+# =============================================================================
 
+# vlc
 org.videolan.vlc .avi all
 org.videolan.vlc .mkv all
 org.videolan.vlc .mp4 all
 
+# sublime text 3
 com.sublimetext.3 public.plain-text      all
 com.sublimetext.3 public.source-code     all
 com.sublimetext.3 public.unix-executable all
 com.sublimetext.3 public.shell-script    all
 com.sublimetext.3 public.python-script   all
 com.sublimetext.3 public.ruby-script     all
-com.sublimetext.3 com.netscape.javascript-​source all
 
+# google chrome
+com.google.chrome http         all
+com.google.chrome https        all
+com.google.chrome public.xhtml all
+com.google.chrome public.html  all

@@ -54,7 +54,7 @@ fi;
 
 # Highlight the user name when logged in as root.
 if [[ "${USER}" == "root" ]]; then
-    userStyle="${red}";
+    userStyle="${bold}${red}";
 else
     userStyle="${orange}";
 fi;
