@@ -172,11 +172,19 @@ defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
 
 
 # =============================================================================
+# SAFARI
+# =============================================================================
+
+# turn on debug mode for development
+defaults write com.apple.Safari IncludeInternalDebugMenu 1
+
+
+# =============================================================================
 # KILL AFFECTED APPLICATIONS
 # =============================================================================
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-    "Dock" "Finder" "SystemUIServer" "Terminal" "iterm"; do
+    "Dock" "Finder" "SystemUIServer" "Terminal" "iterm" "Safari"; do
     killall "${app}" &> /dev/null
 done
 
