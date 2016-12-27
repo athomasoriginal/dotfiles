@@ -176,7 +176,7 @@ defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
 # =============================================================================
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-    "Dock" "Finder" "SystemUIServer" "Terminal"; do
+    "Dock" "Finder" "SystemUIServer" "Terminal" "iterm"; do
     killall "${app}" &> /dev/null
 done
 

@@ -45,6 +45,15 @@ To use ``diff-highlighter`` you will have to reference the currently active glob
 
     pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 
+
+**4.  .macOS paths**
+
+step 3 is going to run the ``.macOS`` script which has preferences that this author prefers, the following is a list of paths that I use that you may want to change before you run the init script:
+
+section - iterm2: where the preferences are located / if you don't want to use my preferences - comment it out
+
+section - screen: where the screenshots are stored
+
 Quickstart
 ==========
 
@@ -67,6 +76,7 @@ Quickstart
 .. code-block:: bash
 
     source setup.sh
+
 
 Post Setup
 ==========
