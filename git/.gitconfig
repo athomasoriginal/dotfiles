@@ -6,7 +6,7 @@
     email = thomasmattacchione@gmail.com
 
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
 
 [core]
     # insanely beautiful diffs
