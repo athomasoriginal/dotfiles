@@ -33,9 +33,7 @@ cask "atom"
 cask "sublime-text"
 cask "vagrant-manager"
 cask "java"
+cask "postman"
 
 # Apps - Appstore Install
 mas "Sip", id: 507257563
-
-
-
