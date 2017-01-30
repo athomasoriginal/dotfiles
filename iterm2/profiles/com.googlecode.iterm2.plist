@@ -276,7 +276,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 477 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>659 274 796 473 0 0 1680 1027 </string>
+	<string>644 284 918 381 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>2 258 1172 660 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -483,14 +483,20 @@
 			<integer>80</integer>
 			<key>Command</key>
 			<string></string>
+			<key>Cursor Boost</key>
+			<real>0.035818829113924054</real>
 			<key>Cursor Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.30783170461654663</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.86314111948013306</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.11494922637939453</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -507,12 +513,16 @@
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.19370138645172119</real>
+				<real>0.22431397438049316</real>
+				<key>Color Space</key>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.15575926005840302</real>
+				<real>0.23291873931884766</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.24042820930480957</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>1</integer>
@@ -846,6 +856,8 @@
 				<key>Red Component</key>
 				<real>0.023</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.2839695411392405</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -892,6 +904,8 @@
 			<string></string>
 			<key>Silence Bell</key>
 			<false/>
+			<key>Smart Cursor Color</key>
+			<false/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -906,6 +920,8 @@
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Cursor Guide</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -1063,5 +1079,9 @@
 	<false/>
 	<key>iTerm Version</key>
 	<string>3.0.13</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
