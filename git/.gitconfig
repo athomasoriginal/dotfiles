@@ -16,19 +16,22 @@
 [color]
   ui = always
 
+[color "branch"]
+	current = green
+
 [color "diff"]
   meta = yellow bold
   commit = green bold
-  frag = cyan
+  frag = cyan bold
   old = red bold
   new = green bold
   whitespace = red reverse
 
 [color "diff-highlight"]
   oldNormal = red bold
-  oldHighlight = "magenta bold"
-  newNormal = "green bold"
-  newHighlight = "blink cyan bold"
+  oldHighlight = magenta bold
+  newNormal = green bold
+  newHighlight = blink cyan bold
 
 [color "status"]
   added = green
@@ -42,4 +45,4 @@
   autocorrect = 1
 
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --color --graph --pretty=format:'%C(red bold)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
