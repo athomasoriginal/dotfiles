@@ -1,0 +1,12 @@
+"*":
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "solarized-light-syntax"
+    ]
+  "exception-reporting":
+    userId: "dd51b682-a7e5-2b3b-c172-243b2cf41df7"
+".shell.source":
+  editor:
+    scrollPastEnd: true

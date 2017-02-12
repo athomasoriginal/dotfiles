@@ -15,3 +15,7 @@ Thumbs.db
 
 # private configs
 .extras
+
+# atom
+atom/packages/
+atom/storage/
