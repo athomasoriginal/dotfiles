@@ -60,6 +60,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 info "dotfiles - removing existing dotfiles"
 rm -rf ~/.zsh_profile
 rm -rf ~/.zshrc
+rm -rf ~/.atom
 rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
 rm -rf ~/.gitcommitmessage
@@ -71,6 +72,7 @@ rm -rf ~/.duti
 info "dotfiles - symlinking dotfiles"
 ln -s ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
 ln -s ~/dotfiles/zsh/.zshrc                   ~/.zshrc
+ln -s ~/dotfiles/atom/                        ~/.atom
 ln -s ~/dotfiles/zsh/themes/thomas.zsh-theme  ~/.oh-my-zsh/themes/thomas.zsh-theme
 ln -s ~/dotfiles/git/.gitignore               ~/.gitignore
 ln -s ~/dotfiles/git/.gitconfig               ~/.gitconfig
