@@ -7,6 +7,8 @@
     ]
   "exception-reporting":
     userId: "dd51b682-a7e5-2b3b-c172-243b2cf41df7"
+  "linter-eslint":
+    useGlobalEslint: true
 ".shell.source":
   editor:
     scrollPastEnd: true
