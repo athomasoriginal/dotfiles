@@ -18,6 +18,7 @@ brew "watchman"
 brew "jenv"
 brew "rbenv"
 brew "duti"
+brew "yarn"
 
 # Apps - Regular Installs
 cask "google-chrome"
