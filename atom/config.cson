@@ -1,4 +1,6 @@
 "*":
+  "file-types":
+    "^Dockerfile\\..*$": "source.dockerfile"
   core:
     disabledPackages: [
       "language-gfm"
