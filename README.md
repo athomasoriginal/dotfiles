@@ -2,8 +2,24 @@
 
 Welcome to my dotfiles.  You are very welcome to use them.
 
-I recommend reading through each file before you try to execute this setup to see if it is what you want.  Having said this, I try to keep my dotfiles
-in a very basic and generalized state thus attempting not to make anything overly specific to my own idiosyncrasies.
+I try to keep my dotfiles in a very basic and generalized state, thus attempting to avoid making anything overly specific to my own idiosyncrasies.
+
+
+If you decide to follow my [Quickstart](#quickstart) it will guide you through the setup of a new mac.  You can also use this on your current mac, but if you run the `setup.sh` script it will overwrite a lot of your current settings.
+
+* [Quickstart](#quickstart)
+* [Post Setup](#post-setup)
+* [Setup Explained](#setup-explained)
+* [Customization](#customization)
+  * [vim](#vim)
+  * [Dev Environments](#dev-environments)
+    * [python](#python)
+    * [node](#node)
+    * [clojure](#clojure)
+  * [Dev Tools](#dev-tools)
+    * [iterm2](#iterm2)
+    * [duti](#duti)
+
 
 ##  Quickstart
 
@@ -58,13 +74,6 @@ $ find -L /usr -name diff-highlight -type f
 The number your looking for in the above path is right after `git` --> `2.11.0`
 
 
-> 4.  Move into the `dotfiles` directory.
-
-```bash
-cd ~/dotfiles
-```
-
-
 > 5.  Open `.gitconfig`
 
 ```bash
@@ -81,26 +90,35 @@ pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-
 
 **6.  .macOS paths**
 
-please take a look at `~dotfiles/.macOS`. This file has preferences that I prefer to use to configure my mac. Base on my own preferences, you may want to take a look at the following and decided if they are good for you or not:
+please take a look at `~dotfiles/.macOS`. This file has preferences that I prefer to use to configure my mac. Based on my own preferences, you may want to take a look at the following and decided if they are good for you or not:
 
 * section - iterm2
-** where the preferences are located / if you don't want to use my preferences - comment it out
+  * This is going to tell iterm2 to use the preferences I have setup in these dotfiles.  If you do not want them, comment this line out.
 
 * section - screen:
-** where the screenshots are stored
+  * where the screenshots are stored
 
 
 **7.  run the setup script**
 
 ```bash
-$ source setup.sh
+$ source ~/dotfiles/setup.sh
 ```
 
 
 ## Post Setup
 
-After the above, be sure to setup the following additional items on your local machine:
+Once the above is complete, I like to perform the following tasks:
 
+* restart computer
+* setup default browser
+* set the items that you want to appear in your dock
+* set the capslock key to be the modifier key
+* setup your screensave/lock to occur after 2 min
+* setup nice [screen savers](https://github.com/JohnCoates/Aerial)
+* turn off spotlight suggestions
+* password storage
+* setup [nvm](https://github.com/creationix/nvm)
 * [git ssh keys](https://help.github.com/articles/connecting-to-github-with-ssh/)
 
 
@@ -138,7 +156,7 @@ This section will outline different development languages / environments that th
 * jenv
 * basic java setup
 
-#### iterm2
+### iterm2
 
 * I activate scroll functionality so you can just use the trackpad for long pieces of text - e.g. `man defaults`
 * solarized color scheme - well thought out color scheme
