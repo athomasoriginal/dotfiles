@@ -5,7 +5,7 @@ Welcome to my dotfiles.  You are very welcome to use them.
 I recommend reading through each file before you try to execute this setup to see if it is what you want.  Having said this, I try to keep my dotfiles
 in a very basic and generalized state thus attempting not to make anything overly specific to my own idiosyncrasies.
 
-## Housekeeping
+##  Quickstart
 
 This setup is tested on:
 
@@ -25,8 +25,23 @@ some understanding of the terminal.  Any command prefixed with `$` means to run 
 $ xcode-select --install
 ```
 
-**3.  Install diff-highlighter**
 
+**3.  move into your home directory**
+
+```bash
+$ cd ~/
+```
+
+**4.  clone this repo**
+
+```bash
+$ git clone https://github.com/tkjone/dotfiles
+```
+
+
+**5.  Setup diff-highlighter**
+
+`diff-highlight` is going to make your diffs look pretty, but based on the version of git you have, you will have to perform these steps:
 
 > 1.  Find diff-highlight
 
@@ -34,46 +49,48 @@ $ xcode-select --install
 $ find -L /usr -name diff-highlight -type f
 ```
 
-> 2.  Choose the path with the larget git version
+> 2.  Choose the path with the highest git version
 
 ```bash
 /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight
 ```
 
-You can tell by the number directly after git.  In the above path, it's `2.11.0`
+The number your looking for in the above path is right after `git` --> `2.11.0`
 
 
-> 3.  Replace the path on line 13 in the .gitconfig with the path from step 2.
+> 4.  Move into the `dotfiles` directory.
+
+```bash
+cd ~/dotfiles
+```
+
+
+> 5.  Open `.gitconfig`
+
+```bash
+vim ~/dotfiles/git/.gitconfig
+```
+
+
+> 6.  Replace the path on line 13 in the `.gitconfig` with the path from `step 2`.
 
 ```bash
 pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 ```
 
-To use `diff-highlighter` you will have to reference the currently active global version of git.  This means, the path specified in the `.gitconfig` file may not be correct for your install of git.  To do this:
+
+**6.  .macOS paths**
+
+please take a look at `~dotfiles/.macOS`. This file has preferences that I prefer to use to configure my mac. Base on my own preferences, you may want to take a look at the following and decided if they are good for you or not:
+
+* section - iterm2
+** where the preferences are located / if you don't want to use my preferences - comment it out
+
+* section - screen:
+** where the screenshots are stored
 
 
-**4.  .macOS paths**
-
-step 3 is going to run the `.macOS` script which has preferences that this author prefers, the following is a list of paths that I use that you may want to change before you run the init script:
-
-
-## Quickstart
-
-**1.  move into your home directory**
-
-```bash
-$ cd ~/
-```
-
-
-**2.  clone this repo**
-
-```bash
-$ git clone https://github.com/tkjone/dotfiles
-```
-
-
-**3.  run the setup script**
+**7.  run the setup script**
 
 ```bash
 $ source setup.sh
@@ -85,6 +102,7 @@ $ source setup.sh
 After the above, be sure to setup the following additional items on your local machine:
 
 * [git ssh keys](https://help.github.com/articles/connecting-to-github-with-ssh/)
+
 
 ## Setup Explained
 
@@ -129,8 +147,3 @@ This section will outline different development languages / environments that th
 ### duti
 
 - duti is a program built to make it easier to configure which filetypes are opened by which application.  For example, lets say you want all `.html` files to be opened by `Atom` and not the default browser, we can configure this in Duti.  For more info, see the .duti` file.
-
-
-section - iterm2: where the preferences are located / if you don't want to use my preferences - comment it out
-
-section - screen: where the screenshots are stored
