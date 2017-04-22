@@ -17,6 +17,7 @@ If you decide to follow my [Quickstart](#quickstart) it will guide you through t
     * [node](#node)
     * [clojure](#clojure)
   * [Dev Tools](#dev-tools)
+    * [Atom](#atom)
     * [iterm2](#iterm2)
     * [duti](#duti)
 
@@ -156,15 +157,15 @@ This section will outline different development languages / environments that th
 * jenv
 * basic java setup
 
+### Atom
+
+* make sure to install package.sync to be able to make use of `package.cson`
+
 ### iterm2
 
 * I activate scroll functionality so you can just use the trackpad for long pieces of text - e.g. `man defaults`
 * solarized color scheme - well thought out color scheme
 * `command + d` will bring up iterm2 when in the background - very handy when you are an active terminal user - something I picked up from linux, quake terminal
-
-### Atom
-
-* make sure to install package.sync to be able to make use of `package.cson`
 
 ### duti
 
