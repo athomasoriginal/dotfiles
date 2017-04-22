@@ -1,0 +1,18 @@
+packages: [
+  "busy-signal"
+  "docblockr"
+  "emmet"
+  "intentions"
+  "language-babel"
+  "language-docker"
+  "language-markdown"
+  "linter"
+  "linter-eslint"
+  "linter-pylama"
+  "linter-ui-default"
+  "markdown-preview-plus"
+  "markdown-writer"
+  "multi-cursor"
+  "open-in-browser"
+  "package-sync"
+]
