@@ -2,26 +2,34 @@
 DOTFILES
 ********
 
-Welcome to my dotfiles.  You are very welcome to use them, but I recommend reading through each file before you try to setup your mac based on this setup.  What works for me, might not work for you.
+Welcome to my dotfiles.  You are very welcome to use them.
+
+I recommend reading through each file before you try to execute this setup to see if it is what you want.  Having said this, I try to keep my dotfiles
+in a very basic and generalized state thus attempting not to make anything overly specific to my own idiosyncrasies.
 
 Housekeeping
 ============
 
-This setup is for OSX.  Tested on macOS 10.12 Sierra.
+This setup is tested on:
 
-Before you run the install script, please make sure you complete the following steps:
+* macOS 10.12.x Sierra
+
+The following will provide a quick outline / checklist of tasks you should complete before using these dotfiles.  The following guide assume you have
+some understanding of the terminal.  Any command prefixed with ``$`` means to run it in the terminal.
 
 **1.  Update macOS**
+
+Just making sure everything is up-to-date :)
+
 
 **2.  Install Xcode Command Line Tools**
 
 .. code-block:: bash
 
-    xcode-select --install
+    $ xcode-select --install
 
-**3.  Setup diff-highlighter**
 
-To use ``diff-highlighter`` you will have to reference the currently active global version of git.  This means, the path specified in the ``.gitconfig`` file may not be correct for your install of git.  To do this:
+**3.  Install diff-highlighter**
 
 1.  Find diff-highlight
 
@@ -46,6 +54,11 @@ To use ``diff-highlighter`` you will have to reference the currently active glob
     pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 
 
+.. epigraph::
+
+   To use ``diff-highlighter`` you will have to reference the currently active global version of git.  This means, the path specified in the ``.gitconfig`` file may not be correct for your install of git.  To do this:
+
+
 **4.  .macOS paths**
 
 step 3 is going to run the ``.macOS`` script which has preferences that this author prefers, the following is a list of paths that I use that you may want to change before you run the init script:
@@ -61,21 +74,21 @@ Quickstart
 
 .. code-block:: bash
 
-    cd ~/
+    $ cd ~/
 
 
 **2.  clone this repo**
 
 .. code-block:: bash
 
-    git clone https://github.com/tkjone/dotfiles
+    $ git clone https://github.com/tkjone/dotfiles
 
 
 **3.  run the setup script**
 
 .. code-block:: bash
 
-    source setup.sh
+    $ source setup.sh
 
 
 Post Setup
@@ -134,5 +147,5 @@ iterm2
 duti
 ----
 
-- duti will set an application to open all filetypes with a specified application.  See the ``.duti`` file.
-
+- duti is a program built to make it easier to configure which filetypes are opened by which application.  For example, lets say you want all ``.html`` files to be
+opened by ``Atom`` and not the default browser, we can configure this in Duti.  For more info, see the ``.duti`` file.

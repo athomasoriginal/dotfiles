@@ -1,6 +1,4 @@
 "*":
-  "file-types":
-    "^Dockerfile\\..*$": "source.dockerfile"
   core:
     disabledPackages: [
       "language-gfm"
@@ -13,12 +11,16 @@
   editor: {}
   "exception-reporting":
     userId: "dd51b682-a7e5-2b3b-c172-243b2cf41df7"
-  "markdown-writer":
-    fileExtension: ".md"
+  "file-types":
+    "^Dockerfile\\..*$": "source.dockerfile"
   "linter-eslint":
     useGlobalEslint: true
   "linter-pylama":
     ignoreErrorsAndWarnings: "D203,D212,D213,D404,D211,D100,D101"
+  "linter-ui-default":
+    showPanel: true
+  "markdown-writer":
+    fileExtension: ".md"
 ".shell.source":
   editor:
     scrollPastEnd: true
