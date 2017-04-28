@@ -19,6 +19,7 @@ brew "jenv"
 brew "rbenv"
 brew "duti"
 brew "yarn"
+brew "tmux"
 
 # Apps - Regular Installs
 cask "google-chrome"
