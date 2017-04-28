@@ -21,6 +21,11 @@
     showPanel: true
   "markdown-writer":
     fileExtension: ".md"
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+    prettierOptions:
+      singleQuote: true
 ".shell.source":
   editor:
     scrollPastEnd: true
