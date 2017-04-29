@@ -7,7 +7,6 @@ packages: [
   "language-docker"
   "language-markdown"
   "linter"
-  "linter-eslint"
   "linter-pylama"
   "linter-ui-default"
   "markdown-preview-plus"
