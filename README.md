@@ -66,6 +66,8 @@ $ git clone https://github.com/tkjone/dotfiles
 $ find -L /usr -name diff-highlight -type f
 ```
 
+The above command may respond with a `permission denied` and if it does try running this: `sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local`.
+
 > 2.  Choose the path with the highest git version
 
 ```bash
