@@ -1,9 +1,10 @@
 # =========================================================
 # Welcome to the global git configuration file
 # =========================================================
-[user]
-  name = tkjone
-  email = thomasmattacchione@gmail.com
+
+# Use separate file for username / github token / etc
+[include]
+  path = ~/.gitconfig.local
 
 [credential]
 	helper = osxkeychain
