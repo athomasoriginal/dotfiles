@@ -69,6 +69,7 @@ rm -rf ~/.extras
 rm -rf ~/.oh-my-zsh/themes/thomas.zsh-theme
 rm -rf ~/.duti
 rm -rf ~/.tmux.conf
+rm -rf ~/.gitconfig.local
 
 info "dotfiles - symlinking dotfiles"
 ln -s ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
@@ -78,6 +79,7 @@ ln -s ~/dotfiles/zsh/themes/thomas.zsh-theme  ~/.oh-my-zsh/themes/thomas.zsh-the
 ln -s ~/dotfiles/git/.gitignore               ~/.gitignore
 ln -s ~/dotfiles/git/.gitconfig               ~/.gitconfig
 ln -s ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
+ln -s ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
 ln -s ~/dotfiles/vim/.vimrc                   ~/.vimrc
 ln -s ~/dotfiles/zsh/.extras                  ~/.extras
 ln -s ~/dotfiles/.duti                        ~/.duti

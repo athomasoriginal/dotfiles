@@ -62,13 +62,7 @@ $ touch dotfiles/git/.gitconfig.local
 $ touch dotfiles/zsh/.extras
 ```
 
-**6.  symlink gitconfig.local**
-
-```bash
-$ ln -s ~/dotfiles/git/.gitconfig.local   ~/.gitconfig.local
-```
-
-**7.  populate .gitconfig.local**
+**6.  populate .gitconfig.local**
 
 ```bash
 [user]
@@ -76,7 +70,7 @@ $ ln -s ~/dotfiles/git/.gitconfig.local   ~/.gitconfig.local
   email = <your-email>
 ```
 
-**8.  Setup diff-highlighter**
+**7.  Setup diff-highlighter**
 
 `diff-highlight` is going to make your diffs look pretty, but based on the version of git you have, you will have to perform these steps:
 
@@ -111,7 +105,7 @@ pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-
 ```
 
 
-**9.  .macOS paths**
+**8.  .macOS paths**
 
 please take a look at `~dotfiles/.macOS`. This file has preferences that I prefer to use to configure my mac. Based on my own preferences, you may want to take a look at the following and decided if they are good for you or not:
 
@@ -122,7 +116,7 @@ please take a look at `~dotfiles/.macOS`. This file has preferences that I prefe
   * where the screenshots are stored
 
 
-**10.  run the setup script**
+**9.  run the setup script**
 
 ```bash
 $ source ~/dotfiles/setup.sh
