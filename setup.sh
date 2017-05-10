@@ -64,6 +64,7 @@ rm -rf ~/.atom
 rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
 rm -rf ~/.gitcommitmessage
+rm -rf ~/.gitconfig.local
 rm -rf ~/.vimrc
 rm -rf ~/.extras
 rm -rf ~/.oh-my-zsh/themes/thomas.zsh-theme
@@ -78,6 +79,7 @@ ln -s ~/dotfiles/atom/                        ~/.atom
 ln -s ~/dotfiles/zsh/themes/thomas.zsh-theme  ~/.oh-my-zsh/themes/thomas.zsh-theme
 ln -s ~/dotfiles/git/.gitignore               ~/.gitignore
 ln -s ~/dotfiles/git/.gitconfig               ~/.gitconfig
+ln -s ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
 ln -s ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
 ln -s ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
 ln -s ~/dotfiles/vim/.vimrc                   ~/.vimrc

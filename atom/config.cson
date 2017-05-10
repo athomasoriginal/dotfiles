@@ -21,9 +21,11 @@
   "markdown-writer":
     fileExtension: ".md"
   "prettier-atom":
-    formatOnSaveOptions: {}
+    formatOnSaveOptions:
+      enabled: true
     prettierOptions:
       singleQuote: true
+    useEslint: true
 ".shell.source":
   editor:
     scrollPastEnd: true
