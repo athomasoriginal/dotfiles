@@ -12,6 +12,7 @@
   "exception-reporting":
     userId: "dd51b682-a7e5-2b3b-c172-243b2cf41df7"
   "file-types":
+    "^.env.*$": "source.shell"
     "^Dockerfile\\..*$": "source.dockerfile"
   "linter-eslint": {}
   "linter-pylama":
@@ -26,6 +27,8 @@
     prettierOptions:
       singleQuote: true
     useEslint: true
+  welcome:
+    showOnStartup: false
 ".shell.source":
   editor:
     scrollPastEnd: true
