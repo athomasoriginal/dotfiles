@@ -3,6 +3,7 @@
     disabledPackages: [
       "language-gfm"
     ]
+    openEmptyEditorOnStart: false
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
@@ -27,6 +28,8 @@
     prettierOptions:
       singleQuote: true
     useEslint: true
+  "tree-view":
+    hideIgnoredNames: true
   welcome:
     showOnStartup: false
 ".shell.source":

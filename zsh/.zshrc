@@ -46,10 +46,14 @@ unset file;
 # ALIASES
 #==============================================================================
 
+# general
 alias zshconfig="subl ~/dotfiles/zsh/.zshrc"     # open zshrc with sublime
 alias dotfiles="cd ~/dotfiles"                   # open dotfiles
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app' # show hidden files
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'  # hide hidden files
+
+# docker
+alias containers="docker ps --format 'table {{.Names}}\t{{.Image}}'"
 
 #==============================================================================
 # PYTHON
