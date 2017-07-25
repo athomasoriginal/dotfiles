@@ -7,8 +7,8 @@
     projectHome: "/Users/thomasmattachione/source"
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
-      "solarized-light-syntax"
+      "one-light-ui"
+      "one-light-syntax"
     ]
   editor: {}
   "exception-reporting":
