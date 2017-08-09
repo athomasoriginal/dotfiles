@@ -30,7 +30,7 @@ if tput setaf 1 &> /dev/null; then
     green=$(tput setaf 64);
     orange=$(tput setaf 166);
     purple=$(tput setaf 125);
-    red=$(tput setaf 124);
+    red="\e[1;31m";
     violet=$(tput setaf 61);
     white=$(tput setaf 15);
     yellow=$(tput setaf 136);
@@ -97,4 +97,3 @@ PROMPT+='$(git_prompt_info)'
 # newline + prompt character
 PROMPT+='
 ${ret_status}%{$reset_color%}'
-

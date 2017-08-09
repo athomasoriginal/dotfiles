@@ -16,7 +16,11 @@
   "file-types":
     "^.env.*$": "source.shell"
     "^Dockerfile\\..*$": "source.dockerfile"
+  "flow-ide":
+    showUncovered: true
   "linter-eslint": {}
+  "linter-flow":
+    executablePath: "/Users/thomasmattachione/source/scribblelive-product/plan-app-client/node_modules/.bin/flow"
   "linter-pylama":
     ignoreErrorsAndWarnings: "D203,D212,D213,D404,D211,D100,D101"
   "linter-ui-default":
@@ -28,6 +32,9 @@
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
+      excludedGlobs: [
+        "package.json"
+      ]
     prettierOptions:
       singleQuote: true
     useEslint: true
