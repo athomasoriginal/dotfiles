@@ -27,7 +27,8 @@ plugins=(                 # plugins to load.
 # USER SETTINGS
 #==============================================================================
 
-export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin" # export MANPATH="/usr/local/man:$MANPATH"
+# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -62,6 +63,9 @@ alias containers="docker ps --format 'table {{.Names}}\t{{.Image}}'"
 # virtualenvwrapper configuration
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/source
+# tell virtual env exactly which python interpreter and local of vw
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 
 #==============================================================================

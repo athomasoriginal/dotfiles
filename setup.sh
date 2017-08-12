@@ -102,7 +102,7 @@ killall -KILL Dock
 # python
 # =============================================================================
 info "python - installing virtualenvwrapper"
-pip install virtualenvwrapper
+pip3 install virtualenvwrapper
 
 # java
 # =============================================================================
