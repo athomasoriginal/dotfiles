@@ -62,13 +62,15 @@ $ touch dotfiles/git/.gitconfig.local
 $ touch dotfiles/zsh/.extras
 ```
 
-**6.  populate .gitconfig.local**
+**6.  update .gitconfig.local**
 
 ```bash
 [user]
   name = <your-username>
   email = <your-email>
 ```
+
+> note: you created this file in step 5
 
 **7.  Setup diff-highlighter**
 
@@ -107,7 +109,7 @@ pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-
 
 **8.  .macOS paths**
 
-please take a look at `~dotfiles/.macOS`. This file has preferences that I prefer to use to configure my mac. Based on my own preferences, you may want to take a look at the following and decided if they are good for you or not:
+please take a look at `~dotfiles/.macOS`. This file has preferences that I prefer to use to configure my mac. In specific, you may want to take a look at the following and decide if they are good for you or not:
 
 * section - iterm2
   * This is going to tell iterm2 to use the preferences I have setup in these dotfiles.  If you do not want them, comment this line out.
@@ -131,8 +133,8 @@ Once the above is complete, I like to perform the following tasks:
 * setup default browser
 * set the items that you want to appear in your dock
 * set the capslock key to be the modifier key
-* setup your screensave/lock to occur after 2 min
-* setup nice [screen savers](https://github.com/JohnCoates/Aerial)
+* setup your screensave/lock to occur after 2 min (annoying, but its for security)
+* setup custom [screen savers](https://github.com/JohnCoates/Aerial)
 * turn off spotlight suggestions
 * password storage
 * setup [nvm](https://github.com/creationix/nvm)
@@ -162,7 +164,8 @@ This section will outline different development languages / environments that th
 
 #### Python
 
-* virtualenvwrapper
+* python3 - we only install python3
+* virtualenvwrapper - we are being opinionated and telling virtualenvwrapper to use python3 by default.
 
 #### Node
 
@@ -185,4 +188,4 @@ This section will outline different development languages / environments that th
 
 ### duti
 
-- duti is a program built to make it easier to configure which filetypes are opened by which application.  For example, lets say you want all `.html` files to be opened by `Atom` and not the default browser, we can configure this in Duti.  For more info, see the .duti` file.
+- duti is a program built to make it easier to configure which filetypes are opened by which application.  For example, lets say you want all `.html` files to be opened by `Atom` and not the default browser, we can configure this in Duti.  For more info, see the `.duti` file.
