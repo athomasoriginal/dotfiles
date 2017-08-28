@@ -25,8 +25,6 @@
     ignoreErrorsAndWarnings: "D203,D212,D213,D404,D211,D100,D101"
   "linter-ui-default":
     hidePanelWhenEmpty: true
-    panelHeight: 69
-    showPanel: true
   "markdown-writer":
     fileExtension: ".md"
   "prettier-atom":
