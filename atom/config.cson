@@ -1,4 +1,6 @@
 "*":
+  "atom-package-deps":
+    ignored: []
   core:
     disabledPackages: [
       "language-gfm"
@@ -20,13 +22,14 @@
     showUncovered: true
   "linter-eslint": {}
   "linter-flow":
-    executablePath: "/Users/thomasmattachione/source/scribblelive-product/plan-app-client/node_modules/.bin/flow"
+    executablePath: "/Users/thomasmattachione/source/scribblelive-product/plan-app/node_modules/.bin/flow"
   "linter-pylama":
     ignoreErrorsAndWarnings: "D203,D212,D213,D404,D211,D100,D101"
   "linter-ui-default":
     hidePanelWhenEmpty: true
   "markdown-writer":
     fileExtension: ".md"
+  organized: {}
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
