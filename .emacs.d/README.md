@@ -1,74 +1,22 @@
-Kong Emacs Configuration
+# Emacs
 
-## prereqs
+## housekeeping
 
-Before using this setup, please make sure you have [cask](http://cask.readthedocs.io/en/latest/) installed.  Further, this setup defaults to use `.zshrc`.  You can see this in the `core-os-osx.el`.  If you have a different config file, like `.bashrc`, or it's located in a different place, you are going to want to update the `core-os-osx.el` file.
+* [install emacs](http://wikemacs.org/wiki/Installing_Emacs_on_OS_X)
+* symlink the `.emacs.d` dir --> `ln -s ~/dotfiles/.emacs.d/  ~/.emacs.d`
 
-Also note that this setup is only optimized for OSX, although I believe that by leaving out some of the items in `init.el`, like the `core-os-osx.el` file you can make it work for most any other OS.
+**NOTE:** The above is for OSX.  Please note to follow the Homebrew recommended install path.
 
+# Quickstart
 
-1.  Move into the `.emacs.d` directory
-```bash
-$ cd ~/.emacs.d
-```
+After you symlink, nothing else should be required as the customizations set are basic.
 
-2.  Install emacs dependencies with cask
-```
-$ cask install
-```
+# Questions
 
-At this point, this configuration is pretty broken.  Running into a lot of issue when trying to configure helms look and feel.  Otherwise though, the basic flow of the code is working correctly. 
+> Why was this not included in the setup script?
 
-## Not Currently Being Used
+I opted to leave this out because not everyone is going to want/need to use emacs.  I also feel that if you are using it, you likely have your own `.emacs.d` files.
 
-- `core/core-buffer-move`
+# Kong Journey
 
-## Helm Configuration:
-
-There are some nice configurations here and I had to reverse engineering what the [doom](https://github.com/hlissner/.emacs.d) setup was doing to make this work, so I am going to break it down a little so other can have an easier time learning and making emacs the way they like.
-
-So this is helm normally, without any UI adjustments:
-
-![Basic Helm GUI](./docs/assets/basic_helm.png)
-
-*above code found in core-heln.el*
-
-What would it look like if we had a different prompt?
-
-![Custom Helm Prompt GUI](./docs/assets/custom_prompt_helm.png)
-
-*above code found in core-heln.el*
-
-What would it look like if we create a *minor-mode* that hides the mode line when we are using helm?
-
-![Custom Helm Prompt GUI](./docs/assets/hidden_mode_line_helm.png)
-
-*above code found in core-heln.el which has dependencies in core-ui-elements.el*
-
-Please note that the reason `kong-hide-mode-line-mode` is set inside of `core-ui-elements` is because it is a minor-mode that can be used throughout Kong.
-
-## Custom Themes
-
-Good resource for learning about custom themes http://batsov.com/articles/2012/02/19/color-theming-in-emacs-reloaded/
-
-Please note that when adding themes to this configuration, you need to end them in `theme`.  For example, 
-
-```bash
-# good
-kong-theme.el
-
-# bad
-kong-one.el
-```
-
-Find the them `M-x custom-theme`
-
-## TO DO:
-
-Next steps I would like to take with this setup:
-
-### Performance
-
-The more you add, the slower emacs is going to get.  This is true with any program.  However, as I was adding things, I took note of performance.  Here are some modules where, when added, visible performance slow down was seen:
-
-- **core-os-osx.el**: specifically the `exec-path-from-shell` part
+Prior to the emacs config I have here, I spent at least a day trying to initially learn emacs customization by studying the kong emacs configs.  You can see how this journey played out by checking out `ef36d7762963d98d6d481139d98ae7651f15df39`.

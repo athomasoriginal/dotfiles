@@ -27,3 +27,6 @@ debug.el
 *.cache-*
 *.log
 *init.el~
+
+recentf
+recentf~
