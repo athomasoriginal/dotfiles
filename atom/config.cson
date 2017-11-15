@@ -22,7 +22,6 @@
   "linter-ui-default":
     hidePanelWhenEmpty: true
     panelHeight: 69
-    showPanel: true
   "markdown-writer":
     fileExtension: ".md"
   parinfer:
@@ -41,8 +40,7 @@
       ".scm"
     ]
   "prettier-atom":
-    formatOnSaveOptions:
-      enabled: true
+    formatOnSaveOptions: {}
     prettierOptions:
       singleQuote: true
     useEslint: true
