@@ -2,7 +2,7 @@
 
 Welcome to my dotfiles;  You are very welcome to use them :smile:
 
-I try to focus my dotfiles to the basics, thus attempting to avoid making anything overly specific to my own idiosyncrasies.
+I try to focus my dotfiles on the basics, thus attempting to avoid making anything overly specific to my own idiosyncrasies.
 
 You can take what you like from these dotfiles a la carte, or feel free to use my [Quickstart](#quickstart) which will walk you through how I setup a new mac for development.
 
@@ -192,13 +192,13 @@ This section will outline different development languages / environments that th
 
 ### Atom
 
-* make sure to install package.sync to be able to make use of `package.cson`
+* make sure to install [package.sync](https://atom.io/packages/package-sync) to be able to make use of `package.cson` that I provide which is what I use to transfer my preferred atom settings from one computer to another.
 
 ### iterm2
 
-* I activate scroll functionality so you can just use the trackpad for long pieces of text - e.g. `man defaults`
-* solarized color scheme - well thought out color scheme
-* `command + d` will bring up iterm2 when in the background - very handy when you are an active terminal user - something I picked up from linux, quake terminal
+* I activate scroll functionality so you can just use the trackpad for long pieces of text.  For example, try typing `man defaults` into your terminal.  When you have to scroll this kind of long document in your terminal, it can get janky.  This helps to avoid that.
+* solarized color scheme - especially amazing if you ever code outside or in a room with a lot of sunlight
+* `command + d` will bring up iterm2 when in the background - very handy when you are an active terminal user - something I picked up from [guake terminal](https://github.com/Guake/guake)
 
 ### duti
 
