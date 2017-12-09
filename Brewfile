@@ -2,7 +2,7 @@
 tap "caskroom/cask"
 tap "homebrew/bundle"
 
-# Dev
+# Developer Tools
 brew "git"
 brew "tree"
 brew "zsh"
@@ -21,7 +21,7 @@ brew "duti"
 brew "yarn"
 brew "tmux"
 
-# Apps - Regular Installs
+# Apps
 cask "google-chrome"
 cask "firefox"
 cask "iterm2"
@@ -37,5 +37,5 @@ cask "vagrant-manager"
 cask "java"
 cask "postman"
 
-# Apps - Appstore Install
+# Apps - https://github.com/mas-cli/mas
 mas "Sip", id: 507257563
