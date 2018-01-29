@@ -72,7 +72,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 # NODE
 #==============================================================================
 
-# uncomment the following if you want to manually setup zsh in this file
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -86,3 +85,4 @@ eval "$(jenv init -)"
 # POSTGRES
 #==============================================================================
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
