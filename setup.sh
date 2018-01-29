@@ -71,6 +71,7 @@ rm -rf ~/.oh-my-zsh/themes/thomas.zsh-theme
 rm -rf ~/.duti
 rm -rf ~/.tmux.conf
 rm -rf ~/.gitconfig.local
+rm -rf ~/.emacs.d
 
 info "dotfiles - symlinking dotfiles"
 ln -s ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
@@ -86,6 +87,7 @@ ln -s ~/dotfiles/vim/.vimrc                   ~/.vimrc
 ln -s ~/dotfiles/zsh/.extras                  ~/.extras
 ln -s ~/dotfiles/.duti                        ~/.duti
 ln -s ~/dotfiles/tmux/.tmux.conf              ~/.tmux.conf
+ln -s ~/dotfiles/.emacs.d                     ~/.emacs.d
 
 # sublime text
 # =============================================================================
