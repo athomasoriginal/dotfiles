@@ -47,10 +47,10 @@
     ]
     "use-smart-mode?": true
   "prettier-atom":
-    formatOnSaveOptions: {}
+    formatOnSaveOptions:
+      enabled: true
     prettierOptions:
       singleQuote: true
-    useEslint: true
   "proto-repl":
     enableCompletions: false
   "tree-view":
