@@ -53,6 +53,9 @@
       singleQuote: true
   "proto-repl":
     enableCompletions: false
+  "seti-ui":
+    compactView: true
+    themeColor: "Purple"
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: false

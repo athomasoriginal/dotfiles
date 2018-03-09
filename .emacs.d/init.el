@@ -2,10 +2,15 @@
 ;; Customizations groked from https://mickael.kerjean.me/2017/03/19/emacs-tutorial-series-episode-1/
 ;;
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
+
+(setq use-package-always-ensure t)
+
+(unless (assoc-default "melpa" package-archives)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t))
+
+(unless (assoc-default "org" package-archives)
+  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
 
 ;; -----------------------------------------------------------------------------
 ;; Theme + Fonts
@@ -261,4 +266,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (cider clojure-mode projectile better-defaults))))
+ '(package-selected-packages
+   (quote
+    (doom-themes cider clojure-mode projectile better-defaults))))
