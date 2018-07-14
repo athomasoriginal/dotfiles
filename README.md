@@ -178,7 +178,22 @@ This section will outline different development languages / environments that th
 #### Python
 
 - The preference of these dotfiles is `Python3` as such, after you have run these dotfiles, python can be accessed by typing `python3` in the terminal.
+- You will have access to `pip` via `pip3`
 - Inline with the above note, virtualenvwrapper is set to use python3 by default.
+
+**Gotcha**
+
+In the event you run into a message from virtualenvwrapper like this:
+
+```bash
+virtualenvwrapper.sh: There was a problem running the initialization hooks...
+```
+
+Try running
+
+```bash
+$ pip3 install virtualenvwrapper
+```
 
 #### Node
 
