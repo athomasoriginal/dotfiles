@@ -195,6 +195,8 @@ Try running
 $ pip3 install virtualenvwrapper
 ```
 
+> We run the above command during the install and the above issue occurs infrequently so there should not be too much worry here.
+
 #### Node
 
 - nvm
