@@ -9,6 +9,7 @@ You can take what you like from these dotfiles a la carte, or feel free to use m
 - [Quickstart](#quickstart)
 - [Post Setup](#post-setup)
 - [Setup Explained](#setup-explained)
+- [Gotchas](#Gotchas)
 - [Customization](#customization)
   - [vim](#vim)
   - [Dev Environments](#dev-environments)
@@ -30,8 +31,6 @@ This setup has been tested on:
 
 These instructions are very detailed and should be followed in order. I also assume that if you are working through this you have some understanding of the terminal. Any command prefixed with `$` means to run it in the terminal.
 
-With some exceptions, I usually prefer to upgrade through the terminal whenever it makes sense. I find there is a simplicity and consistency achieved by doing this.
-
 **1. Update macOS**
 
 Nothing special here, just the [run-of-the-mill upgrade process](https://support.apple.com/en-ca/HT201541)
@@ -52,7 +51,7 @@ $ xcode-select --install
 $ cd ~/
 ```
 
-> This is where I am going to have you install your dotfiles
+> This is where you will install your dotfiles
 
 **4. clone this repo**
 
@@ -69,19 +68,9 @@ $ touch dotfiles/git/.gitconfig.local
 $ touch dotfiles/zsh/.extras
 ```
 
-> you will see what `.gitconfig.local` does in the next step. For more info on `.extras` see the [zsh customization](#zsh) section further down.
+> These are called "private" files because they are where you will put code specific to your setup. you will see what `.gitconfig.local` does in the next step. For more info on `.extras` see the [zsh customization](#zsh) section further down.
 
-**6. update .gitconfig.local**
-
-```bash
-[user]
-  name = <your-username>
-  email = <your-email>
-```
-
-> Just some personal info that you don't need shared everywhere
-
-**7. Setup diff-highlighter**
+**6. Setup diff-highlighter**
 
 `diff-highlight` is going to make your git diffs look pretty, but there is a little bit of a manual process involved in setting this up:
 
@@ -113,12 +102,26 @@ vim ~/dotfiles/git/.gitconfig
 pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 ```
 
-> 5.  Refresh terminal tab
 
-For the above to take effect you will need to open a new terminal tab or close and open the terminal.
+**7. open .gitconfig.local in your favourite editor**
 
-**8. .macOS paths**
-Cleanup formatting + update note on python environment
+```bash
+$ vim git/.gitconfig.local
+```
+
+> You can swap out `vim` for your fav' editor. For example, if you use atom the above would become `atom git/.gitconfig.local`
+
+**8. update .gitconfig.local**
+
+```bash
+[user]
+  name = <your-username>
+  email = <your-email>
+```
+
+> More details can be found [here](https://coderwall.com/p/wkqf9q/local-global-git-config)
+
+**9. .macOS paths**
 
 Please take a look at `~dotfiles/.macOS`. This is a file that configures your mac. Not sure what this means? Well, you know how when you get a mac you have to make decisions like the sensitivty level of your trackpad, or your display settings? Turns out you can automate this setup. This file is going to automate these things for you.
 
@@ -131,13 +134,17 @@ With this in mind, these are preferences for how I like to work with my mac. Mos
 - section - screen:
   - where the screenshots are stored
 
-**9. run the setup script**
+**10. Before you run setup scripts**
+
+Take a gander through the `brewfile`, this dotfiles sub dirs and make sure that what you setup is applicable. Its easy to go back and fix things, but this is a good time to remove things that might not be useful to you.
+
+**10. run the setup script**
 
 ```bash
 $ source ~/dotfiles/setup.sh
 ```
 
-What is this doing? Checkout the [Setup Explained](#setup-explained) section
+> Please note that you will be prompted to enter your computer password while the brew apps are being installed. To see what this is doing, checkout the [Setup Explained](#setup-explained) section
 
 ## Post Setup
 
@@ -146,13 +153,15 @@ Once the above is complete, I like to perform the following tasks:
 - restart computer
 - setup default browser
 - set the items that you want to appear in your dock
-- set the capslock key to be the modifier key - this is especially useful for emacs users
-- setup your screensave/lock to occur after 2 min (security)
+- set the [capslock key to be the modifier key](https://coderwall.com/p/cq_lkg/remapping-caps-lock-key-to-something-more-natural-on-mac-os-x)
+- [setup your screensave/lock](https://it.cornell.edu/device-security/set-your-macs-screen-lock-automatically) to occur after 2 min (security)
 - setup custom [beautiful screen savers](https://github.com/JohnCoates/Aerial)
 - turn off spotlight suggestions (security)
 - password storage (lastpass/1password)
+- update your screen resolution -> system preferences -> display -> scaled + "more space"
 - install [nvm](https://github.com/creationix/nvm) (mainly for JS developers)
 - setup [git ssh keys](https://help.github.com/articles/connecting-to-github-with-ssh/)
+- [sync atom](https://evanhahn.com/atom-apm-install-list/)
 
 ## Setup Explained
 
@@ -164,6 +173,12 @@ The `setup.sh` file is going to do all the heavy lifting and automate as many th
 - Set the default shell environment to zsh
 - Setup Sublime Text - Specifically, setup `subl` and replace the default icon
 - Setup preferred macOS settings
+
+## Gotchas
+
+**iterm 2 syntax highlighting not displaying correctly**
+
+See [iterm2 launch with zsh](https://stackoverflow.com/questions/13476232/make-iterm2-launch-with-zsh)
 
 ## Customization
 

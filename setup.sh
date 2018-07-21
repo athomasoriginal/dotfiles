@@ -28,7 +28,7 @@ fail() {
 
 info "Setting up your mac..."
 
-# brew
+# Mac Deps + Apps
 # =============================================================================
 
 info "Brew - Checking if brew is already installed"
@@ -44,7 +44,7 @@ brew update
 info "Brew - Upgading packages"
 brew upgrade
 
-info "Brew - installing all the brew 'tings"
+info "Brew - installing brew bundle + all things in our brewfile"
 brew tap homebrew/bundle
 brew bundle
 
