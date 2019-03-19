@@ -1,16 +1,20 @@
 "*":
   core:
+    allowPendingPaneItems: false
     disabledPackages: [
       "language-gfm"
+      "markdown-preview"
     ]
     openEmptyEditorOnStart: false
     projectHome: "/Users/thomasmattachione/source"
     telemetryConsent: "no"
     themes: [
       "one-light-ui"
-      "one-light-syntax"
+      "base16-tomorrow-light-theme"
     ]
-  editor: {}
+  editor:
+    fontFamily: "Menlo, Monaco, 'Courier New', monospace"
+    fontSize: 11
   "exception-reporting":
     userId: "dd51b682-a7e5-2b3b-c172-243b2cf41df7"
   "file-types":
@@ -22,6 +26,8 @@
   "linter-ui-default":
     hidePanelWhenEmpty: true
     panelHeight: 69
+  "lisp-paredit":
+    strict: false
   "markdown-writer":
     fileExtension: ".md"
   parinfer:
@@ -39,6 +45,7 @@
       ".rkt"
       ".scm"
     ]
+    "use-smart-mode?": true
   "prettier-atom":
     formatOnSaveOptions: {}
     prettierOptions:
