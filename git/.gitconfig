@@ -11,7 +11,7 @@
 
 [core]
   # insanely beautiful diffs
-  pager = /usr/local/Cellar/git/2.16.1/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
+  pager = /usr/local/Cellar/git/2.21.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 	editor = /usr/bin/vim
 
 [color]
@@ -47,3 +47,8 @@
 
 [alias]
 	lg = log --color --graph --pretty=format:'%C(red bold)%h%Creset -%C(cyan bold)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
