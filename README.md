@@ -117,6 +117,10 @@ vim ~/dotfiles/git/.gitconfig
 pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 ```
 
+> 5.  Refresh terminal tab
+
+For the above to take effect you will need to open a new terminal tab or close and open the terminal.
+
 
 **8.  .macOS paths**
 
