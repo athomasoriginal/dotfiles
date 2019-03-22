@@ -1,2 +1,4 @@
 ; Clojure Global Deps
+;
+; useful reference https://github.com/seancorfield/dot-clojure
 {}
