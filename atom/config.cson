@@ -14,7 +14,7 @@
     ]
   editor:
     fontFamily: "Menlo, Monaco, 'Courier New', monospace"
-    fontSize: 11
+    fontSize: 12
   "exception-reporting":
     userId: "dd51b682-a7e5-2b3b-c172-243b2cf41df7"
   "file-types":
