@@ -72,6 +72,7 @@ rm -rf ~/.duti
 rm -rf ~/.tmux.conf
 rm -rf ~/.gitconfig.local
 rm -rf ~/.emacs.d
+rm -rf ~/.clojure/deps.edn
 
 info "dotfiles - symlinking dotfiles"
 ln -s ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
@@ -88,6 +89,7 @@ ln -s ~/dotfiles/zsh/.extras                  ~/.extras
 ln -s ~/dotfiles/.duti                        ~/.duti
 ln -s ~/dotfiles/tmux/.tmux.conf              ~/.tmux.conf
 ln -s ~/dotfiles/.emacs.d                     ~/.emacs.d
+ln -s ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 
 # sublime text
 # =============================================================================
