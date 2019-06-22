@@ -1,4 +1,5 @@
-; Clojure Global Deps
-;
-; useful reference https://github.com/seancorfield/dot-clojure
+;; user level deps.edn
+;; -----------------------------------------------------------------------------
+;;
+;; reference https://github.com/seancorfield/dot-clojure
 {}
