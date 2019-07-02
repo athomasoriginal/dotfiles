@@ -2,18 +2,31 @@
 # Custom Theme
 # =============================================================================
 
+# disable the terminal window title so we can set our own custom title
+DISABLE_AUTO_TITLE="true"
 
 # Functions
 # =============================================================================
 
+function current_directory {
+  echo $(basename $(pwd))
+}
+
 function collapse_pwd {
-    echo $(pwd | sed -e "s,^$HOME,~,")
+   echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
     hg root >/dev/null 2>/dev/null && echo '☿' && return
     echo '➜'
+}
+
+# precmd called when each prompt executed.  Inside we are setting the window
+# title of the terminal window.  We set it in here to ensure that that the
+# window title updates when we move to different directories
+function precmd () {
+  echo -ne "\033]0;$(current_directory) -- $(hostname)\007"
 }
 
 # Colors
@@ -82,10 +95,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
 # username
 PROMPT='${userStyle}%n%{$reset_color%} '
-# at
-PROMPT+='${bold}${white}at%{$reset_color%} '
-# hostname
-PROMPT+='${hostStyle}%m%{$reset_color%} '
 # in
 PROMPT+='${bold}${white}in%{$reset_color%} '
 # working path

@@ -102,7 +102,6 @@ vim ~/dotfiles/git/.gitconfig
 pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 ```
 
-
 **7. open .gitconfig.local in your favourite editor**
 
 ```bash
@@ -183,6 +182,20 @@ See [iterm2 launch with zsh](https://stackoverflow.com/questions/13476232/make-i
 ## Customization
 
 ### zsh
+
+The `zsh` setup that comes with these dotfiles are going to do the following things:
+
+- setup oh-my-zsh
+- A custom theme called "Thomas" (include my prompt setup)
+- Ability to load custom zsh settings via a file called `.extras` (see below for more details)
+- A few custom aliases that I find generally useful
+- Python config setup - virtualenvwrapper
+- Node - nvm setup
+- Java - jenv
+
+Aside from the above I keep it light because its my feeling that `.zshrc` is a personal thing
+
+**Custom Zsh Settings**
 
 There may be `.zshrc` aliases or configurations that you may want to keep private, you can create a file called `.extras` in the `zsh` directory and this will be picked up by `.zsh_profile`.
 
