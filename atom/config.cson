@@ -4,6 +4,7 @@
     disabledPackages: [
       "language-gfm"
       "markdown-preview"
+      "markdown-writer"
     ]
     openEmptyEditorOnStart: false
     projectHome: "/Users/thomasmattachione/source"
@@ -48,8 +49,7 @@
     ]
     "use-smart-mode?": true
   "prettier-atom":
-    formatOnSaveOptions:
-      enabled: true
+    formatOnSaveOptions: {}
     prettierOptions:
       singleQuote: true
   "proto-repl":
