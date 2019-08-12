@@ -5,13 +5,14 @@
       "language-gfm"
       "markdown-preview"
       "markdown-writer"
+      "chlorine"
     ]
     openEmptyEditorOnStart: false
     projectHome: "/Users/thomasmattachione/source"
     telemetryConsent: "no"
     themes: [
       "one-light-ui"
-      "base16-tomorrow-light-theme"
+      "one-light-syntax"
     ]
   editor:
     fontFamily: "Menlo, Monaco, 'Courier New', monospace"
