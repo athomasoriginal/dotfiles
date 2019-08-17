@@ -30,3 +30,20 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+'atom-text-editor[data-grammar="source clojure"]':
+  'ctrl-y':       'chlorine:connect-clojure-socket-repl'
+  'ctrl-j':       'chlorine:connect-clojurescript-socket-repl'
+  'ctrl-e':       'chlorine:disconnect'
+  'ctrl-k':       'chlorine:clear-console'
+  'ctrl-f':       'chlorine:load-file'
+  'ctrl-b':       'chlorine:evaluate-block'
+  'ctrl-B':       'chlorine:evaluate-top-block'
+  'ctrl-i':       'chlorine:inspect-block'
+  'ctrl-I':       'chlorine:inspect-top-block'
+  'ctrl-s':       'chlorine:evaluate-selection'
+  'ctrl-C':       'chlorine:break-evaluation'
+  'ctrl-c':       'chlorine:source-for-var'
+  'ctrl-d':       'chlorine:doc-for-var'
+  'ctrl-x':       'chlorine:run-tests-in-ns'
+  'ctrl-t':       'chlorine:run-test-for-var'
