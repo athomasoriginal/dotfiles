@@ -1,6 +1,10 @@
 "*":
+  chlorine:
+    "eval-mode": "cljs"
+    "refresh-mode": "simple"
   core:
     allowPendingPaneItems: false
+    automaticallyUpdate: false
     disabledPackages: [
       "language-gfm"
       "markdown-preview"
@@ -8,6 +12,7 @@
       "chlorine"
     ]
     openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: []
     projectHome: "/Users/thomasmattachione/source"
     telemetryConsent: "no"
     themes: [
@@ -27,8 +32,6 @@
     ignoreErrorsAndWarnings: "D203,D212,D213,D404,D211,D100,D101"
   "linter-ui-default":
     hidePanelWhenEmpty: true
-    panelHeight: 69
-    showPanel: true
   "lisp-paredit":
     strict: false
   "markdown-writer":
