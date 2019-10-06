@@ -311,8 +311,6 @@ ParseMultiplyExpression(tokenizer *Tokenizer)
     calc_node *Result = 0;
 
     token Token = PeekToken(Tokenizer);
-    printf("PARSE?: ParseMultiplyExpression\n");
-    printf("TOKEN TYPE: %u\n", Token.Type);
     if((Token.Type == Token_Minus) ||
        (Token.Type == Token_Number))
     {
@@ -330,8 +328,6 @@ ParseMultiplyExpression(tokenizer *Tokenizer)
         }
     }
 
-    printf("PASS: NOT GOING TO NEED ParseMultiplyExpression\n");
-
     return(Result);
 }
 
@@ -348,44 +344,30 @@ ExecCalcNode(calc_node *Node)
         switch(Node->Type)
         {
             case CalcNode_UnaryMinus:
-              printf("NODE TYPE: %s\n", "CalcNode_UnaryMinus");
-              printf("NODE Value: %f\n", Node->Value);
               {Result = -ExecCalcNode(Node->Left);}
               break;
 
             case CalcNode_Add:
-              printf("NODE TYPE: %s\n", "CalcNode_Add");
-              printf("NODE Value: %f\n", Node->Value);
               {Result = ExecCalcNode(Node->Left) + ExecCalcNode(Node->Right);}
               break;
 
             case CalcNode_Subtract:
-              printf("NODE TYPE: %s\n", "CalcNode_Subtract");
-              printf("NODE Value: %f\n", Node->Value);
               {Result = ExecCalcNode(Node->Left) - ExecCalcNode(Node->Right);}
               break;
 
             case CalcNode_Multiply:
-              printf("NODE TYPE: %s\n", "CalcNode_Multiply");
-              printf("NODE Value: %f\n", Node->Value);
               {Result = ExecCalcNode(Node->Left) * ExecCalcNode(Node->Right);}
               break;
 
             case CalcNode_Divide:
-              printf("NODE TYPE: %s\n", "CalcNode_Divide");
-              printf("NODE Value: %f\n", Node->Value);
               {/*TODO(casey): Guard 0*/Result = ExecCalcNode(Node->Left) / ExecCalcNode(Node->Right);}
               break;
 
             case CalcNode_Mod:
-              printf("NODE TYPE: %s\n", "CalcNode_Mod");
-              printf("NODE Value: %f\n", Node->Value);
               {/*TODO(casey): Guard 0*/Result = fmod(ExecCalcNode(Node->Left), ExecCalcNode(Node->Right));}
               break;
 
             case CalcNode_Constant:
-              printf("NODE TYPE: %s\n", "CalcNode_Constant");
-              printf("NODE Value: %f\n", Node->Value);
               {Result = Node->Value;}
               break;
 
@@ -426,8 +408,7 @@ ParseAddExpression(tokenizer *Tokenizer)
     calc_node *Result = 0;
 
     token Token = PeekToken(Tokenizer);
-    printf("PARSE TOKEN: %s\n", Token.Text);
-    printf("PARSE TOKEN TYPE: %u\n", Token.Type);
+
     if((Token.Type == Token_Minus) ||
        (Token.Type == Token_Number))
     {
@@ -474,12 +455,9 @@ CUSTOM_COMMAND_SIG(casey_quick_calc)
     Buffer_Summary buffer = get_buffer(app, view.buffer_id, access);
     buffer_read_range(app, &buffer, range.min, range.max, Stuff);
 
-    // @note {} are called uniform initialization
-    // @note this is the characters to read.  e.g. 4+4
+    // NOTE(thomas) {} are called uniform initialization
+    // NOTE(thomas) this is the characters to read.  e.g. 4+4
     tokenizer Tokenizer = {Stuff};
-
-    printf("PARSE TOKENS: %s\n", Tokenizer.At);
-    // printf("RANGE MIN: %i\n", range.min);
 
     calc_node *CalcTree = ParseCalc(&Tokenizer);
     double ComputedValue = ExecCalcNode(CalcTree);
@@ -546,6 +524,335 @@ CUSTOM_COMMAND_SIG(hello)
 
 }
 
+bool is_not_closing_doublequote(char c)
+{
+    switch (c)
+    {
+    case '"':
+        return false;
+    default:
+        return true;
+    }
+}
+
+
+// CUSTOM RENDER
+//
+// LEARNING
+//    -> If you leave this blank, nothing renders to the screen
+//    -> Just adding `do_core_render(app);` will only render what we type -
+//       no highlights, cursors etc - so what was interesting about this is that
+//       I thought those items were controlled by the 4coder engine, not so.
+//    -> for hexidecimal colors we need to fill out the last few spaces.  e.g.
+//       0xFF3396 would become 0xFFFF339696.  This confuses me.  Maybe we really
+//       only have  limited set of colors to work with.
+RENDER_CALLER_SIG(thomas_render_caller){
+
+  View_Summary view = get_active_view(app, AccessAll);
+  Buffer_Summary buffer = get_buffer(app, view.buffer_id, AccessAll);
+  bool32 is_active_view = (view.view_id == view_id);
+
+  static Managed_Scope render_scope = 0;
+
+  if (render_scope == 0){
+    render_scope = create_user_managed_scope(app);
+  }
+
+  Partition *scratch = &global_part;
+
+  // NOTE(allen): Scan for TODOs and NOTEs
+  // Find the things, store them in memory and highlight them
+  {
+      Theme_Color colors[2];
+      colors[0].tag = Stag_Text_Cycle_2;
+      colors[1].tag = Stag_Text_Cycle_1;
+      get_theme_colors(app, colors, 2);
+
+      Temp_Memory temp = begin_temp_memory(scratch);
+      int32_t text_size = on_screen_range.one_past_last - on_screen_range.first;
+      // NOTE(thomas) The actual characters in all open buffers appears here
+      char *text = push_array(scratch, char, text_size);
+      // NOTE(thomas) Take the contents of the buffer and add it to the `text` variable
+      buffer_read_range(app, &buffer, on_screen_range.first, on_screen_range.one_past_last, text);
+
+      // fprintf(stdout, "%s\n", text);
+      // fprintf(stdout, "%s\n", buffer.file_name);
+
+      Highlight_Record *records = push_array(scratch, Highlight_Record, 0);
+      String tail = make_string(text, text_size);
+
+      // fprintf(stdout, "%s\n", tail.str += 3);
+
+      // NOTE(thomas): WIP - only perform highlighting in the current view
+      // (window) because we want to limit how much noice to get an understanding
+      // of how this works.
+      if (is_active_view) {
+        tokenizer Tokenizer = {text};
+
+        for (int32_t i = 0; i < text_size; tail.str += 1, tail.size -= 1, i += 1){
+          switch(Tokenizer.At[i]) {
+            case ';': {
+              // until we reach the end of the file or the end of a line, make everything in a line a comment
+              int32_t tick = i;
+              while (Tokenizer.At[tick] != '\0') {
+                ++tick;
+                if (Tokenizer.At[tick] == '\n') {
+                  // if we type `jkl` and then `\n` and then `; jkl` we want the
+                  // color to start on `;` which is what first + i is and we want
+                  // the highlight to go until the end of `;jkl` which is
+                  // i + the length of `;jkl`.
+                  int32_t finaltick = tick - i;
+                  Highlight_Record *record = push_array(scratch, Highlight_Record, 1);
+                  record->first = i + on_screen_range.first; // the letter to start the color on
+                  record->one_past_last = record->first + finaltick; // the letter to end the color on
+                  record->color = 0xFF6AC000; // red
+                  tail.str += finaltick;
+                  tail.size -= finaltick;
+                  i += finaltick;
+                  break;
+                }
+              }
+            }
+            case '"': {
+              int32_t tick = i;
+              ++tick; // or else we get stuck on the one we were just on
+              while(is_not_closing_doublequote(Tokenizer.At[tick])) {
+                ++tick;
+              }
+
+              ++tick; // or else we get stuck on the one before the last
+
+              int32_t finaltick = tick - i;
+              Highlight_Record *record = push_array(scratch, Highlight_Record, 1);
+              record->first = i + on_screen_range.first; // the letter to start the color on
+              record->one_past_last = record->first + finaltick; // the letter to end the color on
+              record->color = 0xFFFF0000; // green
+              tail.str += finaltick;
+              tail.size -= finaltick;
+              i += finaltick;
+
+              break;
+            }
+            case 'a':
+            case 'b':
+            case 'c':
+            case 'd':
+            case 'e':
+            case 'f':
+            case 'g':
+            case 'h':
+            case 'i':
+            case 'j':
+            case 'k':
+            case 'l':
+            case 'm':
+            case 'n':
+            case 'o':
+            case 'p':
+            case 'q':
+            case 'r':
+            case 's':
+            case 't':
+            case 'u':
+            case 'v':
+            case 'w':
+            case 'x':
+            case 'y':
+            case 'z':
+            case 'A':
+            case 'B':
+            case 'C':
+            case 'D':
+            case 'E':
+            case 'F':
+            case 'G':
+            case 'H':
+            case 'I':
+            case 'J':
+            case 'K':
+            case 'L':
+            case 'M':
+            case 'N':
+            case 'O':
+            case 'P':
+            case 'Q':
+            case 'R':
+            case 'S':
+            case 'T':
+            case 'U':
+            case 'V':
+            case 'W':
+            case 'X':
+            case 'Y':
+            case 'Z': {
+              Highlight_Record *record = push_array(scratch, Highlight_Record, 1);
+              record->first = i + on_screen_range.first;
+              record->one_past_last = record->first + 1;
+              record->color = 0xFF0044FF; // light gray
+              break;
+            }
+            default:
+            {} break;
+          }
+        }
+      }
+
+      int32_t record_count = (int32_t)(push_array(scratch, Highlight_Record, 0) - records);
+      push_array(scratch, Highlight_Record, 1);
+
+      if (record_count > 0){
+          sort_highlight_record(records, 0, record_count);
+          Temp_Memory marker_temp = begin_temp_memory(scratch);
+          Marker *markers = push_array(scratch, Marker, 0);
+          int_color current_color = records[0].color;
+          {
+              Marker *marker = push_array(scratch, Marker, 2);
+              marker[0].pos = records[0].first;
+              marker[1].pos = records[0].one_past_last;
+          }
+          for (int32_t i = 1; i <= record_count; i += 1){
+              bool32 do_emit = i == record_count || (records[i].color != current_color);
+              if (do_emit){
+                  int32_t marker_count = (int32_t)(push_array(scratch, Marker, 0) - markers);
+                  Managed_Object o = alloc_buffer_markers_on_buffer(app, buffer.buffer_id, marker_count, &render_scope);
+                  managed_object_store_data(app, o, 0, marker_count, markers);
+                  Marker_Visual v = create_marker_visual(app, o);
+                  marker_visual_set_effect(app, v,
+                                           VisualType_CharacterHighlightRanges,
+                                           SymbolicColor_Transparent, current_color, 0);
+                  marker_visual_set_priority(app, v, VisualPriority_Lowest);
+                  end_temp_memory(marker_temp);
+                  current_color = records[i].color;
+              }
+
+              Marker *marker = push_array(scratch, Marker, 2);
+              marker[0].pos = records[i].first;
+              marker[1].pos = records[i].one_past_last;
+          }
+      }
+
+      end_temp_memory(temp);
+  }
+
+  // NOTE(allen): Cursor and mark
+  Managed_Object cursor_and_mark = alloc_buffer_markers_on_buffer(app, buffer.buffer_id, 2, &render_scope);
+  Marker cm_markers[2] = {};
+  cm_markers[0].pos = view.cursor.pos;
+  cm_markers[1].pos = view.mark.pos;
+  managed_object_store_data(app, cursor_and_mark, 0, 2, cm_markers);
+
+  // Highlight the cursor
+  bool32 cursor_is_hidden_in_this_view = (cursor_is_hidden && is_active_view);
+  if (!cursor_is_hidden_in_this_view){
+      switch (fcoder_mode){
+          case FCoderMode_Original:
+          {
+              Theme_Color colors[2] = {};
+              colors[0].tag = Stag_Cursor;
+              colors[1].tag = Stag_Mark;
+              get_theme_colors(app, colors, 2);
+              int_color cursor_color = SymbolicColorFromPalette(Stag_Cursor);
+              int_color mark_color   = SymbolicColorFromPalette(Stag_Mark);
+              int_color text_color    = is_active_view?
+                  SymbolicColorFromPalette(Stag_At_Cursor):SymbolicColorFromPalette(Stag_Default);
+
+              Marker_Visual_Take_Rule take_rule = {};
+              take_rule.first_index = 0;
+              take_rule.take_count_per_step = 1;
+              take_rule.step_stride_in_marker_count = 1;
+              take_rule.maximum_number_of_markers = 1;
+
+              Marker_Visual visual = create_marker_visual(app, cursor_and_mark);
+              Marker_Visual_Type type = is_active_view?VisualType_CharacterBlocks:VisualType_CharacterWireFrames;
+              marker_visual_set_effect(app, visual,
+                                       type, cursor_color, text_color, 0);
+              marker_visual_set_take_rule(app, visual, take_rule);
+              marker_visual_set_priority(app, visual, VisualPriority_Highest);
+
+              visual = create_marker_visual(app, cursor_and_mark);
+              marker_visual_set_effect(app, visual,
+                                       VisualType_CharacterWireFrames, mark_color, 0, 0);
+              take_rule.first_index = 1;
+              marker_visual_set_take_rule(app, visual, take_rule);
+              marker_visual_set_priority(app, visual, VisualPriority_Highest);
+          }break;
+
+          case FCoderMode_NotepadLike:
+          {
+              Theme_Color colors[2] = {};
+              colors[0].tag = Stag_Cursor;
+              colors[1].tag = Stag_Highlight;
+              get_theme_colors(app, colors, 2);
+              int_color cursor_color    = SymbolicColorFromPalette(Stag_Cursor);
+              int_color highlight_color = SymbolicColorFromPalette(Stag_Highlight);
+
+              Marker_Visual_Take_Rule take_rule = {};
+              take_rule.first_index = 0;
+              take_rule.take_count_per_step = 1;
+              take_rule.step_stride_in_marker_count = 1;
+              take_rule.maximum_number_of_markers = 1;
+
+              Marker_Visual visual = create_marker_visual(app, cursor_and_mark);
+              marker_visual_set_effect(app, visual, VisualType_CharacterIBars, cursor_color, 0, 0);
+              marker_visual_set_take_rule(app, visual, take_rule);
+              marker_visual_set_priority(app, visual, VisualPriority_Highest);
+
+              if (view.cursor.pos != view.mark.pos){
+                  visual = create_marker_visual(app, cursor_and_mark);
+                  marker_visual_set_effect(app, visual, VisualType_CharacterHighlightRanges, highlight_color, SymbolicColorFromPalette(Stag_At_Highlight), 0);
+                  take_rule.maximum_number_of_markers = 2;
+                  marker_visual_set_take_rule(app, visual, take_rule);
+                  marker_visual_set_priority(app, visual, VisualPriority_Highest);
+              }
+          }break;
+      }
+  }
+
+  if (highlight_line_at_cursor && is_active_view){
+      Theme_Color color = {};
+      color.tag = Stag_Highlight_Cursor_Line;
+      get_theme_colors(app, &color, 1);
+      uint32_t line_color = color.color;
+      Marker_Visual visual = create_marker_visual(app, cursor_and_mark);
+      marker_visual_set_effect(app, visual, VisualType_LineHighlights,
+                               line_color, 0, 0);
+      Marker_Visual_Take_Rule take_rule = {};
+      take_rule.first_index = 0;
+      take_rule.take_count_per_step = 1;
+      take_rule.step_stride_in_marker_count = 1;
+      take_rule.maximum_number_of_markers = 1;
+      marker_visual_set_take_rule(app, visual, take_rule);
+      marker_visual_set_priority(app, visual, VisualPriority_Highest);
+  }
+
+  // NOTE(allen): Token highlight setup
+  bool32 do_token_highlight = true;
+  if (do_token_highlight){
+      Theme_Color color = {};
+      color.tag = Stag_Cursor;
+      get_theme_colors(app, &color, 1);
+      uint32_t token_color = (0x50 << 24) | (color.color&0xFFFFFF);
+
+      uint32_t token_flags = BoundaryToken|BoundaryWhitespace;
+      int32_t pos0 = view.cursor.pos;
+      int32_t pos1 = buffer_boundary_seek(app, &buffer, pos0, DirLeft , token_flags);
+      int32_t pos2 = buffer_boundary_seek(app, &buffer, pos1, DirRight, token_flags);
+
+      Managed_Object token_highlight = alloc_buffer_markers_on_buffer(app, buffer.buffer_id, 2, &render_scope);
+      Marker range_markers[2] = {};
+      range_markers[0].pos = pos1;
+      range_markers[1].pos = pos2;
+      managed_object_store_data(app, token_highlight, 0, 2, range_markers);
+      Marker_Visual visual = create_marker_visual(app, token_highlight);
+      marker_visual_set_effect(app, visual,
+                               VisualType_CharacterHighlightRanges,
+                               token_color, SymbolicColorFromPalette(Stag_At_Highlight), 0);
+  }
+
+  do_core_render(app);
+  managed_scope_clear_self_all_dependent_scopes(app, render_scope);
+}
+
 
 // ----------------------------------------------------------------------------
 // SETUP
@@ -562,11 +869,14 @@ get_bindings(void *data, int32_t size)
 
     // call all the default hooks specified by the custom layer provided by
     // 4ed out of the box so we don't have to respecify them, but not sure if
-    // we actually need to re-call these
+    // we actually need to re-call these and then below this we can overwrite
+    // as we go.
     set_all_default_hooks(context);
 
     // custom hooks here
     set_start_hook(context, custom_default_start);
+    set_render_caller(context, thomas_render_caller);
+
 
 #if defined(__APPLE__) && defined(__MACH__)
     mac_default_keys(context);
@@ -578,7 +888,7 @@ get_bindings(void *data, int32_t size)
     begin_map(context, mapid_global);
     {
         // was previously `o`
-        bind(context, 'p', MDFR_CMND, casey_quick_calc);
+        bind(context, 'p', MDFR_CMND, hello);
     }
     end_map(context);
     // END OF CUSTOM MAC KEY BINDING TEST
