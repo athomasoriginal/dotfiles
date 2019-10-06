@@ -9,7 +9,6 @@
       "language-gfm"
       "markdown-preview"
       "markdown-writer"
-      "chlorine"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: []
@@ -32,6 +31,7 @@
     ignoreErrorsAndWarnings: "D203,D212,D213,D404,D211,D100,D101"
   "linter-ui-default":
     hidePanelWhenEmpty: true
+    showPanel: true
   "lisp-paredit":
     strict: false
   "markdown-writer":
