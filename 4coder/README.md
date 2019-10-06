@@ -119,3 +119,5 @@ This section will outline how I develop the customization layer.
 - [Github Lexers](https://github.com/topics/lexer)
 - [Nice lexer v parser intro](https://qscintilla.com/lexer-basics/)
 - [Lexer from Scratch in Python - really good stuff](https://www.youtube.com/watch?v=LDDRn2f9fUk)
+- [Guide 1](https://blog.klipse.tech/javascript/2017/02/08/tiny-compiler-tokenizer.html)
+- [Guide 2](https://blog.klipse.tech/javascript/2017/02/08/tiny-compiler-parser.html)
