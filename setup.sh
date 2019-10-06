@@ -75,31 +75,31 @@ rm -rf ~/.emacs.d
 rm -rf ~/.clojure/deps.edn
 
 info "dotfiles - symlinking dotfiles"
-ln -s ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
-ln -s ~/dotfiles/zsh/.zshrc                   ~/.zshrc
-ln -s ~/dotfiles/atom/                        ~/.atom
-ln -s ~/dotfiles/zsh/themes/thomas.zsh-theme  ~/.oh-my-zsh/themes/thomas.zsh-theme
-ln -s ~/dotfiles/git/.gitignore               ~/.gitignore
-ln -s ~/dotfiles/git/.gitconfig               ~/.gitconfig
-ln -s ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
-ln -s ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
-ln -s ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
-ln -s ~/dotfiles/vim/.vimrc                   ~/.vimrc
-ln -s ~/dotfiles/zsh/.extras                  ~/.extras
-ln -s ~/dotfiles/.duti                        ~/.duti
-ln -s ~/dotfiles/tmux/.tmux.conf              ~/.tmux.conf
-ln -s ~/dotfiles/.emacs.d                     ~/.emacs.d
-ln -s ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
+ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
+ln -sf ~/dotfiles/zsh/.zshrc                   ~/.zshrc
+ln -sf ~/dotfiles/atom/                        ~/.atom
+ln -sf ~/dotfiles/zsh/themes/thomas.zsh-theme  ~/.oh-my-zsh/themes/thomas.zsh-theme
+ln -sf ~/dotfiles/git/.gitignore               ~/.gitignore
+ln -sf ~/dotfiles/git/.gitconfig               ~/.gitconfig
+ln -sf ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
+ln -sf ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
+ln -sf ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
+ln -sf ~/dotfiles/vim/.vimrc                   ~/.vimrc
+ln -sf ~/dotfiles/zsh/.extras                  ~/.extras
+ln -sf ~/dotfiles/.duti                        ~/.duti
+ln -sf ~/dotfiles/tmux/.tmux.conf              ~/.tmux.conf
+ln -sf ~/dotfiles/.emacs.d                     ~/.emacs.d
+ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 
 # sublime text
 # =============================================================================
 
 info "sublime text - setup shortcut: subl"
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+ln -sf /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
 info "sublime text - replace default sublime text icon"
 rm -rf /Applications/Sublime\ Text.app/Contents/Resources/Sublime\ Text.icns
-ln -s ~/dotfiles/sublime/Sublime\ Text.icns /Applications/Sublime\ Text.app/Contents/Resources/
+ln -sf ~/dotfiles/sublime/Sublime\ Text.icns /Applications/Sublime\ Text.app/Contents/Resources/
 open ~/dotfiles/sublime
 killall -KILL Dock
 
