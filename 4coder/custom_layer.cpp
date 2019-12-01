@@ -71,407 +71,6 @@ START_HOOK_SIG(custom_default_start)
 }
 
 // ----------------------------------------------------------------------------
-// CUSTOM FUNCTION EXAMPLE 2
-//
-// custom parser
-// ----------------------------------------------------------------------------
-
-enum token_type
-{
-    Token_Unknown,
-
-    Token_OpenParen,
-    Token_CloseParen,
-    Token_Asterisk,
-    Token_Minus,
-    Token_Plus,
-    Token_ForwardSlash,
-    Token_Percent,
-    Token_Colon,
-    Token_Number,
-    Token_Comma,
-
-    Token_EndOfStream,
-};
-
-struct token
-{
-    token_type Type;
-
-    size_t TextLength;
-    char *Text;
-};
-
-
-struct tokenizer
-{
-    char *At;
-};
-
-enum calc_node_type
-{
-    CalcNode_UnaryMinus,
-
-    CalcNode_Add,
-    CalcNode_Subtract,
-    CalcNode_Multiply,
-    CalcNode_Divide,
-    CalcNode_Mod,
-
-    CalcNode_Constant,
-};
-
-struct calc_node
-{
-    calc_node_type Type;
-    double Value;
-    calc_node *Left;
-    calc_node *Right;
-};
-
-
-inline bool
-IsNumeric(char C)
-{
-    bool Result = ((C >= '0') && (C <= '9'));
-
-    return(Result);
-}
-
-
-inline bool
-IsEndOfLine(char C)
-{
-    bool Result = ((C == '\n') ||
-                   (C == '\r'));
-
-    return(Result);
-}
-
-
-inline bool
-IsWhitespace(char C)
-{
-    bool Result = ((C == ' ') ||
-                   (C == '\t') ||
-                   (C == '\v') ||
-                   (C == '\f') ||
-                   IsEndOfLine(C));
-
-    return(Result);
-}
-
-
-static void
-EatAllWhitespace(tokenizer *Tokenizer)
-{
-    for(;;)
-    {
-        if(IsWhitespace(Tokenizer->At[0]))
-        {
-            ++Tokenizer->At;
-        }
-        else if((Tokenizer->At[0] == '/') &&
-                (Tokenizer->At[1] == '/'))
-        {
-            Tokenizer->At += 2;
-            while(Tokenizer->At[0] && !IsEndOfLine(Tokenizer->At[0]))
-            {
-                ++Tokenizer->At;
-            }
-        }
-        else if((Tokenizer->At[0] == '/') &&
-                (Tokenizer->At[1] == '*'))
-        {
-            Tokenizer->At += 2;
-            while(Tokenizer->At[0] &&
-                  !((Tokenizer->At[0] == '*') &&
-                    (Tokenizer->At[1] == '/')))
-            {
-                ++Tokenizer->At;
-            }
-
-            if(Tokenizer->At[0] == '*')
-            {
-                Tokenizer->At += 2;
-            }
-        }
-        else
-        {
-            break;
-        }
-    }
-}
-
-static token
-GetToken(tokenizer *Tokenizer)
-{
-    EatAllWhitespace(Tokenizer);
-
-    token Token = {};
-    Token.TextLength = 1;
-    Token.Text = Tokenizer->At;
-    char C = Tokenizer->At[0];
-    ++Tokenizer->At;
-    switch(C)
-    {
-        case 0: {--Tokenizer->At; Token.Type = Token_EndOfStream;} break;
-
-        case '(': {Token.Type = Token_OpenParen;} break;
-        case ')': {Token.Type = Token_CloseParen;} break;
-        case '*': {Token.Type = Token_Asterisk;} break;
-        case '-': {Token.Type = Token_Minus;} break;
-        case '+': {Token.Type = Token_Plus;} break;
-        case '/': {Token.Type = Token_ForwardSlash;} break;
-        case '%': {Token.Type = Token_Percent;} break;
-        case ':': {Token.Type = Token_Colon;} break;
-        case ',': {Token.Type = Token_Comma;} break;
-
-        default:
-        {
-            if(IsNumeric(C))
-            {
-                // TODO(casey): Real number
-                Token.Type = Token_Number;
-                while(IsNumeric(Tokenizer->At[0]) ||
-                      (Tokenizer->At[0] == '.') ||
-                      (Tokenizer->At[0] == 'f'))
-                {
-                    ++Tokenizer->At;
-                    Token.TextLength = Tokenizer->At - Token.Text;
-                }
-            }
-            else
-            {
-                Token.Type = Token_Unknown;
-            }
-        } break;
-    }
-
-    return(Token);
-}
-
-
-static token
-PeekToken(tokenizer *Tokenizer)
-{
-    tokenizer Tokenizer2 = *Tokenizer;
-    token Result = GetToken(&Tokenizer2);
-    return(Result);
-}
-
-
-internal calc_node *
-AddNode(calc_node_type Type, calc_node *Left = 0, calc_node *Right = 0)
-{
-    calc_node *Node = (calc_node *)malloc(sizeof(calc_node));
-    Node->Type = Type;
-    Node->Value = 0;
-    Node->Left = Left;
-    Node->Right = Right;
-    return(Node);
-}
-
-internal calc_node *
-ParseNumber(tokenizer *Tokenizer)
-{
-    calc_node *Result = AddNode(CalcNode_Constant);
-
-    token Token = GetToken(Tokenizer);
-    Result->Value = atof(Token.Text);
-
-    return(Result);
-}
-
-
-internal calc_node *
-ParseConstant(tokenizer *Tokenizer)
-{
-    calc_node *Result = 0;
-
-    token Token = PeekToken(Tokenizer);
-    if(Token.Type == Token_Minus)
-    {
-        Token = GetToken(Tokenizer);
-        Result = AddNode(CalcNode_UnaryMinus);
-        Result->Left = ParseNumber(Tokenizer);
-    }
-    else
-    {
-        Result = ParseNumber(Tokenizer);
-    }
-
-    return(Result);
-}
-
-
-internal calc_node *
-ParseMultiplyExpression(tokenizer *Tokenizer)
-{
-    calc_node *Result = 0;
-
-    token Token = PeekToken(Tokenizer);
-    if((Token.Type == Token_Minus) ||
-       (Token.Type == Token_Number))
-    {
-        Result = ParseConstant(Tokenizer);
-        token Token = PeekToken(Tokenizer);
-        if(Token.Type == Token_ForwardSlash)
-        {
-            GetToken(Tokenizer);
-            Result = AddNode(CalcNode_Divide, Result, ParseNumber(Tokenizer));
-        }
-        else if(Token.Type == Token_Asterisk)
-        {
-            GetToken(Tokenizer);
-            Result = AddNode(CalcNode_Multiply, Result, ParseNumber(Tokenizer));
-        }
-    }
-
-    return(Result);
-}
-
-
-internal double
-ExecCalcNode(calc_node *Node)
-{
-
-    double Result = 0.0f;
-
-    if(Node)
-    {
-
-        switch(Node->Type)
-        {
-            case CalcNode_UnaryMinus:
-              {Result = -ExecCalcNode(Node->Left);}
-              break;
-
-            case CalcNode_Add:
-              {Result = ExecCalcNode(Node->Left) + ExecCalcNode(Node->Right);}
-              break;
-
-            case CalcNode_Subtract:
-              {Result = ExecCalcNode(Node->Left) - ExecCalcNode(Node->Right);}
-              break;
-
-            case CalcNode_Multiply:
-              {Result = ExecCalcNode(Node->Left) * ExecCalcNode(Node->Right);}
-              break;
-
-            case CalcNode_Divide:
-              {/*TODO(casey): Guard 0*/Result = ExecCalcNode(Node->Left) / ExecCalcNode(Node->Right);}
-              break;
-
-            case CalcNode_Mod:
-              {/*TODO(casey): Guard 0*/Result = fmod(ExecCalcNode(Node->Left), ExecCalcNode(Node->Right));}
-              break;
-
-            case CalcNode_Constant:
-              {Result = Node->Value;}
-              break;
-
-            default:
-              {Assert(!"AHHHHH!");}
-        }
-    }
-
-    return(Result);
-}
-
-internal void
-FreeCalcNode(calc_node *Node)
-{
-    if(Node)
-    {
-        FreeCalcNode(Node->Left);
-        FreeCalcNode(Node->Right);
-        free(Node);
-    }
-}
-
-
-
-
-
-
-
-// PARSER LOGIC
-
-
-
-#pragma warning(disable:4456)
-
-internal calc_node *
-ParseAddExpression(tokenizer *Tokenizer)
-{
-    calc_node *Result = 0;
-
-    token Token = PeekToken(Tokenizer);
-
-    if((Token.Type == Token_Minus) ||
-       (Token.Type == Token_Number))
-    {
-        Result = ParseMultiplyExpression(Tokenizer);
-        token Token = PeekToken(Tokenizer);
-        if(Token.Type == Token_Plus)
-        {
-            GetToken(Tokenizer);
-            Result = AddNode(CalcNode_Add, Result, ParseMultiplyExpression(Tokenizer));
-        }
-        else if(Token.Type == Token_Minus)
-        {
-            GetToken(Tokenizer);
-            Result = AddNode(CalcNode_Subtract, Result, ParseMultiplyExpression(Tokenizer));
-        }
-    }
-
-    return(Result);
-}
-
-internal calc_node *
-ParseCalc(tokenizer *Tokenizer)
-{
-
-    calc_node *Node = ParseAddExpression(Tokenizer);
-
-    return(Node);
-}
-
-// CUSTOM COMMAND
-
-CUSTOM_COMMAND_SIG(casey_quick_calc)
-{
-    // the files we have access to edit only
-    unsigned int access = AccessOpen;
-    View_Summary view = get_active_view(app, access);
-
-    Range range = get_view_range(&view);
-
-    size_t Size = range.max - range.min;
-    char *Stuff = (char *)malloc(Size + 1);
-    Stuff[Size] = 0;
-
-    Buffer_Summary buffer = get_buffer(app, view.buffer_id, access);
-    buffer_read_range(app, &buffer, range.min, range.max, Stuff);
-
-    // NOTE(thomas) {} are called uniform initialization
-    // NOTE(thomas) this is the characters to read.  e.g. 4+4
-    tokenizer Tokenizer = {Stuff};
-
-    calc_node *CalcTree = ParseCalc(&Tokenizer);
-    double ComputedValue = ExecCalcNode(CalcTree);
-    FreeCalcNode(CalcTree);
-
-    char ResultBuffer[256];
-    int ResultSize = sprintf(ResultBuffer, "%f", ComputedValue);
-
-    buffer_replace_range(app, &buffer, range.min, range.max, ResultBuffer, ResultSize);
-
-    free(Stuff);
-}
-
-// ----------------------------------------------------------------------------
 // CUSTOM FUNCTION EXAMPLE
 //
 // This is an example of how to init a custom comment block as Allen has done
@@ -536,6 +135,9 @@ bool is_not_closing_doublequote(char c)
 }
 
 
+
+
+// ----------------------------------------------------------------------------
 // CUSTOM RENDER
 //
 // LEARNING
@@ -546,6 +148,44 @@ bool is_not_closing_doublequote(char c)
 //    -> for hexidecimal colors we need to fill out the last few spaces.  e.g.
 //       0xFF3396 would become 0xFFFF339696.  This confuses me.  Maybe we really
 //       only have  limited set of colors to work with.
+// ----------------------------------------------------------------------------
+
+struct tokenizer
+{
+    char *At;
+};
+
+inline bool
+IsNumeric(char C)
+{
+    bool Result = ((C >= '0') && (C <= '9'));
+
+    return(Result);
+}
+
+
+inline bool
+IsEndOfLine(char C)
+{
+    bool Result = ((C == '\n') ||
+                   (C == '\r'));
+
+    return(Result);
+}
+
+
+inline bool
+IsWhitespace(char C)
+{
+    bool Result = ((C == ' ') ||
+                   (C == '\t') ||
+                   (C == '\v') ||
+                   (C == '\f') ||
+                   IsEndOfLine(C));
+
+    return(Result);
+}
+
 RENDER_CALLER_SIG(thomas_render_caller){
 
   View_Summary view = get_active_view(app, AccessAll);
