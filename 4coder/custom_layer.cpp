@@ -150,9 +150,20 @@ bool is_not_closing_doublequote(char c)
 //       only have  limited set of colors to work with.
 // ----------------------------------------------------------------------------
 
+enum token_type
+{
+    Token_Comment,
+};
+
+struct token
+{
+    token_type Type;
+    int32_t NextCursor;
+};
+
 struct tokenizer
 {
-    char *At;
+    char *At; // @TODO maybe rename this to cursor for my own sanity?
 };
 
 inline bool
@@ -186,6 +197,39 @@ IsWhitespace(char C)
     return(Result);
 }
 
+// finds the end of the comment and tells us where the comment ended
+inline token
+IsComment(int cursor, tokenizer Tokenizer)
+{
+  int32_t tick = cursor;
+  token Token = {};
+
+  // loop until we reach the end of the file and we need to be sure to catch the
+  // end of the stream
+  while (Tokenizer.At[tick] != '\0') {
+    ++tick;
+
+    fprintf(stdout, "%s\n", "OUTSIDE");
+
+    // stop when we find the end of the line
+    if (Tokenizer.At[tick] == '\n') {
+      int32_t finaltick = tick - cursor;
+
+      fprintf(stdout, "%s\n", "THE F");
+      fprintf(stdout, "%d\n", finaltick);
+
+      Token.Type = Token_Comment;
+      Token.NextCursor = finaltick;
+      break;
+    }
+
+    break;
+  };
+
+  return(Token);
+}
+
+
 RENDER_CALLER_SIG(thomas_render_caller){
 
   View_Summary view = get_active_view(app, AccessAll);
@@ -210,129 +254,58 @@ RENDER_CALLER_SIG(thomas_render_caller){
 
       Temp_Memory temp = begin_temp_memory(scratch);
       int32_t text_size = on_screen_range.one_past_last - on_screen_range.first;
-      // NOTE(thomas) The actual characters in all open buffers appears here
+      // @note will hold the characters in the buffer e.g. "My name is"
       char *text = push_array(scratch, char, text_size);
-      // NOTE(thomas) Take the contents of the buffer and add it to the `text` variable
+      // @note actually place the characters in the buffer in the `text` var
       buffer_read_range(app, &buffer, on_screen_range.first, on_screen_range.one_past_last, text);
 
-      // fprintf(stdout, "%s\n", text);
-      // fprintf(stdout, "%s\n", buffer.file_name);
-
+      // @note create an array of records (tokens) to highlight
       Highlight_Record *records = push_array(scratch, Highlight_Record, 0);
       String tail = make_string(text, text_size);
 
-      // fprintf(stdout, "%s\n", tail.str += 3);
+      /* -----------------------------------------------------------------------
+         Custom Syntax Highlighting
 
-      // NOTE(thomas): WIP - only perform highlighting in the current view
-      // (window) because we want to limit how much noice to get an understanding
-      // of how this works.
+         Only highlight in the active view for the current tests
+
+         TODO
+           - last line with comment will not be highlighted
+           - extract comment lexing into a helper function
+        --------------------------------------------------------------------- */
       if (is_active_view) {
-        tokenizer Tokenizer = {text};
 
-        for (int32_t i = 0; i < text_size; tail.str += 1, tail.size -= 1, i += 1){
-          switch(Tokenizer.At[i]) {
+        for (int32_t cursor = 0; cursor < text_size; tail.str += 1, tail.size -= 1, cursor += 1) {
+          switch(text[cursor]) {
             case ';': {
-              // until we reach the end of the file or the end of a line, make everything in a line a comment
-              int32_t tick = i;
-              while (Tokenizer.At[tick] != '\0') {
-                ++tick;
-                if (Tokenizer.At[tick] == '\n') {
-                  // if we type `jkl` and then `\n` and then `; jkl` we want the
-                  // color to start on `;` which is what first + i is and we want
-                  // the highlight to go until the end of `;jkl` which is
-                  // i + the length of `;jkl`.
-                  int32_t finaltick = tick - i;
+              int32_t nextCursor = cursor;
+
+              // Find end of comment
+              while (text[nextCursor] != '\0') {
+                // @note this is inside because we still need to increment the
+                // cursor and know that we have reached a possible newline
+                if (text[nextCursor] == '\n' || ) {
+                  fprintf(stdout, "End of Comment: %d\n \n \n", nextCursor - cursor);
+                  // Found end of comment
+                  int32_t finalCursor = nextCursor - cursor;
                   Highlight_Record *record = push_array(scratch, Highlight_Record, 1);
-                  record->first = i + on_screen_range.first; // the letter to start the color on
-                  record->one_past_last = record->first + finaltick; // the letter to end the color on
-                  record->color = 0xFF6AC000; // red
-                  tail.str += finaltick;
-                  tail.size -= finaltick;
-                  i += finaltick;
+                  // @note the letter to start the color on
+                  record->first = cursor + on_screen_range.first;
+                  // @note the letter to end the color on
+                  record->one_past_last = record->first + finalCursor;
+                  // @note comment colour - green
+                  record->color = 0xFF6AC000;
+                  // @note ??
+                  tail.str += finalCursor;
+                  // @note ??
+                  tail.size -= finalCursor;
+                  // @note increment cursor
+                  cursor += finalCursor;
                   break;
                 }
+
+                ++nextCursor;
               }
             }
-            case '"': {
-              int32_t tick = i;
-              ++tick; // or else we get stuck on the one we were just on
-              while(is_not_closing_doublequote(Tokenizer.At[tick])) {
-                ++tick;
-              }
-
-              ++tick; // or else we get stuck on the one before the last
-
-              int32_t finaltick = tick - i;
-              Highlight_Record *record = push_array(scratch, Highlight_Record, 1);
-              record->first = i + on_screen_range.first; // the letter to start the color on
-              record->one_past_last = record->first + finaltick; // the letter to end the color on
-              record->color = 0xFFFF0000; // green
-              tail.str += finaltick;
-              tail.size -= finaltick;
-              i += finaltick;
-
-              break;
-            }
-            case 'a':
-            case 'b':
-            case 'c':
-            case 'd':
-            case 'e':
-            case 'f':
-            case 'g':
-            case 'h':
-            case 'i':
-            case 'j':
-            case 'k':
-            case 'l':
-            case 'm':
-            case 'n':
-            case 'o':
-            case 'p':
-            case 'q':
-            case 'r':
-            case 's':
-            case 't':
-            case 'u':
-            case 'v':
-            case 'w':
-            case 'x':
-            case 'y':
-            case 'z':
-            case 'A':
-            case 'B':
-            case 'C':
-            case 'D':
-            case 'E':
-            case 'F':
-            case 'G':
-            case 'H':
-            case 'I':
-            case 'J':
-            case 'K':
-            case 'L':
-            case 'M':
-            case 'N':
-            case 'O':
-            case 'P':
-            case 'Q':
-            case 'R':
-            case 'S':
-            case 'T':
-            case 'U':
-            case 'V':
-            case 'W':
-            case 'X':
-            case 'Y':
-            case 'Z': {
-              Highlight_Record *record = push_array(scratch, Highlight_Record, 1);
-              record->first = i + on_screen_range.first;
-              record->one_past_last = record->first + 1;
-              record->color = 0xFF0044FF; // light gray
-              break;
-            }
-            default:
-            {} break;
           }
         }
       }
