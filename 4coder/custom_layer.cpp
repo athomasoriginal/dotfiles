@@ -269,7 +269,6 @@ RENDER_CALLER_SIG(thomas_render_caller){
          Only highlight in the active view for the current tests
 
          TODO
-           - last line with comment will not be highlighted
            - extract comment lexing into a helper function
         --------------------------------------------------------------------- */
       if (is_active_view) {
@@ -281,10 +280,10 @@ RENDER_CALLER_SIG(thomas_render_caller){
 
               // Find end of comment
               while (text[nextCursor] != '\0') {
-                // @note this is inside because we still need to increment the
-                // cursor and know that we have reached a possible newline
-                if (text[nextCursor] == '\n' || ) {
-                  fprintf(stdout, "End of Comment: %d\n \n \n", nextCursor - cursor);
+                ++nextCursor;
+                // @note we incremement before to catch a scenario where the next
+                // line is a newline or the end of the text
+                if (text[nextCursor] == '\n' || text[nextCursor] == '\0') {
                   // Found end of comment
                   int32_t finalCursor = nextCursor - cursor;
                   Highlight_Record *record = push_array(scratch, Highlight_Record, 1);
@@ -302,8 +301,6 @@ RENDER_CALLER_SIG(thomas_render_caller){
                   cursor += finalCursor;
                   break;
                 }
-
-                ++nextCursor;
               }
             }
           }
