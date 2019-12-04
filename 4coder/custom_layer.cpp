@@ -123,17 +123,6 @@ CUSTOM_COMMAND_SIG(hello)
 
 }
 
-bool is_not_closing_doublequote(char c)
-{
-    switch (c)
-    {
-    case '"':
-        return false;
-    default:
-        return true;
-    }
-}
-
 
 
 
@@ -195,6 +184,17 @@ IsWhitespace(char C)
                    IsEndOfLine(C));
 
     return(Result);
+}
+
+bool is_quote(char c)
+{
+    switch (c)
+    {
+    case '"':
+        return true;
+    default:
+        return false;
+    }
 }
 
 // finds the end of the comment and tells us where the comment ended
@@ -270,11 +270,13 @@ RENDER_CALLER_SIG(thomas_render_caller){
 
          TODO
            - extract comment lexing into a helper function
+           - remove trailing `/` added by 4coder when you reach end of line
         --------------------------------------------------------------------- */
       if (is_active_view) {
 
         for (int32_t cursor = 0; cursor < text_size; tail.str += 1, tail.size -= 1, cursor += 1) {
           switch(text[cursor]) {
+            /* ---- comment ------------------------------------------------- */
             case ';': {
               int32_t nextCursor = cursor;
 
@@ -302,6 +304,39 @@ RENDER_CALLER_SIG(thomas_render_caller){
                   break;
                 }
               }
+
+              break;
+            }
+
+            /* ---- string -------------------------------------------------- */
+            case '"': {
+              int32_t nextCursor = cursor;
+              // @note jump to next char - prevent staying on first `"`
+              ++nextCursor;
+
+              while(!is_quote(text[nextCursor])) {
+                ++nextCursor;
+              }
+
+              // @note jumpt to next char - prevent staying on last `"`
+              ++nextCursor;
+
+              // Found string
+              int32_t finalCursor = nextCursor - cursor;
+              Highlight_Record *record = push_array(scratch, Highlight_Record, 1);
+              // @note the letter to start the color on
+              record->first = cursor + on_screen_range.first;
+              // @note the letter to end the color on
+              record->one_past_last = record->first + finalCursor;
+              // @note comment colour - blue
+              record->color = 0xFF0044FF;
+              // @note ??
+              tail.str += finalCursor;
+              // @note ??
+              tail.size -= finalCursor;
+              // @note increment cursor
+              cursor += finalCursor;
+              break;
             }
           }
         }
