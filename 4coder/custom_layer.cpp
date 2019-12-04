@@ -197,6 +197,13 @@ bool is_quote(char c)
     }
 }
 
+bool is_number(char c)
+{
+  bool Result = ((c >= '0') && (c <= '9'));
+
+  return(Result);
+}
+
 // finds the end of the comment and tells us where the comment ended
 inline token
 IsComment(int cursor, tokenizer Tokenizer)
@@ -269,6 +276,7 @@ RENDER_CALLER_SIG(thomas_render_caller){
          Only highlight in the active view for the current tests
 
          TODO
+           - numbers can lead and be part of symbols (identifiers) in clj
            - extract comment lexing into a helper function
            - remove trailing `/` added by 4coder when you reach end of line
         --------------------------------------------------------------------- */
@@ -330,6 +338,43 @@ RENDER_CALLER_SIG(thomas_render_caller){
               record->one_past_last = record->first + finalCursor;
               // @note comment colour - blue
               record->color = 0xFF0044FF;
+              // @note ??
+              tail.str += finalCursor;
+              // @note ??
+              tail.size -= finalCursor;
+              // @note increment cursor
+              cursor += finalCursor;
+              break;
+            }
+
+            /* ---- numbers ------------------------------------------------- */
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':{
+              int32_t nextCursor = cursor;
+              // @note jump to next char - prevent staying on first `"`
+              ++nextCursor;
+
+              while(is_number(text[nextCursor])) {
+                ++nextCursor;
+              }
+
+              // Found string
+              int32_t finalCursor = nextCursor - cursor;
+              Highlight_Record *record = push_array(scratch, Highlight_Record, 1);
+              // @note the letter to start the color on
+              record->first = cursor + on_screen_range.first;
+              // @note the letter to end the color on
+              record->one_past_last = record->first + finalCursor;
+              // @note comment colour - red
+              record->color = 0xFF7C0000;
               // @note ??
               tail.str += finalCursor;
               // @note ??
