@@ -57,6 +57,7 @@
       enabled: true
       excludedGlobs: [
         ".scss"
+        ".md"
       ]
     prettierOptions:
       singleQuote: true
