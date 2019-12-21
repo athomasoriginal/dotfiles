@@ -28,7 +28,7 @@ plugins=(                 # plugins to load.
 #==============================================================================
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
