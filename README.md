@@ -85,7 +85,7 @@ The above command may respond with a `permission denied` and if it does try runn
 > 2.  Choose the path with the highest git version
 
 ```bash
-/usr/local/Cellar/git/2.25.0_1/share/git-core/contrib/diff-highlight/diff-highlight
+/usr/local/Cellar/git/2.25.1/share/git-core/contrib/diff-highlight/diff-highlight
 ```
 
 The segment of the above path that matters is `2.22.0_1` as this is the version of git you are using locally.
