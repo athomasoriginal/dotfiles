@@ -206,7 +206,7 @@ bool is_number(char c)
 
 // finds the end of the comment and tells us where the comment ended
 inline token
-IsComment(int cursor, tokenizer Tokenizer)
+comment(int cursor, tokenizer Tokenizer)
 {
   int32_t tick = cursor;
   token Token = {};
@@ -273,10 +273,18 @@ RENDER_CALLER_SIG(thomas_render_caller){
       /* -----------------------------------------------------------------------
          Custom Syntax Highlighting
 
+         Decent breakdown of the grammar
+         https://github.com/ccw-ide/ccw/blob/3738a4fd768bcb0399630b7f6a6427a3066bdaa9/clojure-antlr-grammar/src/Clojure.g
+         https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Compiler.java
+
          Only highlight in the active view for the current tests
 
          TODO
            - numbers can lead and be part of symbols (identifiers) in clj
+           - invalid symbol: 4trheer
+           - valid symbol: hi-2-you
+           - eat whitespace
+           - strings should handle escapes
            - extract comment lexing into a helper function
            - remove trailing `/` added by 4coder when you reach end of line
         --------------------------------------------------------------------- */
