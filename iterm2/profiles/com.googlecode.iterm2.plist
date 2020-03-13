@@ -1304,10 +1304,12 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>929 110 445 103 0 0 1440 877 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>760 786 400 129 0 0 1920 1177 </string>
+	<string>495 628 400 129 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 588 620 392 0 0 1920 1177 </string>
+	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>329 160 606 469 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -1315,9 +1317,11 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 593 592 584 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>24 679 570 392 0 0 1920 1177 </string>
+	<string>0 0 717 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>47 657 570 392 0 0 1920 1177 </string>
+	<string>35 539 570 392 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -1973,7 +1977,6 @@
 		<string>3.3.8</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
-		<string>3.3.5</string>
 		<string>3.3.7</string>
 		<string>3.2.9</string>
 		<string>3.3.2</string>
@@ -1982,7 +1985,7 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1200}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
 		<string>{269, 595}</string>
 	</dict>
@@ -1993,7 +1996,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>701AEBF3-2CBD-4F51-A282-BB6CE0F9E830</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>24</integer>
+	<integer>28</integer>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587393197.982939</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2780,7 +2787,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-05T20:17:42Z</date>
+	<date>2020-02-12T03:10:19Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
