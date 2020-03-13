@@ -161,7 +161,7 @@ Guide for how to develop on this customization layer
 [Developing Customization Layer]: #Developing-Customization-Layer
 [Debugging Customization Layer]: #Debugging-Customization-Layer
 [4Coder Gotchas]: #4Coder-Gotchas
-[Download Paid 4Coder]: https://4coder.itch.io/
+[Download Paid Version of 4Coder]: https://4coder.itch.io/
 
 [Clojure Parser in C++]: https://github.com/WillDetlor/TinyClojure/blob/master/src/TinyClojure.cpp
 [Lexer Faster When not Regex]: https://eli.thegreenplace.net/2013/07/16/hand-written-lexer-in-javascript-compared-to-the-regex-based-ones
