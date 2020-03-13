@@ -1,23 +1,54 @@
-# 4Coder Customization Layer
+# 4Coder 4.1.4 Customization Layer
 
-This is my 4Coder customization layer.  Please note that it is incomplete and I do not use 4Coder on a daily basis.  This is more of a pet project while I wait/work alongside 4Coder to a point where I feel I can switch off of my current editor.
+Welcome to my 4Coder customization layer.  I can't use 4Coder just yet for regular coding because 4Coder is focused on C++ and how and I professionally work with lisp...hence this customization layer.  This guide is for macos.
 
-## Quickstart - Running 4Coder
+- [Motivation]
+- [Housekeeping]
+- [Quickstart]
+- [Customization Layer Setup]
+- [Developing Customization Layer]
+  - [Debugging Customization Layer]
+- [4Coder Gotchas]
 
-> The following is where I currently store 4Coder
+## Motivation
 
-- download `4coder` paid version
+- Tired of bloated editors with poor performance
+- Interested in learning lower level language
 
-- move the `4coder` from the `Downloads` dir to home dir
+## Housekeeping
 
-- setup an alias to `4coder` folder in your `.zshrc`
+- [Download Paid Version of 4Coder] to use this layer
 
-- running `4ed`: `./4ed`
+- Move 4Coder from your Downloads directory to your
 
-  > `4ed` is the file you will run.  It is a `unix executable` or `binary` file which means that you cannot just double click on the icon.
+  ```bash
+  mv ~/Downloads/4coder ~/4coder
+  ```
+
+- setup an alias to `4ed` folder in your `.zshrc`
+
+## Quickstart
+
+- Open your favorite terminal
+
+- Move into `4ed`
+
+  ```bash
+  4ed
+  ```
+
+- run 4coder
+
+  ```bash
+  ./4ed
+  ```
+
+  > First time you run on mac, you will get a security warning.  Open `Security & Privacy` settings.  Click `Allow Anyway`.  Run `./4ed` again.  You will get another security warning.  Select `Open`.  Also Note that as of now `4coder` is shipped as a `unix executable` or `binary` file which means that you cannot just double click on the icon and run it.  This is why we open a terminal window and run it as a process there.
 
 
-## Quick Start - Customization Layer
+## Customization Layer Setup
+
+Guide for setting up this customization layer
 
 - move into `4Coder`
 
@@ -86,22 +117,21 @@ The above should build and then when you press `alt + p` you should see the `ope
 **NOTE** The downside of symlinking is that each time you get a new version of 4Coder you will have to re-link your customization layer.
 
 
-## QuickStart - Developing Customization Layer
+## Developing Customization Layer
 
-This section will outline how I develop the customization layer.
+Guide for how to develop on this customization layer
 
 - All code changes are made in my `4coder` dir.
 - Test code changes by running `./buildsuper.sh custom_layer.cpp` from within `4coder` core dir
 - To see everything running run `./4ed` from within `4coder` core dir
 
 
-## QuickStart - Debuggin Customization Layer
+### Debugging Customization Layer
 
 - using vscode I setup tasks and debug line
 - open `4Coder` core app inside of vscode
 
-
-## Gotchas
+## 4Coder Gotchas
 
 - new syntax highlight requires updating 4coder.config also
 
@@ -113,11 +143,31 @@ This section will outline how I develop the customization layer.
 
 ## Resources
 
-- [Clojure Parser in C++](https://github.com/WillDetlor/TinyClojure/blob/master/src/TinyClojure.cpp)
-- [Lexer Faster When not Regex](https://eli.thegreenplace.net/2013/07/16/hand-written-lexer-in-javascript-compared-to-the-regex-based-ones)
-- [PEG - modern approach](https://en.wikipedia.org/wiki/Parsing_expression_grammar)
-- [Github Lexers](https://github.com/topics/lexer)
-- [Nice lexer v parser intro](https://qscintilla.com/lexer-basics/)
-- [Lexer from Scratch in Python - really good stuff](https://www.youtube.com/watch?v=LDDRn2f9fUk)
-- [Guide 1](https://blog.klipse.tech/javascript/2017/02/08/tiny-compiler-tokenizer.html)
-- [Guide 2](https://blog.klipse.tech/javascript/2017/02/08/tiny-compiler-parser.html)
+- [Clojure Parser in C++]
+- [Lexer Faster When not Regex]
+- [PEG - modern approach]
+- [Github Lexers]
+- [Nice lexer v parser intro]
+- [Lexer from Scratch in Python - good stuff]
+- [Guide 1]
+- [Guide 2]
+
+
+
+[Motivation]: #motivation
+[Housekeeping]: #Housekeeping
+[Quickstart]: Quickstart
+[Customization Layer Setup]: #Customization-Layer-Setup
+[Developing Customization Layer]: #Developing-Customization-Layer
+[Debugging Customization Layer]: #Debugging-Customization-Layer
+[4Coder Gotchas]: #4Coder-Gotchas
+[Download Paid 4Coder]: https://4coder.itch.io/
+
+[Clojure Parser in C++]: https://github.com/WillDetlor/TinyClojure/blob/master/src/TinyClojure.cpp
+[Lexer Faster When not Regex]: https://eli.thegreenplace.net/2013/07/16/hand-written-lexer-in-javascript-compared-to-the-regex-based-ones
+[PEG - modern approach]: https://en.wikipedia.org/wiki/Parsing_expression_grammar
+[Github Lexers]: https://github.com/topics/lexer
+[Nice lexer v parser intro]: https://qscintilla.com/lexer-basics/
+[Lexer from Scratch in Python - good stuff]: https://www.youtube.com/watch?v=LDDRn2f9fUk
+[Guide 1]: https://blog.klipse.tech/javascript/2017/02/08/tiny-compiler-tokenizer.html
+[Guide 2]: https://blog.klipse.tech/javascript/2017/02/08/tiny-compiler-parser.html
