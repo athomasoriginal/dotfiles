@@ -120,26 +120,34 @@ Guide for setting up this customization layer
 - build customization layer
 
   ```bash
-  `./custom/bin/buildsuper_x64-mac.sh custom_layer.cpp`
+  ./custom/bin/buildsuper_x64-mac.sh custom_layer.cpp
   ```
 
 ## Developing Customization Layer
 
 Guide for how to develop on this customization layer
 
-- All code changes are made in my `4coder` dir.
-- Test code changes by running `./buildsuper.sh custom_layer.cpp` from within `4coder` core dir
-- To see everything running run `./4ed` from within `4coder` core dir
+### Code Changes
 
+You change the code in your working customization layer directory.  As I mentioned, I keep mine outside of the 4coder app itself and in a directory in these dotfiles called `dotfiles/4coder/4.1/thomas_custom_layer.cpp`.
+
+### Build Changes
+
+- Build custom Layer
+
+  ```bash
+  ./custom/bin/buildsuper_x64-mac.sh custom_layer.cpp
+  ```
 
 ### Debugging Customization Layer
 
 - using vscode I setup tasks and debug line
+
 - open `4Coder` core app inside of vscode
 
 ## 4Coder Gotchas
 
-- new syntax highlight requires updating 4coder.config also
+- new syntax highlight requires updating 4coder.config
 
 ## API Guide
 
