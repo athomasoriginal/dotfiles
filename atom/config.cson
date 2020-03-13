@@ -1,7 +1,5 @@
 "*":
-  chlorine:
-    "eval-mode": "cljs"
-    "refresh-mode": "simple"
+  chlorine: {}
   core:
     allowPendingPaneItems: false
     automaticallyUpdate: false
