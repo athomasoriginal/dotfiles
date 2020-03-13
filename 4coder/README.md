@@ -5,6 +5,7 @@ Welcome to my 4Coder customization layer.  I can't use 4Coder just yet for regul
 - [Motivation]
 - [Housekeeping]
 - [Quickstart]
+- [Directory Structure]
 - [Customization Layer Setup]
 - [Developing Customization Layer]
   - [Debugging Customization Layer]
@@ -31,7 +32,7 @@ Welcome to my 4Coder customization layer.  I can't use 4Coder just yet for regul
 
 - Open your favorite terminal
 
-- Move into `4ed`
+- Move into 4coder directory
 
   ```bash
   4ed
@@ -45,77 +46,82 @@ Welcome to my 4Coder customization layer.  I can't use 4Coder just yet for regul
 
   > First time you run on mac, you will get a security warning.  Open `Security & Privacy` settings.  Click `Allow Anyway`.  Run `./4ed` again.  You will get another security warning.  Select `Open`.  Also Note that as of now `4coder` is shipped as a `unix executable` or `binary` file which means that you cannot just double click on the icon and run it.  This is why we open a terminal window and run it as a process there.
 
+## Directory Structure
+
+```bash
+.
+├── 4.0
+│   ├── custom_layer.cpp
+│   └── lexer.cpp
+├── 4.1
+│   └── thomas_customization_layer.cpp
+├── README.md
+└── dev-journal.md
+```
+
+- `4.*` are customization layers based on the version of 4coder I was using.
 
 ## Customization Layer Setup
 
 Guide for setting up this customization layer
 
-- move into `4Coder`
+- move into
 
-- sanity check: run `./buildsuper.bat`
+  ```
+  4ed
+  ```
 
-  > Run this from within the `4coder` dir. We are just making sure that everything is working as expected.
+  > The above is an alias I set during the housekeeping steps
 
-- create a directory to store you 4Coder customization layer
+- build customization layer (sanity check)
 
-  > I co-located mine with my dotfiles because I want to have them available across all of my machines.
+  ```bash
+  `./custom/bin/buildsuper_x64-mac.sh`
+  ```
+
+  > Run this from within the `4coder` dir. We are just making sure that we can build 4coder as we expect.  This will generate folders and files: `custom/metadata_generator.dSYM/Contents/Resources/DWARF/metadata_generator` & `custom_4coder.so`.
+
+- create a home for your 4Coder customization layer
+
+  ```
+  mkdir ~/dotfiles/4coder
+  ```
+
+  > I store my layer in my dotfiles.  The reason to create a layer folder and not just add to 4coder is to make it easier when you update your versions of 4coder.
 
 - Add an alias to the `4Coder` customization directory
 
+  ```bash
+  alias 4coder="dotfiles/4coder"
+  ```
+
   > This is just for quick access
 
-- create a file called `custom_layer.cpp` inside of your custom `4coder` dir you created above
+- create an entry point for your customization layer
+
+  ```bash
+  touch ~/dotfiles/4coder/4.1/thomas_custom_layer.cpp
+  ```
+
+  > Note that I prefix mine with `thomas` just to make it abundantly clear.
 
 - symlink the `custom_layer.cpp` code from dotfiles to the `4coder` app dir
 
   ```bash
-  ln -s ~/dotfiles/4coder/custom_layer.cpp ~/4coder/custom_layer.cpp
+  ln -s ~/dotfiles/4coder/4.1/thomas_custom_layer.cpp ~/4coder/custom_layer.cpp
   ```
 
-- Setup the `custom_layer` file to look like this:
+  > This is how we get our custom layer inside of the 4coder app
 
-  ```c
-  #include "4coder_default_include.cpp"
+- Initial `custom_layer` setup:
 
-  // this is exactly the same as what we would find in 4coder_default_bindings.cpp
-  // until aftter the default_keys bit.  At that point, our custom code takes over
-  extern "C" int32_t
-  get_bindings(void *data, int32_t size){
-      Bind_Helper context_ = begin_bind_helper(data, size);
-      Bind_Helper *context = &context_;
+  Copy `4coder_default_bidings.cpp` into your custom layer.  This is how you init your own custom layer.
 
-      set_all_default_hooks(context);
-
-  #if defined(__APPLE__) && defined(__MACH__)
-      mac_default_keys(context);
-  #else
-      default_keys(context);
-  #endif
-
-      // custom remapping of 4coder keys begins here
-      begin_map( context, mapid_global );
-      {
-          // was previously `o`
-          bind(context, 'p', MDFR_CMND, interactive_open_or_new);
-      }
-      end_map( context );
-      // END OF CUSTOM MAC KEY BINDING TEST
-
-      int32_t result = end_bind_helper(context);
-      return(result);
-  }
-  ```
-
-- run the `./buildsuper.sh` from the `4ed` app dir
+- build customization layer
 
   ```bash
-  ./buildsuper.sh custom_layer.cpp
+  `./custom/bin/buildsuper_x64-mac.sh custom_layer.cpp`
   ```
-
-The above should build and then when you press `alt + p` you should see the `open` lister open up.
-
-**NOTE** The downside of symlinking is that each time you get a new version of 4Coder you will have to re-link your customization layer.
-
 
 ## Developing Customization Layer
 
@@ -157,6 +163,7 @@ Guide for how to develop on this customization layer
 [Motivation]: #motivation
 [Housekeeping]: #Housekeeping
 [Quickstart]: Quickstart
+[Directory Structure]: #Directory-Structure
 [Customization Layer Setup]: #Customization-Layer-Setup
 [Developing Customization Layer]: #Developing-Customization-Layer
 [Debugging Customization Layer]: #Debugging-Customization-Layer
