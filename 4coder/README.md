@@ -16,6 +16,11 @@ Welcome to my 4Coder customization layer.  I can't use 4Coder just yet for regul
 - Tired of bloated editors with poor performance
 - Interested in learning lower level language
 
+## Customizations
+
+- [ ] Solarized theme
+- [ ] Clojure Syntax Highlighter
+
 ## Housekeeping
 
 - [Download Paid Version of 4Coder] to use this layer

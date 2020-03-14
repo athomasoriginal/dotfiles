@@ -14,6 +14,9 @@ thomas_default_bidings.cpp - Supplies the default bindings used for default
 
 #include "generated/managed_id_metadata.cpp"
 
+// NOTE(thomas): thomas imports start here
+#include "theme/solarized.cpp"
+
 
 function void
 thomas_render_buffer(Application_Links *app, View_ID view_id, Face_ID face_id,
@@ -195,7 +198,6 @@ thomas_render_caller(Application_Links *app, Frame_Info frame_info, View_ID view
     draw_set_clip(app, prev_clip);
 }
 
-
 void
 custom_layer_init(Application_Links *app){
     Thread_Context *tctx = get_thread_context(app);
@@ -206,12 +208,13 @@ custom_layer_init(Application_Links *app){
     // NOTE(allen): default hooks and command maps
     set_all_default_hooks(app);
 
+    // NOTE(thomas): Allens stuff
+    mapping_init(tctx, &framework_mapping);
+    setup_default_mapping(&framework_mapping, mapid_global, mapid_file, mapid_code);
+
     // NOTE(thomas): syntax highlighting
     set_custom_hook(app, HookID_RenderCaller, thomas_render_caller);
 
-    // NOTE(thomas): Allen
-    mapping_init(tctx, &framework_mapping);
-    setup_default_mapping(&framework_mapping, mapid_global, mapid_file, mapid_code);
 }
 
 #endif //FCODER_DEFAULT_BINDINGS
