@@ -1,15 +1,21 @@
 # 4Coder 4.1.4 Customization Layer
 
-Welcome to my 4Coder customization layer.  I can't use 4Coder just yet for regular coding because 4Coder is focused on C++ and how and I professionally work with lisp...hence this customization layer.  This guide is for macos.
+This is my 4coder customization layer.  It's a complete WIP.  I am posting this for education purposes.  This guide is for macos.
 
 - [Motivation]
+- [Customizations]
 - [Housekeeping]
 - [Quickstart]
 - [Directory Structure]
 - [Customization Layer Setup]
 - [Developing Customization Layer]
+  - [Code Changes]
+  - [Build Custom Layer]
+  - [Build Lexer]
   - [Debugging Customization Layer]
 - [4Coder Gotchas]
+- [API Guide]
+- [Resources]
 
 ## Motivation
 
@@ -20,6 +26,8 @@ Welcome to my 4Coder customization layer.  I can't use 4Coder just yet for regul
 
 - [ ] Solarized theme
 - [ ] Clojure Syntax Highlighter
+- [ ] zprint integration - see [Remedy BG Integration]
+- [ ] REPL integration
 
 ## Housekeeping
 
@@ -59,18 +67,19 @@ Welcome to my 4Coder customization layer.  I can't use 4Coder just yet for regul
 │   ├── custom_layer.cpp
 │   └── lexer.cpp
 ├── 4.1
+│   ├── thomas_languages.cpp
 │   └── thomas_customization_layer.cpp
-├── README.md
-└── dev-journal.md
+└── README.md
 ```
 
-- `4.*` are customization layers based on the version of 4coder I was using.
+- `4.*` are customization layers by 4coder version
+- `thomas_languages` -
 
 ## Customization Layer Setup
 
 Guide for setting up this customization layer
 
-- move into
+- move into 4coder directory
 
   ```
   4ed
@@ -84,7 +93,7 @@ Guide for setting up this customization layer
   `./custom/bin/buildsuper_x64-mac.sh`
   ```
 
-  > Run this from within the `4coder` dir. We are just making sure that we can build 4coder as we expect.  This will generate folders and files: `custom/metadata_generator.dSYM/Contents/Resources/DWARF/metadata_generator` & `custom_4coder.so`.
+  > Run this from within the `4coder` dir. We are just making sure that we can build 4coder as we expect.  This will generate folders and files: `custom/metadata_generator.dSYM/Contents/Resources/DWARF/metadata_generator` & `custom_4coder.so`.  The above command is if you are a mac user.
 
 - create a home for your 4Coder customization layer
 
@@ -136,13 +145,49 @@ Guide for how to develop on this customization layer
 
 You change the code in your working customization layer directory.  As I mentioned, I keep mine outside of the 4coder app itself and in a directory in these dotfiles called `dotfiles/4coder/4.1/thomas_custom_layer.cpp`.
 
-### Build Changes
+### Build Custom Layer
 
 - Build custom Layer
 
   ```bash
   ./custom/bin/buildsuper_x64-mac.sh custom_layer.cpp
   ```
+
+### Build The Lexer
+
+**Housekeeping**
+
+I found that the `build_one_time.sh` script did not work out of the box with `readlink` throwing an error like:
+
+```bash
+readlink: illegal option -- f
+```
+
+So I just installed `coreutils`
+
+```bash
+brew install coreutils
+```
+
+and then swapped out `readlink` for `greedlink` inside of the `build_one_time.sh` script.
+
+**Quick Guide**
+
+> I was able to discover how to do this through [Skytrias Great 4Coder Customization Video] and you're performing all these commands from the root of the `4coder` editor directory
+
+- Make changes to `4coder_cpp_lexer_gen.cpp`
+
+- Move into the `4coder` app directory
+
+- build generator, run generator and cleanup
+
+  ```bash
+  ./build_lang
+  ```
+
+  > This is just a helper script I setup to improve the ux when building a specific language
+
+- [Now rebuild your customization layer](#build-custom-layer)
 
 ### Debugging Customization Layer
 
@@ -170,6 +215,9 @@ You change the code in your working customization layer directory.  As I mention
 - [Lexer from Scratch in Python - good stuff]
 - [Guide 1]
 - [Guide 2]
+- [Remedy BG Integration]
+
+  Example of how to call an outside program
 
 
 
@@ -191,3 +239,6 @@ You change the code in your working customization layer directory.  As I mention
 [Lexer from Scratch in Python - good stuff]: https://www.youtube.com/watch?v=LDDRn2f9fUk
 [Guide 1]: https://blog.klipse.tech/javascript/2017/02/08/tiny-compiler-tokenizer.html
 [Guide 2]: https://blog.klipse.tech/javascript/2017/02/08/tiny-compiler-parser.html
+
+[Skytrias Great 4Coder Customization Video]: https://youtu.be/DzTbmleyafY?t=1881
+[Remedy BG Integration]: https://gitlab.com/flyingsolomon/4coder_modal/-/blob/master/debugger_remedybg.cpp
