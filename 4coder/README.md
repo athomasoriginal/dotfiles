@@ -222,7 +222,11 @@ and then swapped out `readlink` for `greedlink` inside of the `build_one_time.sh
 
 
 [Motivation]: #motivation
+[Customizations]: #customizations
 [Housekeeping]: #Housekeeping
+[Code Changes]: #code-changes
+[Build Custom Layer]: #build-custom-layer
+[Build Lexer]: #build-lexer
 [Quickstart]: Quickstart
 [Directory Structure]: #Directory-Structure
 [Customization Layer Setup]: #Customization-Layer-Setup
@@ -230,6 +234,8 @@ and then swapped out `readlink` for `greedlink` inside of the `build_one_time.sh
 [Debugging Customization Layer]: #Debugging-Customization-Layer
 [4Coder Gotchas]: #4Coder-Gotchas
 [Download Paid Version of 4Coder]: https://4coder.itch.io/
+[API Guide]: #api-guide
+[Resources]: #resources
 
 [Clojure Parser in C++]: https://github.com/WillDetlor/TinyClojure/blob/master/src/TinyClojure.cpp
 [Lexer Faster When not Regex]: https://eli.thegreenplace.net/2013/07/16/hand-written-lexer-in-javascript-compared-to-the-regex-based-ones
