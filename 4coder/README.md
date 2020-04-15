@@ -6,6 +6,7 @@ This is my 4coder customization layer.  It's a complete WIP.  I am posting this 
 - [Customizations]
 - [Housekeeping]
 - [Quickstart]
+- [Upgrading 4coder]
 - [Directory Structure]
 - [Customization Layer Setup]
 - [Developing Customization Layer]
@@ -59,6 +60,14 @@ This is my 4coder customization layer.  It's a complete WIP.  I am posting this 
 
   > First time you run on mac, you will get a security warning.  Open `Security & Privacy` settings.  Click `Allow Anyway`.  Run `./4ed` again.  You will get another security warning.  Select `Open`.  Also Note that as of now `4coder` is shipped as a `unix executable` or `binary` file which means that you cannot just double click on the icon and run it.  This is why we open a terminal window and run it as a process there.
 
+## Upgrading 4coder
+
+Given that we customize several files, it's import to track down what we changed:
+
+- Script - `build_one_time.sh` -> `readlink` to `greadlink`
+- Hook - `begin_buffer`
+- Lexer - `thomas_cpp_lexer_gen.cpp`
+
 ## Directory Structure
 
 ```bash
@@ -67,13 +76,16 @@ This is my 4coder customization layer.  It's a complete WIP.  I am posting this 
 │   ├── custom_layer.cpp
 │   └── lexer.cpp
 ├── 4.1
-│   ├── thomas_languages.cpp
-│   └── thomas_customization_layer.cpp
+│   ├── thomas_default_hooks.cpp
+│   └── thomas_default_bindings.cpp
 └── README.md
 ```
 
 - `4.*` are customization layers by 4coder version
-- `thomas_languages` -
+- `thomas_default_hooks` -
+- `thomas_default_bindings` - entry point
+
+> Helpful to sync with Allen's naming convention and just prefix differently to sync with the structure he has provided.
 
 ## Customization Layer Setup
 
@@ -114,27 +126,41 @@ Guide for setting up this customization layer
 - create an entry point for your customization layer
 
   ```bash
-  touch ~/dotfiles/4coder/4.1/thomas_custom_layer.cpp
+  touch ~/dotfiles/4coder/4.1/thomas_default_bindings.cpp
   ```
 
   > Note that I prefix mine with `thomas` just to make it abundantly clear.
 
-- symlink the `custom_layer.cpp` code from dotfiles to the `4coder` app dir
+- symlink the `default_bindings.cpp` code from dotfiles to the `4coder` app dir
 
   ```bash
-  ln -s ~/dotfiles/4coder/4.1/thomas_custom_layer.cpp ~/4coder/custom_layer.cpp
+  ln -s ~/dotfiles/4coder/4.1/custom/thomas_default_bindings.cpp ~/4coder/thomas_default_bindings.cpp
+  ln -s ~/dotfiles/4coder/4.1/custom/thomas_default_hooks.cpp ~/4coder/custom/thomas_default_hooks.cpp
+
+  ln -s ~/dotfiles/4coder/4.1/languages/thomas_clojure_lexer_gen.cpp ~/4coder/custom/languages/thomas_clojure_lexer_gen.cpp
+  ln -s ~/dotfiles/4coder/4.1/languages/thomas_cpp_lexer_gen.cpp ~/4coder/custom/languages/thomas_cpp_lexer_gen.cpp
+
+  ln -s ~/dotfiles/4coder/4.1/build_lang.sh ~/4coder/build_lang.sh
   ```
 
   > This is how we get our custom layer inside of the 4coder app
 
-- Initial `custom_layer` setup:
+- Initial `default_bindings` setup:
 
   Copy `4coder_default_bidings.cpp` into your custom layer.  This is how you init your own custom layer.
+
+- Build Language Lexers
+
+  ```bash
+  ./build_lang.sh
+  ```
+
+  > Above might need you to `chmod +x`
 
 - build customization layer
 
   ```bash
-  ./custom/bin/buildsuper_x64-mac.sh custom_layer.cpp
+  ./custom/bin/buildsuper_x64-mac.sh thomas_default_bindings.cpp
   ```
 
 ## Developing Customization Layer
@@ -143,14 +169,14 @@ Guide for how to develop on this customization layer
 
 ### Code Changes
 
-You change the code in your working customization layer directory.  As I mentioned, I keep mine outside of the 4coder app itself and in a directory in these dotfiles called `dotfiles/4coder/4.1/thomas_custom_layer.cpp`.
+You change the code in your working customization layer directory.  As I mentioned, I keep mine outside of the 4coder app itself and in a directory in these dotfiles called `dotfiles/4coder/4.1/thomas_default_bindings.cpp`.
 
 ### Build Custom Layer
 
 - Build custom Layer
 
   ```bash
-  ./custom/bin/buildsuper_x64-mac.sh custom_layer.cpp
+  ./custom/bin/buildsuper_x64-mac.sh default_bindings.cpp
   ```
 
 ### Build The Lexer
