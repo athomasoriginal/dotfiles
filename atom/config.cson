@@ -18,7 +18,7 @@
     ]
   editor:
     fontFamily: "Menlo, Monaco, 'Courier New', monospace"
-    fontSize: 12
+    fontSize: 13
   "exception-reporting":
     userId: "dd51b682-a7e5-2b3b-c172-243b2cf41df7"
   "file-types":
@@ -30,7 +30,6 @@
   "linter-ui-default":
     hidePanelWhenEmpty: true
     panelHeight: 69
-    showPanel: true
   "lisp-paredit":
     strict: false
   "markdown-writer":

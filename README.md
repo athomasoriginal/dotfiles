@@ -91,7 +91,7 @@ The above command may respond with a `permission denied` and if it does try runn
 /usr/local/Cellar/git/2.30.0/share/git-core/contrib/diff-highlight/diff-highlight
 ```
 
-The segment of the above path that matters is `2.29.2` as this is the version of git you are using locally.
+The segment of the above path that matters is `2.30.0` as this is the version of git you are using locally.
 
 > 3.  Open `.gitconfig`
 
