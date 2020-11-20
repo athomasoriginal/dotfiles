@@ -5,7 +5,7 @@ export DOTFILES=$HOME/dotfiles  # path to dotfiles
 # ZSH SETTINGS
 # ------------------------------------------------------------------------------
 
-# zsh theme name
+# zsh theme name - see `themes/thomas.zsh-theme`
 ZSH_THEME="thomas"
 
 # auto-update zsh after 13 days
