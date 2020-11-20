@@ -17,8 +17,6 @@ plugins=(
     colored-man-pages
     # syntax higlight by file extension
     colorize
-    pip
-    python
     brew
     osx
     zsh-syntax-highlighting
