@@ -19,6 +19,7 @@ brew "rbenv"
 brew "duti"
 brew "yarn"
 brew "tmux"
+brew "gh"
 
 # Apps
 cask "google-chrome"
