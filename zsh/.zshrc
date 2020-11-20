@@ -17,8 +17,6 @@ plugins=(
     colored-man-pages
     # syntax higlight by file extension
     colorize
-    vagrant
-    virtualenv
     pip
     python
     brew
