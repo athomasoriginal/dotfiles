@@ -13,9 +13,9 @@ export UPDATE_ZSH_DAYS=13
 
 # zsh plugins to improve your workflow
 plugins=(
-    git
     # syntax highlight man pages for easier reading
     colored-man-pages
+    # syntax higlight by file extension
     colorize
     github
     jira
