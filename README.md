@@ -102,7 +102,13 @@ vim ~/dotfiles/git/.gitconfig
 pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 ```
 
-**7. open .gitconfig.local in your favourite editor**
+**7. Install zsh-highlight**
+
+```bash
+see https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
+```
+
+**8. open .gitconfig.local in your favourite editor**
 
 ```bash
 $ vim git/.gitconfig.local
@@ -110,7 +116,7 @@ $ vim git/.gitconfig.local
 
 > You can swap out `vim` for your fav' editor. For example, if you use atom the above would become `atom git/.gitconfig.local`
 
-**8. update .gitconfig.local**
+**9. update .gitconfig.local**
 
 ```bash
 [user]
@@ -120,7 +126,7 @@ $ vim git/.gitconfig.local
 
 > More details can be found [here](https://coderwall.com/p/wkqf9q/local-global-git-config)
 
-**9. .macOS paths**
+**10. .macOS paths**
 
 Please take a look at `~dotfiles/.macOS`. This is a file that configures your mac. Not sure what this means? Well, you know how when you get a mac you have to make decisions like the sensitivty level of your trackpad, or your display settings? Turns out you can automate this setup. This file is going to automate these things for you.
 
@@ -133,11 +139,11 @@ With this in mind, these are preferences for how I like to work with my mac. Mos
 - section - screen:
   - where the screenshots are stored
 
-**10. Before you run setup scripts**
+**11. Before you run setup scripts**
 
 Take a gander through the `brewfile`, this dotfiles sub dirs and make sure that what you setup is applicable. Its easy to go back and fix things, but this is a good time to remove things that might not be useful to you.
 
-**10. run the setup script**
+**12. run the setup script**
 
 ```bash
 $ source ~/dotfiles/setup.sh
