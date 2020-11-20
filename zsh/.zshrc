@@ -17,9 +17,10 @@ plugins=(
     colored-man-pages
     # syntax higlight by file extension
     colorize
+    # shortcuts like `hidefiles` & `showfiles`
     osx
+    # syntax hilight cli commands as you're typing
     zsh-syntax-highlighting
-    zsh-nvm
 )
 
 # ------------------------------------------------------------------------------
@@ -71,7 +72,12 @@ source /usr/local/bin/virtualenvwrapper.sh
 # ------------------------------------------------------------------------------
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# load nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+ # nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # ------------------------------------------------------------------------------
 # JAVA
@@ -83,5 +89,3 @@ eval "$(jenv init -)"
 # POSTGRES
 # ------------------------------------------------------------------------------
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
