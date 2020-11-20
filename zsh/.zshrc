@@ -1,15 +1,21 @@
 export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
 export DOTFILES=$HOME/dotfiles  # path to dotfiles
 
-#==============================================================================
+# ------------------------------------------------------------------------------
 # ZSH SETTINGS
-#==============================================================================
+# ------------------------------------------------------------------------------
 
-ZSH_THEME="thomas"        # zsh theme
-export UPDATE_ZSH_DAYS=13 # how often to auto-update zsh
-plugins=(                 # plugins to load.
+# zsh theme name
+ZSH_THEME="thomas"
+
+# auto-update zsh after 13 days
+export UPDATE_ZSH_DAYS=13
+
+# zsh plugins to improve your workflow
+plugins=(
     git
-    colored-man
+    # syntax highlight man pages for easier reading
+    colored-man-pages
     colorize
     github
     jira
@@ -23,9 +29,9 @@ plugins=(                 # plugins to load.
     zsh-nvm
 )
 
-#==============================================================================
+# ------------------------------------------------------------------------------
 # USER SETTINGS
-#==============================================================================
+# ------------------------------------------------------------------------------
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/.jenv/bin:$PATH"
@@ -43,9 +49,9 @@ for file in ~/.{path,extras}; do
 done;
 unset file;
 
-#==============================================================================
+# ------------------------------------------------------------------------------
 # ALIASES
-#==============================================================================
+# ------------------------------------------------------------------------------
 
 # general
 alias zshconfig="subl ~/dotfiles/zsh/.zshrc"     # open zshrc with sublime
@@ -56,9 +62,9 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 # docker
 alias containers="docker ps --format 'table {{.Names}}\t{{.Image}}'"
 
-#==============================================================================
+# ------------------------------------------------------------------------------
 # PYTHON
-#==============================================================================
+# ------------------------------------------------------------------------------
 
 # virtualenvwrapper configuration
 export WORKON_HOME=$HOME/.virtualenvs
@@ -69,22 +75,22 @@ export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 
-#==============================================================================
+# ------------------------------------------------------------------------------
 # NODE
-#==============================================================================
+# ------------------------------------------------------------------------------
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-#==============================================================================
+# ------------------------------------------------------------------------------
 # JAVA
-#==============================================================================
+# ------------------------------------------------------------------------------
 eval "$(jenv init -)"
 
 
-#==============================================================================
+# ------------------------------------------------------------------------------
 # POSTGRES
-#==============================================================================
+# ------------------------------------------------------------------------------
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
