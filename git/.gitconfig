@@ -47,6 +47,7 @@
 
 [alias]
 	lg = log --color --graph --pretty=format:'%C(red bold)%h%Creset -%C(cyan bold)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
