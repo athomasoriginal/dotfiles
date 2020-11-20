@@ -65,18 +65,10 @@ fi;
 # ------------------------------------------------------------------------------
 
 # Highlight the user name when logged in as root.
-if [[ "${USER}" == "root" ]]; then
-    userStyle="${bold}${red}";
-else
-    userStyle="${orange}";
-fi;
+[[ "${USER}" == "root" ]] && userStyle="${bold}${red}" || userStyle="${orange}"
 
 # Highlight the hostname when connected via SSH.
-if [[ "${SSH_TTY}" ]]; then
-    hostStyle="${bold}${red}";
-else
-    hostStyle="${yellow}";
-fi;
+[[ "${SSH_TTY}" ]] && hostStyle="${bold}${red}" || hostStyle="${yellow}"
 
 # when the return is success, show a white ➜ otherwise show a red ➜
 local ret_status="%(?:%{$fg[white]%}➜ :%{$fg[red]%}➜ )"
