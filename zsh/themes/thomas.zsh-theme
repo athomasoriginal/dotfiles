@@ -86,16 +86,24 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 # Prompt
 # ------------------------------------------------------------------------------
 
-# username
+# example prompt
+#   thomas in ~/code/projects/pillar on issue-227-front-end-touchups [+]
+#   ➜
+#
+# Which follows the following structure
+#   [username] in [working-dir] on [git-branch-name] [git-modified?]
+#   [prompt-char]
+
+# [username]
 PROMPT='${userStyle}%n%{$reset_color%} '
 # in
 PROMPT+='${bold}${white}in%{$reset_color%} '
-# working path
+# [working-dir]
 PROMPT+='${green}$(collapse_pwd)%{$reset_color%} '
 # on
 PROMPT+='${bold}${white}on%{$reset_color%} '
-# git branch
+# [git-branch-name]
 PROMPT+='$(git_prompt_info)'
-# newline + prompt character
+# [prompt-char]
 PROMPT+='
 ${ret_status}%{$reset_color%}'
