@@ -2,25 +2,21 @@
 # Custom Theme
 # ------------------------------------------------------------------------------
 
-# disable the terminal window title so we can set our own custom title
+# disable the terminal window title allowing us to set our custom title
 DISABLE_AUTO_TITLE="true"
 
 # ------------------------------------------------------------------------------
 # Functions
 # ------------------------------------------------------------------------------
 
+# get the current directory's name
 function current_directory {
   echo $(basename $(pwd))
 }
 
+# collapse the beginning of PWD to `~`
 function collapse_pwd {
    echo $(pwd | sed -e "s,^$HOME,~,")
-}
-
-function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
-    hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '➜'
 }
 
 # precmd called when each prompt executed.  Inside we are setting the window
