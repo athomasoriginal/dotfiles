@@ -17,7 +17,6 @@ plugins=(
     colored-man-pages
     # syntax higlight by file extension
     colorize
-    github
     jira
     vagrant
     virtualenv
