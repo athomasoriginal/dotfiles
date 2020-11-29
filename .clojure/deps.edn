@@ -2,9 +2,9 @@
 ;; -----------------------------------------------------------------------------
 ;; reference https://github.com/seancorfield/dot-clojure
 {:aliases
- {; socket - start a clojure socket repl
-  ; ----------------------------------------------------------------------------
-  ; usage:   clj -A:socket
+ {;; socket - start a clojure socket repl
+  ;; ---------------------------------------------------------------------------
+  ;; usage:   clj -M:socket
   :socket
   {:jvm-opts ["-Dclojure.server.repl={:port,50505,:accept,clojure.core.server/repl}"]}
 
@@ -20,24 +20,19 @@
                 "-m" "rebel-readline.main"]}
 
 
-  ; deps - run a repl with access to tools.deps
-  ; ----------------------------------------------------------------------------
-  ; usage:   clj -A:deps
-  ; example: (require '[clojure.tools.deps.alpha.repl :refer [add-lib]])
+  ;; deps - run a repl with access to tools.deps
+  ;; ---------------------------------------------------------------------------
+  ;; usage:   clj -M:deps
+  ;; example: (require '[clojure.tools.deps.alpha.repl :refer [add-lib]])
   :deps
   {:extra-deps {org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
                                               :sha     "0c2b1db2d0cd95c1b8a337086ec9af11da721a53"}}}
 
 
-  ; create-reagent-app - create a new clojurescript/reagent app
-  ; ----------------------------------------------------------------------------
-  ; usage:   clj -A:create-reagent-app create :name <org-name>/<ns-name>
+  ;; create-reagent-app - create a new clojurescript/reagent app
+  ;; ---------------------------------------------------------------------------
+  ;; usage:   clj -X:create-reagent-app create :name <org-name>/<ns-name>
   :create-reagent-app
   {:extra-deps {seancorfield/clj-new {:mvn/version "1.1.228"}}
    :ns-default clj-new
    :exec-args  {:template "https://github.com/tkjone/create-reagent-app@518b9cb0b2c36daff44cc6fe1048512dfd938842"}}}}
-
-
-  ; cljs - run a clojurescript repl
-  ; ----------------------------------------------------------------------------
-  ; TODO Add this alias
