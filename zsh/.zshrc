@@ -89,3 +89,11 @@ eval "$(jenv init -)"
 # POSTGRES
 # ------------------------------------------------------------------------------
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+
+# ------------------------------------------------------------------------------
+# Clojure
+# ------------------------------------------------------------------------------
+
+# alias to call zprint for code formatting
+alias pz="/usr/local/bin/zprint"
