@@ -5,14 +5,14 @@
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos I recommend reading
 # mathiasbynens and taking what you like from it to create your own
 
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
 # Set computer name
 COMPUTERNAME="Thomas's MBP"
 HOSTNAME='mbp'
 LOCALHOSTNAME='mbp'
-
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password
 sudo -v
