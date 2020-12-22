@@ -13,6 +13,7 @@
   # insanely beautiful diffs
   pager = /usr/local/Cellar/git/2.29.2/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 	editor = /usr/bin/vim
+  ignorecase = false
 
 [color]
   ui = always
@@ -53,3 +54,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[user]
+	name = athomasoriginal
+	email = thomasmattacchione@gmail.com
