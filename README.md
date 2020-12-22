@@ -20,6 +20,7 @@ You can take what you like from these dotfiles a la carte, or feel free to use m
     - [Atom](#atom)
     - [iterm2](#iterm2)
     - [duti](#duti)
+  - [.macos]
 
 ## Quickstart
 
@@ -253,3 +254,10 @@ $ pip3 install virtualenvwrapper
 ### duti
 
 - duti is a program built to make it easier to configure which filetypes are opened by which application. For example, lets say you want all `.html` files to be opened by `Atom` and not the default browser, we can configure this in Duti. For more info, see the `.duti` file.
+
+### .macos
+
+- [Preferences by the commandline]
+
+
+[Preferences by the commandline]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
