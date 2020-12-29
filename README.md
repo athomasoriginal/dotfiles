@@ -86,7 +86,7 @@ The above command may respond with a `permission denied` and if it does try runn
 > 2.  Choose the path with the highest git version
 
 ```bash
-/usr/local/Cellar/git/2.29.2/share/git-core/contrib/diff-highlight/diff-highlight
+/usr/local/Cellar/git/2.30.0/share/git-core/contrib/diff-highlight/diff-highlight
 ```
 
 The segment of the above path that matters is `2.29.2` as this is the version of git you are using locally.
@@ -100,7 +100,7 @@ vim ~/dotfiles/git/.gitconfig
 > 4.  Replace the path on line 13 in the `.gitconfig` with the path from `step 2`.
 
 ```bash
-pager = /usr/local/Cellar/git/2.11.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
+pager = /usr/local/Cellar/git/2.30.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 ```
 
 **7. Install zsh-highlight**
