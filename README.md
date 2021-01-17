@@ -20,7 +20,7 @@ You can take what you like from these dotfiles a la carte, or feel free to use m
     - [Atom](#atom)
     - [iterm2](#iterm2)
     - [duti](#duti)
-  - [.macos]
+  - [macos]
 - [Extras]
   - [Aliases]
 
@@ -257,7 +257,7 @@ $ pip3 install virtualenvwrapper
 
 - duti is a program built to make it easier to configure which filetypes are opened by which application. For example, lets say you want all `.html` files to be opened by `Atom` and not the default browser, we can configure this in Duti. For more info, see the `.duti` file.
 
-### .macos
+### macos
 
 - [Preferences by the commandline]
 
@@ -272,6 +272,7 @@ These are some helpful extras which I figure could be helpful to just show peopl
   alias repocount="git ls-files | grep '\.clj' | xargs wc -l"
   ```
 
+[macos]: #macos
 [Extras]: #extras
 [Aliases]: #aliases
 [Preferences by the commandline]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
