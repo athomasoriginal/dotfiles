@@ -21,6 +21,8 @@ You can take what you like from these dotfiles a la carte, or feel free to use m
     - [iterm2](#iterm2)
     - [duti](#duti)
   - [.macos]
+- [Extras]
+  - [Aliases]
 
 ## Quickstart
 
@@ -259,5 +261,17 @@ $ pip3 install virtualenvwrapper
 
 - [Preferences by the commandline]
 
+## Extras
 
+These are some helpful extras which I figure could be helpful to just show people
+
+### Aliases
+
+- Count lines by file type
+  ```bash
+  alias repocount="git ls-files | grep '\.clj' | xargs wc -l"
+  ```
+
+[Extras]: #extras
+[Aliases]: #aliases
 [Preferences by the commandline]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
