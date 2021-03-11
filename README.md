@@ -73,7 +73,9 @@ $ touch dotfiles/zsh/.extras
 
 > These are called "private" files because they are where you will put code specific to your setup. you will see what `.gitconfig.local` does in the next step. For more info on `.extras` see the [zsh customization](#zsh) section further down.
 
-**6. Setup diff-highlighter**
+**6. Setup diff-highlighter - Optional**
+
+> I don't actively use this anymore, but leaving as an example for how to use
 
 `diff-highlight` is going to make your git diffs look pretty, but there is a little bit of a manual process involved in setting this up:
 

@@ -11,18 +11,18 @@
 
 [core]
   # insanely beautiful diffs
-  pager = /usr/local/Cellar/git/2.30.1/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
+  pager = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '
 	editor = /usr/bin/vim
   ignorecase = false
 
 [color]
-  ui = always
+  ui = true
 
 [color "branch"]
 	current = green
 
 [color "diff"]
-  meta = yellow bold
+  meta = 11
   commit = green bold
   frag = cyan bold
   old = red bold
