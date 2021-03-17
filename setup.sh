@@ -73,6 +73,7 @@ rm -rf ~/.tmux.conf
 rm -rf ~/.gitconfig.local
 rm -rf ~/.emacs.d
 rm -rf ~/.clojure/deps.edn
+rm -rf ~/.config/vim/init.vim
 
 info "dotfiles - symlinking dotfiles"
 ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
@@ -90,6 +91,7 @@ ln -sf ~/dotfiles/.duti                        ~/.duti
 ln -sf ~/dotfiles/tmux/.tmux.conf              ~/.tmux.conf
 ln -sf ~/dotfiles/.emacs.d                     ~/.emacs.d
 ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
+ln -sf ~/dotfiles/nvim/init.vim                ~/.config/nvim/init.vim
 
 # sublime text
 # =============================================================================

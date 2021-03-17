@@ -18,6 +18,7 @@ You can take what you like from these dotfiles a la carte, or feel free to use m
     - [clojure](#clojure)
   - [Dev Tools](#dev-tools)
     - [Atom](#atom)
+    - [nvim](#nvim)
     - [iterm2](#iterm2)
     - [duti](#duti)
   - [macos]
@@ -248,6 +249,15 @@ $ pip3 install virtualenvwrapper
 ### Atom
 
 - make sure to install [package.sync](https://atom.io/packages/package-sync) to be able to make use of `package.cson` that I provide which is what I use to transfer my preferred atom settings from one computer to another.
+
+### nvim
+
+Experimenting with this.  Not daily drive
+### nvim
+
+Experimenting with this.  Not daily driver.
+
+- Install `vim-plugin`
 
 ### iterm2
 
