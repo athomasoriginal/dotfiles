@@ -11,7 +11,7 @@
 
 [core]
   # insanely beautiful diffs
-  pager = diff-so-fancy | less --tabs=4 -r --pattern '^(Date|added|deleted|modified): '
+  pager = diff-so-fancy | less --tabs=4 -r
 	editor = /usr/bin/vim
   ignorecase = false
 
