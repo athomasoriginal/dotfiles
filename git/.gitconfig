@@ -11,7 +11,7 @@
 
 [core]
   # insanely beautiful diffs
-  pager = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '
+  pager = diff-so-fancy | less --tabs=4 -r --pattern '^(Date|added|deleted|modified): '
 	editor = /usr/bin/vim
   ignorecase = false
 
@@ -22,7 +22,7 @@
 	current = green
 
 [color "diff"]
-  meta = 11
+  meta = yellow bold
   commit = green bold
   frag = cyan bold
   old = red bold
