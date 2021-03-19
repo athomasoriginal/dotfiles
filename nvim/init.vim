@@ -26,6 +26,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "" The plugins begin
 call plug#begin('~/.vim/plugged')
   Plug 'gruvbox-community/gruvbox'
+  Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 call plug#end()
 
 colorscheme gruvbox
