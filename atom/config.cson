@@ -13,8 +13,8 @@
     projectHome: "/Users/thomasmattachione/source"
     telemetryConsent: "no"
     themes: [
-      "one-light-ui"
-      "one-light-syntax"
+      "atom-dark-ui"
+      "atom-dark-syntax"
     ]
   editor:
     fontFamily: "Menlo, Monaco, 'Courier New', monospace"
