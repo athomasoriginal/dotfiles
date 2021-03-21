@@ -30,6 +30,7 @@
   "linter-ui-default":
     hidePanelWhenEmpty: true
     panelHeight: 69
+    showPanel: true
   "lisp-paredit":
     strict: false
   "markdown-writer":
