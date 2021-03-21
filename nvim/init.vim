@@ -20,6 +20,9 @@ set number
 set signcolumn=yes
 set termguicolors
 
+"" escape using jk which feels more ergonomic
+inoremap jk <ESC>
+
 let g:gruvbox_italic=1
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
