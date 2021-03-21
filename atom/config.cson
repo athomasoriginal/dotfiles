@@ -2,6 +2,7 @@
   chlorine: {}
   core:
     allowPendingPaneItems: false
+    audioBeep: false
     automaticallyUpdate: false
     disabledPackages: [
       "language-gfm"
@@ -12,10 +13,6 @@
     packagesWithKeymapsDisabled: []
     projectHome: "/Users/thomasmattachione/source"
     telemetryConsent: "no"
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
-    ]
   editor:
     fontFamily: "Menlo, Monaco, 'Courier New', monospace"
     fontSize: 13
@@ -29,7 +26,6 @@
     ignoreErrorsAndWarnings: "D203,D212,D213,D404,D211,D100,D101"
   "linter-ui-default":
     hidePanelWhenEmpty: true
-    panelHeight: 69
     showPanel: true
   "lisp-paredit":
     strict: false
