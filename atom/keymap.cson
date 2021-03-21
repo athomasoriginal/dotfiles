@@ -47,3 +47,6 @@
   'ctrl-x':       'chlorine:run-tests-in-ns'
   'ctrl-t':       'chlorine:go-to-var-definition'
   'ctrl-r':       'chlorine:clear-inline-results'
+
+'atom-text-editor.vim-mode-plus.insert-mode':
+  'j k': 'vim-mode-plus:activate-normal-mode' # jk to escape
