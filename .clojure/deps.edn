@@ -9,10 +9,10 @@
   {:jvm-opts ["-Dclojure.server.repl={:port,50505,:accept,clojure.core.server/repl}"]}
 
   :1.10.1
-  {:override-deps {org.clojure/clojure {:mvn/version "1.10.1"}}}
+  {:override-deps {org.clojure/clojure {:mvn/version "1.10.3"}}}
 
   :async
-  {:extra-deps {org.clojure/core.async {:mvn/version "0.6.532"}}}
+  {:extra-deps {org.clojure/core.async {:mvn/version "1.3.610"}}}
 
   :rebel
   {:extra-deps {com.bhauman/rebel-readline {:mvn/version "RELEASE"}}
@@ -26,13 +26,13 @@
   ;; example: (require '[clojure.tools.deps.alpha.repl :refer [add-lib]])
   :deps
   {:extra-deps {org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
-                                              :sha     "0c2b1db2d0cd95c1b8a337086ec9af11da721a53"}}}
+                                              :sha     "5bfcef59a2c92102b7ff491542e143d481083556"}}}
 
 
   ;; create-reagent-app - create a new clojurescript/reagent app
   ;; ---------------------------------------------------------------------------
   ;; usage:   clj -X:create-reagent-app create :name <org-name>/<ns-name>
   :create-reagent-app
-  {:extra-deps {seancorfield/clj-new {:mvn/version "1.1.228"}}
+  {:extra-deps {seancorfield/clj-new {:mvn/version "1.1.264"}}
    :ns-default clj-new
-   :exec-args  {:template "https://github.com/tkjone/create-reagent-app@518b9cb0b2c36daff44cc6fe1048512dfd938842"}}}}
+   :exec-args  {:template "https://github.com/tkjone/create-reagent-app@iterm2/profiles/com.googlecode.iterm2.plist"}}}}
