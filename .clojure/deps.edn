@@ -35,4 +35,4 @@
   :create-reagent-app
   {:extra-deps {seancorfield/clj-new {:mvn/version "1.1.264"}}
    :ns-default clj-new
-   :exec-args  {:template "https://github.com/tkjone/create-reagent-app@iterm2/profiles/com.googlecode.iterm2.plist"}}}}
+   :exec-args  {:template "https://github.com/tkjone/create-reagent-app@a7a9968d2164b8562a7802c882dd5447998bd00f"}}}}
