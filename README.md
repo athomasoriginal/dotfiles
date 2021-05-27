@@ -260,7 +260,9 @@ $ pip3 install virtualenvwrapper
 
 Experimenting with this.  Not daily driver.
 
+- Running nightly so we can use telescope
 - Install [vim-plugin](https://github.com/junegunn/vim-plugs)
+- Installing plugins - type `:PlugInstall` into vim
 - Install and Build [parinfer-rust](https://github.com/eraserhd/parinfer-rust)
 
 ### iterm2

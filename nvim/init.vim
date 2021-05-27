@@ -30,10 +30,25 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 call plug#begin('~/.vim/plugged')
   Plug 'gruvbox-community/gruvbox'
   Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+
+  "" Telescope plugins
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim'
 call plug#end()
 
 colorscheme gruvbox
 set bg=dark
+
+let mapleader = " "
+
+"" Find files using Telescope command-line sugar.
+nnoremap <leader>p <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>pg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>ph <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
