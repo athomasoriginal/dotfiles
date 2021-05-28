@@ -33,7 +33,7 @@
   oldNormal = red bold
   oldHighlight = magenta bold
   newNormal = green bold
-  newHighlight = blink cyan bold
+  newHighlight = cyan bold
 
 [color "status"]
   added = green
