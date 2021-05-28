@@ -1,6 +1,7 @@
 # Taps
 tap "caskroom/cask"
 tap "homebrew/bundle"
+tap "cask-fonts"
 
 # Developer Tools
 brew "git"
@@ -21,7 +22,7 @@ brew "yarn"
 brew "tmux"
 brew "gh"
 
-# Apps
+# Install casks items (apps, fonts etc)
 cask "google-chrome"
 cask "firefox"
 cask "iterm2"
@@ -34,6 +35,7 @@ cask "vlc"
 cask "atom"
 cask "vagrant-manager"
 cask "postman"
+cask "font-meslo-lg-nerd-font"
 
 # Apps - https://github.com/mas-cli/mas
 mas "Sip", id: 507257563

@@ -262,6 +262,7 @@ Experimenting with this.  Not daily driver.
 
 - Running nightly so we can use telescope
 - Install [vim-plugin](https://github.com/junegunn/vim-plugs)
+- If using `nvim-web-devicons` be sure to have [Nerd Font]
 - Installing plugins - type `:PlugInstall` into vim
 - Install and Build [parinfer-rust](https://github.com/eraserhd/parinfer-rust)
 
@@ -294,3 +295,4 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Extras]: #extras
 [Aliases]: #aliases
 [Preferences by the commandline]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
+[Nerd Font]: https://www.nerdfonts.com/
