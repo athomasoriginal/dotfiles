@@ -31,11 +31,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'gruvbox-community/gruvbox'
   Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 
-  "" Telescope plugins
+  "" Telescope main plugins
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
+  "" Telescope optional plugins
+  Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 colorscheme gruvbox
