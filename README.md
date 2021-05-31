@@ -76,7 +76,7 @@ $ touch dotfiles/zsh/.extras
 
 **6. Setup diff-highlighter - Optional**
 
-> I don't actively use this anymore, but leaving as an example for how to use
+> NOTE: I don't actively use this anymore, but leaving as an example for how to use
 
 `diff-highlight` is going to make your git diffs look pretty, but there is a little bit of a manual process involved in setting this up:
 
@@ -91,7 +91,7 @@ The above command may respond with a `permission denied` and if it does try runn
 > 2.  Choose the path with the highest git version
 
 ```bash
-/usr/local/Cellar/git/2.30.1/share/git-core/contrib/diff-highlight/diff-highlight
+/usr/local/Cellar/git/2.31.1/share/git-core/contrib/diff-highlight/diff-highlight
 ```
 
 The segment of the above path that matters is `2.30.1` as this is the version of git you are using locally.
