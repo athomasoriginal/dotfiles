@@ -157,7 +157,7 @@ $ source ~/dotfiles/setup.sh
 
 > Please note that you will be prompted to enter your computer password while the brew apps are being installed. To see what this is doing, checkout the [Setup Explained](#setup-explained) section
 
-**13. increase speed of cursor**
+**13. optional - increase speed of cursor**
 
 - `system preferences` > `keyboard` > `key repeat - fast` and `daily until repeat - short (1 less than ma)`
 
