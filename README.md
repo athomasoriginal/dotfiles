@@ -163,6 +163,23 @@ $ source ~/dotfiles/setup.sh
 
 > These are my preferences in general and more of a reminder when setting up a new system
 
+**14. optional - replace spotlight with raycast**
+
+I am still experimenting with this, but for those interested the minimum steps to take to get started:
+
+- [Install Raycast]
+- [Disable spotlight hotkey]
+- Recast Hotkey in Raycast
+  - Open raycast
+  - Type `preferences`
+  - Click `About`
+  - Click `General`
+  - Click on the current hotkey and type `⌘` (command) + `space`
+
+Now you're off to the races and can start experimenting.
+
+> Fun fact: as of June 30, 2021 if you compare the scroll speed of raycast to spotlight by just pressing the down arrow spotlight will lose position (the cursor is lost), but raycast will always maintain the position.  This is a small, but illustrative example of improvements provided.
+
 ## Post Setup
 
 Once the above is complete, I like to perform the following tasks:
@@ -296,3 +313,5 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Aliases]: #aliases
 [Preferences by the commandline]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
 [Nerd Font]: https://www.nerdfonts.com/
+[Install Raycast]: https://raycast.com/
+[Disable spotlight hotkey]: https://www.notion.so/Hotkey-56103210375b4fc78b63a7c5e7075fb7
