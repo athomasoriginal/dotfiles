@@ -13,7 +13,6 @@ You can take what you like from these dotfiles a la carte, or feel free to use m
 - [Customization](#customization)
   - [vim](#vim)
   - [Dev Environments](#dev-environments)
-    - [python](#python)
     - [node](#node)
     - [clojure](#clojure)
   - [Dev Tools](#dev-tools)
@@ -22,6 +21,7 @@ You can take what you like from these dotfiles a la carte, or feel free to use m
     - [iterm2](#iterm2)
     - [duti](#duti)
   - [macos]
+- [Zsh Performance]
 - [Extras]
   - [Aliases]
 
@@ -108,13 +108,13 @@ vim ~/dotfiles/git/.gitconfig
 pager = /usr/local/Cellar/git/2.30.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
 ```
 
-**7. Install zsh-highlight**
+**5. Optional - Install zsh-highlight**
 
 ```bash
 see https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
 ```
 
-**8. open .gitconfig.local in your favourite editor**
+**6. open .gitconfig.local in your favourite editor**
 
 ```bash
 $ vim git/.gitconfig.local
@@ -122,7 +122,7 @@ $ vim git/.gitconfig.local
 
 > You can swap out `vim` for your fav' editor. For example, if you use atom the above would become `atom git/.gitconfig.local`
 
-**9. update .gitconfig.local**
+**7. update .gitconfig.local**
 
 ```bash
 [user]
@@ -132,7 +132,7 @@ $ vim git/.gitconfig.local
 
 > More details can be found [here](https://coderwall.com/p/wkqf9q/local-global-git-config)
 
-**10. .macOS paths**
+**8. .macOS paths**
 
 Please take a look at `~dotfiles/.macOS`. This is a file that configures your mac. Not sure what this means? Well, you know how when you get a mac you have to make decisions like the sensitivty level of your trackpad, or your display settings? Turns out you can automate this setup. This file is going to automate these things for you.
 
@@ -145,11 +145,11 @@ With this in mind, these are preferences for how I like to work with my mac. Mos
 - section - screen:
   - where the screenshots are stored
 
-**11. Before you run setup scripts**
+**9. Before you run setup scripts**
 
 Take a gander through the `brewfile`, this dotfiles sub dirs and make sure that what you setup is applicable. Its easy to go back and fix things, but this is a good time to remove things that might not be useful to you.
 
-**12. run the setup script**
+**10. run the setup script**
 
 ```bash
 $ source ~/dotfiles/setup.sh
@@ -157,13 +157,13 @@ $ source ~/dotfiles/setup.sh
 
 > Please note that you will be prompted to enter your computer password while the brew apps are being installed. To see what this is doing, checkout the [Setup Explained](#setup-explained) section
 
-**13. optional - increase speed of cursor**
+**11. optional - increase speed of cursor**
 
 - `system preferences` > `keyboard` > `key repeat - fast` and `daily until repeat - short (1 less than ma)`
 
 > These are my preferences in general and more of a reminder when setting up a new system
 
-**14. optional - replace spotlight with raycast**
+**12. optional - replace spotlight with raycast**
 
 I am still experimenting with this, but for those interested the minimum steps to take to get started:
 
@@ -238,31 +238,11 @@ There may be `.zshrc` aliases or configurations that you may want to keep privat
 
 This section will outline different development languages / environments that this setup supports. These are the languages that I tend to work with. However, you will notice that the setups are usually package managers. This is because I use vagrant or docker and do not need specific versions of the following languages installed.
 
-#### Python
-
-- The preference of these dotfiles is `Python3` as such, after you have run these dotfiles, python can be accessed by typing `python3` in the terminal.
-- You will have access to `pip` via `pip3`
-- Inline with the above note, virtualenvwrapper is set to use python3 by default.
-
-**Gotcha**
-
-In the event you run into a message from virtualenvwrapper like this:
-
-```bash
-virtualenvwrapper.sh: There was a problem running the initialization hooks...
-```
-
-Try running
-
-```bash
-$ pip3 install virtualenvwrapper
-```
-
-> We run the above command during the install and the above issue occurs infrequently so there should not be too much worry here.
-
 #### Node
 
-- nvm
+The only thing that is node specific for our setup is `nvm`.  This is a great tool for managing version of node.  The issue though is this tool is slow in zsh!  So instead of loading it on init, we add a `loadnvm` alias and you run this when you want to use it.
+
+Isn't this cumbersome?  Doubling the time it takes to start your shell is significantly worse.
 
 #### Clojure
 
@@ -315,3 +295,4 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Nerd Font]: https://www.nerdfonts.com/
 [Install Raycast]: https://raycast.com/
 [Disable spotlight hotkey]: https://www.notion.so/Hotkey-56103210375b4fc78b63a7c5e7075fb7
+[Zsh Performance]: https://htr3n.github.io/2018/07/faster-zsh/
