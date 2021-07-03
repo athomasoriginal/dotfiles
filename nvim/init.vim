@@ -36,29 +36,49 @@ call plug#begin('~/.vim/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
   "" Telescope optional plugins
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/playground'
   Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 colorscheme gruvbox
 set bg=dark
 
+
+
+"" Telescope stuff
+lua << EOF
+
+  require('telescope').setup {
+    defaults = {
+      file_sorter    = require('telescope.sorters').get_fzy_sorter,
+      prompt_prefix  = ' >',
+      color_devicons = true,
+
+      file_previwer    = require('telescope.previewers').vim_buffer_cat.new,
+      grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
+      qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+    },
+    extensions = {
+      fzy_native = {
+        override_generic_sorter = false,
+        override_file_sorter = true,
+      }
+    }
+  }
+
+  require('telescope').load_extension('fzy_native')
+  require('nvim-treesitter.configs').setup { highlight = { enable = true } }
+
+EOF
+
+"" press space for glory!
 let mapleader = " "
 
 "" Find files using Telescope command-line sugar.
-nnoremap <leader>p <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>pg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>ph <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s+$//e
-    call winrestview(l:save)
-endfun
-
-augroup THOMAS
-    autocmd!
-    autocmd BufWritePre * :call TrimWhitespace()
-augroup END
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
