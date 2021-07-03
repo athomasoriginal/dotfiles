@@ -70,19 +70,6 @@ alias dotfiles="cd ~/dotfiles" # open dotfiles
 alias containers="docker ps --format 'table {{.Names}}\t{{.Image}}'"
 
 # ------------------------------------------------------------------------------
-# PYTHON
-# ------------------------------------------------------------------------------
-
-# virtualenvwrapper configuration
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/source
-
-# tell virtual env exactly which python interpreter and local of vw
-export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
-
-# ------------------------------------------------------------------------------
 # NODE
 # ------------------------------------------------------------------------------
 export NVM_LAZY_LOAD=true
