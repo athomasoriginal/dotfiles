@@ -23,8 +23,6 @@ export UPDATE_ZSH_DAYS=13
 
 # zsh plugins to improve your workflow
 plugins=(
-    # manage nvm and help us improve load performance
-    zsh-nvm
     # syntax highlight man pages for easier reading
     colored-man-pages
     # syntax higlight by file extension
@@ -79,11 +77,7 @@ export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 export NVM_DIR="$HOME/.nvm"
 
-# # load nvm
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-#
-#  # nvm bash_completion
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
 
 # ------------------------------------------------------------------------------
 # JAVA
