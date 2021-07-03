@@ -20,6 +20,7 @@ export UPDATE_ZSH_DAYS=13
 
 # zsh plugins to improve your workflow
 plugins=(
+    # manage nvm and help us improve load performance
     zsh-nvm
     # syntax highlight man pages for easier reading
     colored-man-pages
