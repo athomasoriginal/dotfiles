@@ -38,8 +38,7 @@ plugins=(
 # ------------------------------------------------------------------------------
 
 # quick access to config files
-alias zshconfig="subl ~/dotfiles/zsh/.zshrc"     # open zshrc with sublime
-alias dotfiles="cd ~/dotfiles"                   # open dotfiles
+alias dotfiles="cd ~/dotfiles" # open dotfiles
 
 # docker
 alias containers="docker ps --format 'table {{.Names}}\t{{.Image}}'"
