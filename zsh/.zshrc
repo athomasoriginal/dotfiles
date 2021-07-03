@@ -15,6 +15,16 @@ export DOTFILES=$HOME/dotfiles  # path to dotfiles
 # ZSH Config
 # ------------------------------------------------------------------------------
 
+# https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2308206 speed
+# up the zsh load time by only checking if zcompdump needs regenerating once a
+# day
+autoload -Uz compinit
+if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+
 # zsh theme name - see `themes/thomas.zsh-theme`
 ZSH_THEME="thomas"
 
@@ -37,12 +47,12 @@ plugins=(
 # not work as expected
 source $ZSH/oh-my-zsh.sh
 
+# export MANPATH="/usr/local/man:$MANPATH" and also invlude .jenv
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/.jenv/bin:$PATH"
+
 # ------------------------------------------------------------------------------
 # USER SETTINGS
 # ------------------------------------------------------------------------------
-
-# export MANPATH="/usr/local/man:$MANPATH"
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/.jenv/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
