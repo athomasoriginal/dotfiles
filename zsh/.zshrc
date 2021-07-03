@@ -3,7 +3,10 @@
 #   - Change this file
 #   - Reload by running `exec zsh`
 #   - Run `zprof` to see the results
-zmodload zsh/zprof
+# and another way to track this is
+#   - /usr/bin/time zsh -i -c exit
+#   - for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done;
+# zmodload zsh/zprof
 
 export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
 export DOTFILES=$HOME/dotfiles  # path to dotfiles
