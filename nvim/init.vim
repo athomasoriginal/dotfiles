@@ -41,6 +41,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/playground'
   Plug 'kyazdani42/nvim-web-devicons'
+
+  "" Markdown stuffs
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 colorscheme gruvbox
@@ -82,3 +86,35 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+
+""" Markdown Syntax Configuration
+""" ----------------------------------------------------------------------------
+
+"" au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+let g:markdown_flavor = 'github'
+
+"" ****
+:hi mkdBold gui=bold guifg=#8f3f71
+:hi htmlBold gui=bold guifg=#8f3f71
+
+"" strike through
+:hi mkdStrike gui=italic guifg=#af3a03
+:hi htmlStrike gui=italic guifg=#af3a03
+
+"" italics
+:hi mkdItalic gui=italic guifg=#076678
+:hi htmlItalic gui=italic guifg=#076678
+
+"" [link text]: https://hi-there - for regular markdown
+
+:hi link mkdLinkDef GruvboxAqua
+:hi link mkdDelimiter GruvboxAqua
+:hi link mkdLinkDefTarget  GruvboxBlue
+
+"" make the `#` and `heading text` the same color - less noise
+:hi link htmlH1 GruvboxRedBold
+
+"" make the back tickss and `inline-code` the same color
+:hi link mkdCode GruvboxOrange
+:hi link mkdCodeDelimiter GruvboxOrange
