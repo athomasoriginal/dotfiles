@@ -31,8 +31,7 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 'atom-text-editor[data-grammar="source clojure"]':
-  'ctrl-y':       'chlorine:connect-clojure-socket-repl'
-  'ctrl-j':       'chlorine:connect-clojurescript-socket-repl'
+  'ctrl-y':       'chlorine:connect-socket-repl'
   'ctrl-e':       'chlorine:disconnect'
   'ctrl-k':       'chlorine:clear-console'
   'ctrl-f':       'chlorine:load-file'
