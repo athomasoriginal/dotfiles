@@ -52,6 +52,9 @@ call plug#begin('~/.vim/plugged')
   "" Nunjucks syntax highlighting 
   Plug 'sheerun/vim-polyglot'
   Plug 'lepture/vim-jinja'
+
+  "" File Navigation
+  Plug 'preservim/nerdtree'
 call plug#end()
 
 colorscheme gruvbox
@@ -94,6 +97,8 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+"" Project File Navigation
+map <leader>n :NERDTreeToggle<cr>
 
 """ Markdown Syntax Configuration
 """ ----------------------------------------------------------------------------
