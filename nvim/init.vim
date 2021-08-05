@@ -45,6 +45,9 @@ call plug#begin('~/.vim/plugged')
   "" Markdown stuffs
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
+
+  "" Improved commenting
+  Plug 'tpope/vim-commentary'
 call plug#end()
 
 colorscheme gruvbox
