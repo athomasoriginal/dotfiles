@@ -48,6 +48,10 @@ call plug#begin('~/.vim/plugged')
 
   "" Improved commenting
   Plug 'tpope/vim-commentary'
+
+  "" Nunjucks syntax highlighting 
+  Plug 'sheerun/vim-polyglot'
+  Plug 'lepture/vim-jinja'
 call plug#end()
 
 colorscheme gruvbox
