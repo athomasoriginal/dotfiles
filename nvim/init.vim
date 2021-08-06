@@ -110,6 +110,9 @@ nnoremap <leader>fp <cmd>Telescope project<cr>
 "" Project File Navigation
 map <leader>n :NERDTreeToggle<cr>
 
+"" Save file
+nnoremap <C-S> :update<cr>
+
 """ Markdown Syntax Configuration
 """ ----------------------------------------------------------------------------
 
