@@ -63,6 +63,10 @@ call plug#begin('~/.vim/plugged')
 
   "" File Navigation
   Plug 'preservim/nerdtree'
+
+  "" Clojure
+  Plug 'guns/vim-sexp',    {'for': 'clojure'}
+  Plug 'liquidz/vim-iced', {'for': 'clojure'}
 call plug#end()
 
 colorscheme gruvbox
@@ -96,6 +100,10 @@ lua << EOF
   require('nvim-treesitter.configs').setup { highlight = { enable = true } }
 
 EOF
+
+" Enable vim-iced's default key mapping
+" This is recommended for newbies
+let g:iced_enable_default_key_mappings = v:true
 
 "" press space for glory!
 let mapleader = " "
