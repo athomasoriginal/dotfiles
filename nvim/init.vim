@@ -22,6 +22,10 @@ set nowrap
 set number
 set signcolumn=yes
 set termguicolors
+"" turn of highlighting searches after search
+set nohlsearch
+"" search as we type
+set incsearch
 
 "" escape using jk which feels more ergonomic
 inoremap jk <ESC>
