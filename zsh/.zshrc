@@ -125,3 +125,6 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # alias to call zprint for code formatting
 alias pz="/usr/local/bin/zprint"
+
+# vim-iced
+export PATH=$PATH:~/.vim/plugged/vim-iced/bin
