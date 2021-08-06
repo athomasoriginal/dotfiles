@@ -119,6 +119,9 @@ nnoremap <C-S> :update<cr>
 "" au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 let g:markdown_flavor = 'github'
 
+"" Disable automatic folding in vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
 "" ****
 :hi mkdBold gui=bold guifg=#8f3f71
 :hi htmlBold gui=bold guifg=#8f3f71
