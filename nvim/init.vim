@@ -14,6 +14,9 @@ set tabstop=4
 set mouse+=a
 "" prevent the bells when things go wrong
 set noerrorbells
+"" remove swapfiles - annoying
+set noswapfile
+set nobackup
 "" let me be free and the text go as far and I want it to
 set nowrap
 set number
