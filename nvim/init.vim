@@ -72,19 +72,6 @@ call plug#end()
 colorscheme gruvbox
 set bg=dark
 
-
-" file_ignore_patterns = { 'node_modules', '.git' },
-" '!.git'
-
-" find_command         = {
-"         'rg',
-"         '--no-ignore-files'
-"       },
-
-" '-u',
-
-" https://www.mankier.com/1/rg#--files-with-matches - options for vgrep
-
 "" Telescope stuff
 lua << EOF
 
@@ -94,6 +81,7 @@ lua << EOF
       prompt_prefix        = ' >',
       color_devicons       = true,
       file_ignore_patterns = { 'node_modules', '.git' },
+      -- https://www.mankier.com/1/rg#--files-with-matches
       vimgrep_arguments    = {
         'rg',
         '--no-heading',
