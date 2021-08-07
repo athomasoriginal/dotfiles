@@ -73,19 +73,41 @@ colorscheme gruvbox
 set bg=dark
 
 
+" file_ignore_patterns = { 'node_modules', '.git' },
+" '!.git'
+
+" find_command         = {
+"         'rg',
+"         '--no-ignore-files'
+"       },
+
+" '-u',
+
+" https://www.mankier.com/1/rg#--files-with-matches - options for vgrep
 
 "" Telescope stuff
 lua << EOF
 
   require('telescope').setup {
     defaults = {
-      file_sorter    = require('telescope.sorters').get_fzy_sorter,
-      prompt_prefix  = ' >',
-      color_devicons = true,
+      file_sorter          = require('telescope.sorters').get_fzy_sorter,
+      prompt_prefix        = ' >',
+      color_devicons       = true,
+      file_ignore_patterns = { 'node_modules', '.git' },
+      vimgrep_arguments    = {
+        'rg',
+        '--no-heading',
+        '--with-filename',
+        '--line-number',
+        '--column',
+        '--smart-case',
+        '--no-ignore',
+        '--hidden',
+      },
 
-      file_previwer    = require('telescope.previewers').vim_buffer_cat.new,
-      grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
-      qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+      file_previwer        = require('telescope.previewers').vim_buffer_cat.new,
+      grep_previewer       = require('telescope.previewers').vim_buffer_vimgrep.new,
+      qflist_previewer     = require('telescope.previewers').vim_buffer_qflist.new,
     },
     extensions = {
       fzy_native = {
@@ -109,7 +131,7 @@ let g:iced_enable_default_key_mappings = v:true
 let mapleader = " "
 
 "" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--files,-uu prompt_prefix=🔍<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
