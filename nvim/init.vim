@@ -132,6 +132,12 @@ nnoremap <leader>fp <cmd>Telescope project<cr>
 "" Project File Navigation
 map <leader>n :NERDTreeToggle<cr>
 
+"" Window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 "" Save file
 nnoremap <C-S> :update<cr>
 
