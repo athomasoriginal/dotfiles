@@ -75,6 +75,9 @@ set bg=dark
 "" Telescope stuff
 lua << EOF
 
+  require('telescope').load_extension('fzy_native')
+  require('telescope').load_extension('project')
+
   require('telescope').setup {
     defaults = {
       file_sorter          = require('telescope.sorters').get_fzy_sorter,
@@ -101,12 +104,13 @@ lua << EOF
       fzy_native = {
         override_generic_sorter = false,
         override_file_sorter = true,
+      },
+      project = {
+        hidden_files = true,
       }
     }
   }
 
-  require('telescope').load_extension('fzy_native')
-  require('telescope').load_extension('project')
   require('nvim-treesitter.configs').setup { highlight = { enable = true } }
 
 EOF
