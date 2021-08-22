@@ -126,7 +126,10 @@ let mapleader = " "
 nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--files,-uu prompt_prefix=🔍<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+"" @testing
+nnoremap <leader>h <cmd>Telescope help_tags<cr>
+
 "" @testing - idea - searching through all projects I have recorded
 nnoremap <leader>p <cmd>Telescope project<cr>
 
