@@ -127,7 +127,8 @@ nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--files,-uu prompt
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fp <cmd>Telescope project<cr>
+"" @testing - idea - searching through all projects I have recorded
+nnoremap <leader>p <cmd>Telescope project<cr>
 
 "" @testing -- not a fan of gcc, so seeing how this works out
 nnoremap <leader>/ :Commentary<cr>
