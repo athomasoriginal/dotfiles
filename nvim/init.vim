@@ -129,6 +129,9 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fp <cmd>Telescope project<cr>
 
+"" @testing -- not a fan of gcc, so seeing how this works out
+nnoremap <leader>/ :Commentary<cr>
+
 "" Project File Navigation
 map <leader>n :NERDTreeToggle<cr>
 
