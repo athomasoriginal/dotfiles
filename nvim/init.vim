@@ -99,8 +99,11 @@ nnoremap <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <leader>h <cmd>Telescope help_tags<cr>
 
 
-"" @testing -- not a fan of gcc, so seeing how this works out
-nnoremap <leader>/ :Commentary<cr>
+"" @testing -- atom used `/` so using that, but we should also try `_` like
+"" clj
+nmap <C-/>  <Plug>CommentaryLine
+xmap <C-/>  <Plug>Commentary
+
 
 "" Project File Navigation
 map <leader>n :NERDTreeToggle<cr>
