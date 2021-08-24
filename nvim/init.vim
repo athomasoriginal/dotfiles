@@ -92,7 +92,7 @@ nnoremap <leader>p <cmd>Telescope project<cr>
 nnoremap <leader>f <cmd>Telescope find_files find_command=rg,--files,-u<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 
-"" @testing - g - like a ctrl+shift+f that im used to
+"" @testing - g - meant to replace ctrl+shift+f that im used to
 nnoremap <leader>g <cmd>Telescope live_grep<cr>
 
 "" @testing
