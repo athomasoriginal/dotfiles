@@ -67,53 +67,17 @@ call plug#begin('~/.vim/plugged')
   "" Clojure
   Plug 'guns/vim-sexp',    {'for': 'clojure'}
   Plug 'liquidz/vim-iced', {'for': 'clojure'}
+
+  "" JavaScript
+  Plug 'prettier/vim-prettier', {
+    \ 'do': 'yarn install',
+    \ 'for': ['javascript', 'markdown', 'css', 'json'. 'html'] }
 call plug#end()
 
 colorscheme gruvbox
 set bg=dark
 
-"" Telescope stuff
-lua << EOF
-
-  require('telescope').load_extension('fzy_native')
-  require('telescope').load_extension('project')
-
-  require('telescope').setup {
-    defaults = {
-      file_sorter          = require('telescope.sorters').get_fzy_sorter,
-      prompt_prefix        = ' >',
-      color_devicons       = true,
-      file_ignore_patterns = { 'node_modules', '.git' },
-      -- https://www.mankier.com/1/rg#--files-with-matches
-      vimgrep_arguments    = {
-        'rg',
-        '--no-heading',
-        '--with-filename',
-        '--line-number',
-        '--column',
-        '--smart-case',
-        '--no-ignore',
-        '--hidden',
-      },
-
-      file_previwer        = require('telescope.previewers').vim_buffer_cat.new,
-      grep_previewer       = require('telescope.previewers').vim_buffer_vimgrep.new,
-      qflist_previewer     = require('telescope.previewers').vim_buffer_qflist.new,
-    },
-    extensions = {
-      fzy_native = {
-        override_generic_sorter = false,
-        override_file_sorter = true,
-      },
-      project = {
-        hidden_files = true,
-      }
-    }
-  }
-
-  require('nvim-treesitter.configs').setup { highlight = { enable = true } }
-
-EOF
+lua require('init')
 
 " Enable vim-iced's default key mapping
 " This is recommended for newbies
@@ -123,15 +87,17 @@ let g:iced_enable_default_key_mappings = v:true
 let mapleader = " "
 
 "" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--files,-uu prompt_prefix=🔍<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+"" @testing - idea - searching through all projects I have recorded
+nnoremap <leader>p <cmd>Telescope project<cr>
+nnoremap <leader>f <cmd>Telescope find_files find_command=rg,--files,-u<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+
+"" @testing - g - like a ctrl+shift+f that im used to
+nnoremap <leader>g <cmd>Telescope live_grep<cr>
 
 "" @testing
 nnoremap <leader>h <cmd>Telescope help_tags<cr>
 
-"" @testing - idea - searching through all projects I have recorded
-nnoremap <leader>p <cmd>Telescope project<cr>
 
 "" @testing -- not a fan of gcc, so seeing how this works out
 nnoremap <leader>/ :Commentary<cr>
