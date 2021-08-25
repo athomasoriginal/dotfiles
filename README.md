@@ -262,6 +262,9 @@ Experimenting with this.  Not daily driver.
 - If using `nvim-web-devicons` be sure to have [Nerd Font]
 - Installing plugins - type `:PlugInstall` into vim
 - Install and Build [parinfer-rust](https://github.com/eraserhd/parinfer-rust)
+- If `vim-prettier` can't find the prettier exe:
+  - move to `~/.vim/plugin/vim-prettier`
+  - run yarn install
 
 ### iterm2
 
