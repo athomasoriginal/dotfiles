@@ -55,7 +55,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'plasticboy/vim-markdown'
 
   "" Improved commenting
-  Plug 'tpope/vim-commentary'
+  Plug 'preservim/nerdcommenter'
 
   "" Nunjucks syntax highlighting
   Plug 'sheerun/vim-polyglot'
