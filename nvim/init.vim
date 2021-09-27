@@ -4,12 +4,12 @@ set clipboard=unnamedplus
 "" hide the buffers in the background, but don't close them
 set hidden
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set scrolloff=8
 "" automatically indent at the same lvl as the previous
 set smartindent
-set softtabstop=4
-set tabstop=4
+set softtabstop=2
+set tabstop=2
 "" prevent copying of line numbers when using a mouse
 set mouse+=a
 "" prevent the bells when things go wrong
