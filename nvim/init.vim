@@ -119,6 +119,7 @@ nnoremap <C-l> <C-w>l
 
 autocmd BufWritePre * :%s/\s\+$//e
 
+
 "" Save file
 "" ---------------
 nnoremap <C-S> :update<cr>
@@ -131,6 +132,9 @@ let g:markdown_flavor = 'github'
 
 "" Disable automatic folding in vim-markdown
 let g:vim_markdown_folding_disabled = 1
+
+"" Prevent highlighting spaces in markdown files
+:hi link mkdLineBreak Normal
 
 "" ****
 :hi mkdBold gui=bold guifg=#8f3f71
