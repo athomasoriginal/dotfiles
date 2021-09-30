@@ -24,9 +24,9 @@
   ;; ---------------------------------------------------------------------------
   ;; usage:   clj -M:deps
   ;; example: (require '[clojure.tools.deps.alpha.repl :refer [add-lib]])
-  :deps
-  {:extra-deps {org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
-                                              :sha     "5bfcef59a2c92102b7ff491542e143d481083556"}}}
+  :tda
+  {:extra-deps {org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"}}}
+                                             ;:sha     "5bfcef59a2c92102b7ff491542e143d481083556"}}}
 
 
   ;; create-reagent-app - create a new clojurescript/reagent app
