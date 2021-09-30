@@ -258,6 +258,7 @@ Isn't this cumbersome?  Doubling the time it takes to start your shell is signif
 Experimenting with this.  Not daily driver.
 
 - Running nightly so we can use telescope
+- Install Rust Cargo (this is for parinfer-rust)
 - Install [vim-plugin](https://github.com/junegunn/vim-plugs)
 - If using `nvim-web-devicons` be sure to have [Nerd Font]
 - Installing plugins - type `:PlugInstall` into vim

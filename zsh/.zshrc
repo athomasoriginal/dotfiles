@@ -138,3 +138,8 @@ alias cap="dumpcap -i 1 -i 10 -w ~/wireshark-capture/data.pcapng -b filesize:500
 
 export PATH=$PATH:/Applications/Wireshark.app/Contents/MacOS$PATH
 
+# ------------------------------------------------------------------------------
+# Rust
+# ------------------------------------------------------------------------------
+
+export PATH=$PATH:$HOME/.cargo/bin
