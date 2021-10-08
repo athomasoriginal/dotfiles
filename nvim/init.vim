@@ -158,5 +158,11 @@ hi link mkdLinkDefTarget  GruvboxBlue
 hi link htmlH1 GruvboxRedBold
 
 "" make the back tickss and `inline-code` the same color
-:hi link mkdCode GruvboxOrange
-:hi link mkdCodeDelimiter GruvboxOrange
+hi link mkdCode GruvboxOrange
+hi link mkdCodeDelimiter GruvboxOrange
+
+" Custom Syntax Highlighting
+" -----------------------------------------------------------------------------
+highlight link commentTag Todo
+autocmd Syntax * syn match commentTag "@todo" containedin=.*Comment,vimCommentTitle
+autocmd Syntax * syn match commentTag "@note" containedin=.*Comment,vimCommentTitle
