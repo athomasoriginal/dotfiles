@@ -134,28 +134,28 @@ let g:markdown_flavor = 'github'
 let g:vim_markdown_folding_disabled = 1
 
 "" Prevent highlighting spaces in markdown files
-:hi link mkdLineBreak Normal
+hi link mkdLineBreak Normal
 
 "" ****
-:hi mkdBold gui=bold guifg=#8f3f71
-:hi htmlBold gui=bold guifg=#8f3f71
+hi mkdBold gui=bold guifg=#8f3f71
+hi htmlBold gui=bold guifg=#8f3f71
 
 "" strike through
-:hi mkdStrike gui=italic guifg=#af3a03
-:hi htmlStrike gui=italic guifg=#af3a03
+hi mkdStrike gui=italic guifg=#af3a03
+hi htmlStrike gui=italic guifg=#af3a03
 
 "" italics
-:hi mkdItalic gui=italic guifg=#076678
-:hi htmlItalic gui=italic guifg=#076678
+hi mkdItalic gui=italic guifg=#076678
+hi htmlItalic gui=italic guifg=#076678
 
 "" [link text]: https://hi-there - for regular markdown
 
-:hi link mkdLinkDef GruvboxAqua
-:hi link mkdDelimiter GruvboxAqua
-:hi link mkdLinkDefTarget  GruvboxBlue
+hi link mkdLinkDef GruvboxAqua
+hi link mkdDelimiter GruvboxAqua
+hi link mkdLinkDefTarget  GruvboxBlue
 
 "" make the `#` and `heading text` the same color - less noise
-:hi link htmlH1 GruvboxRedBold
+hi link htmlH1 GruvboxRedBold
 
 "" make the back tickss and `inline-code` the same color
 :hi link mkdCode GruvboxOrange
