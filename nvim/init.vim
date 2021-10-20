@@ -84,7 +84,7 @@ lua require('init')
 let g:iced_enable_default_key_mappings = v:true
 
 "" press space for glory!
-let mapleader = " "
+let mapleader = "\<Space>"
 
 "" Find files using Telescope command-line sugar.
 "" @testing - idea - searching through all projects I have recorded
