@@ -98,13 +98,6 @@ nnoremap <leader>g <cmd>Telescope live_grep<cr>
 "" @testing
 nnoremap <leader>h <cmd>Telescope help_tags<cr>
 
-
-"" @testing -- atom used `/` so using that, but we should also try `_` like
-"" clj
-nmap <C-/>  <Plug>CommentaryLine
-xmap <C-/>  <Plug>Commentary
-
-
 "" Project File Navigation
 map <leader>n :NERDTreeToggle<cr>
 
