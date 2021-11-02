@@ -69,7 +69,6 @@ rm -rf ~/.vimrc
 rm -rf ~/.extras
 rm -rf ~/.oh-my-zsh/themes/thomas.zsh-theme
 rm -rf ~/.duti
-rm -rf ~/.tmux.conf
 rm -rf ~/.gitconfig.local
 rm -rf ~/.clojure/deps.edn
 rm -rf ~/.config/nvim
@@ -86,7 +85,6 @@ ln -sf ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
 ln -sf ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
 ln -sf ~/dotfiles/zsh/.extras                  ~/.extras
 ln -sf ~/dotfiles/.duti                        ~/.duti
-ln -sf ~/dotfiles/tmux/.tmux.conf              ~/.tmux.conf
 ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
 
