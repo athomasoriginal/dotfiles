@@ -25,14 +25,6 @@ org.videolan.vlc .avi all
 org.videolan.vlc .mkv all
 org.videolan.vlc .mp4 all
 
-# sublime text 3
-com.github.atom public.plain-text      all
-com.github.atom public.source-code     all
-com.github.atom public.unix-executable all
-com.github.atom public.shell-script    all
-com.github.atom public.python-script   all
-com.github.atom public.ruby-script     all
-
 # google chrome
 com.google.chrome http         all
 com.google.chrome https        all
