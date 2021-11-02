@@ -26,11 +26,13 @@
     ignoreErrorsAndWarnings: "D203,D212,D213,D404,D211,D100,D101"
   "linter-ui-default":
     hidePanelWhenEmpty: true
-    panelHeight: 69
   "lisp-paredit":
     strict: false
   "markdown-writer":
     fileExtension: ".md"
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   parinfer:
     "file-extensions": [
       ".boot"

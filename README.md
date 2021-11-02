@@ -169,9 +169,9 @@ to think about right now.
 ### Atom
 
 - [sync atom]
-- make sure to install [package.sync] to be able to make use of `package.cson` that
-  I provide which is what I use to transfer my preferred atom settings from one
-  scomputer to another.
+- Install [package.sync]
+  - This tool allows me to easily move between computers and easily install
+    plugins
 
 ### Neovim
 
