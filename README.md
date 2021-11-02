@@ -123,6 +123,9 @@ hings as we can. It will perform the following tasks in order:
 
 ## Language Details
 
+This section outlines what language configurations exist in our zsh profile and
+why:
+
 ### zsh
 
 Our `zsh` setup comes with the following configurations:
@@ -145,18 +148,23 @@ picked up by `.zsh_profile`.
 ### Node
 
 The only thing that is node specific for our setup is `nvm`.  This is a great
-tool for managing version of node.  The issue though is this tool is slow in zsh!
-So instead of loading it on init, we add a `loadnvm` alias and you run this when
-you want to use it.
-
-Isn't this cumbersome?  Doubling the time it takes to start your shell is
-significantly worse.
+tool for managing node versions.  Now, there is a problem with this tool: it's
+going to slow down the initialization of your terminal app!  Our solution to this
+is to optimize by adding a `loadnvm` alias and you run this when you want to use
+it.
 
 ### Clojure
 
-- jenv and java initialization
+Similar to Node and nvm, we use jenv with Java.  Yes, this also slows down the
+initialization of your terminal so we apply a similar performance optimizing
+strategy.
 
 ## Dev Tools
+
+This section outlines how to get started with some of the main tools in my kit.
+Yes, the Dotfiles installed these things, but there is a little further to go.
+Why not automate?  That requires more testing and maintenance cost than I want
+to think about right now.
 
 ### Atom
 
