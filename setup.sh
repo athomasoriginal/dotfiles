@@ -35,7 +35,7 @@ info "Brew - Checking if brew is already installed"
 if [[ $(which brew) == '' ]]; then
     # http://brew.sh/
     info "Brew - Install"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   echo "Homebrew is already installed...";
 fi
