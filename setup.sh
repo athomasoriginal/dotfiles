@@ -54,6 +54,7 @@ brew bundle
 # =============================================================================
 
 info "oh-my-zsh - installing oh-my-zsh"
+# @todo add condition around this!
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # dotfile setup
@@ -101,7 +102,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | b
 # =============================================================================
 
 info "macOS - init macOS preferences"
-source ~/dotfiles/.macOS
+source .macOS
 
 info "macOS - init zshrc"
 source ~/.zshrc
