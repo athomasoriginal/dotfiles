@@ -15,8 +15,6 @@ brew "bash"
 brew "wget"
 brew "diff-so-fancy"
 brew "python3"
-brew "watchman"
-brew "rbenv"
 brew "duti"
 brew "yarn"
 brew "tmux"
@@ -34,8 +32,4 @@ cask "virtualbox-extension-pack"
 cask "vlc"
 cask "atom"
 cask "vagrant-manager"
-cask "postman"
 cask "font-meslo-lg-nerd-font"
-
-# Apps - https://github.com/mas-cli/mas
-mas "Sip", id: 507257563
