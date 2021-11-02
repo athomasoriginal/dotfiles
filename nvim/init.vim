@@ -1,36 +1,71 @@
+"" -----------------------------------------------------------------------------
+"" Base Settings
+"" -----------------------------------------------------------------------------
+
+"" Enable filetype plugins
+filetype indent on
+
+"" Keep 10 characters visible above and below the cursor
+set scrolloff=10
+
+"" Keep 20 characters visible to the right and left of the cursor
+set sidescrolloff=20
+
 "" show a vertical bar at 80 characters
 set colorcolumn=80
+
+"" sync your clipboard with system clipboard
 set clipboard=unnamedplus
+
 "" hide the buffers in the background, but don't close them
 set hidden
 set expandtab
+
+"" indentation formatting for new lines
 set shiftwidth=2
-set scrolloff=8
+
 "" automatically indent at the same lvl as the previous
 set smartindent
+
+"" 
 set softtabstop=2
+
+"" Tab width
 set tabstop=2
+
 "" prevent copying of line numbers when using a mouse
 set mouse+=a
-"" prevent the bells when things go wrong
+
+"" prevent bell noise when things go wrong
 set noerrorbells
+
 "" remove swapfiles - annoying
 set noswapfile
 set nobackup
-"" let me be free and the text go as far and I want it to
+
+"" infinite horizontal typing
 set nowrap
+
+"" Show line numbers
 set number
+
+"" Add space to the left column when signs are used e.g. git
 set signcolumn=yes
+
+"" Use colorschemes you set
 set termguicolors
-"" turn of highlighting searches after search
+
+"" Turn of highlighting searches after search
 set nohlsearch
-"" search as we type
+
+"" Search as we type
 set incsearch
 
-"" escape using jk which feels more ergonomic
+"" Escape using jk which feels more ergonomic
 inoremap jk <ESC>
 
 let g:gruvbox_italic=1
+
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 "" The plugins begin
