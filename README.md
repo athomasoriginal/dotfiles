@@ -3,13 +3,13 @@
 Welcome to my dotfiles; You are very welcome to use them :smile:
 
 You can take what you like from these dotfiles a la carte, or feel free to use
-the [Quickstart](#quickstart) below which will walk you through how I setup a
+the [Quickstart] below which will walk you through how I setup a
 new mac for development.
 
-- [Quickstart](#quickstart)
-- [Post Setup](#post-setup)
-- [Setup Explained](#setup-explained)
-- [Gotchas](#Gotchas)
+- [Quickstart]
+- [Post Setup]
+- [Setup Explained]
+- [Gotchas]
 - [Customization](#customization)
   - [vim](#vim)
   - [Dev Environments](#dev-environments)
@@ -24,6 +24,27 @@ new mac for development.
 - [Zsh Performance]
 - [Extras]
   - [Aliases]
+
+## New Mac
+
+- Install non development apps
+  - password storage (lastpass/1password)
+  - cleanmymac
+  - karibner-elements
+  - magent
+  - obs link
+  - pandan
+  - docker
+  - dv
+  - screenflow
+  - folx
+  - wireshark
+  - ipvanish
+  - muzzle
+  - dozer
+  - java
+  - jenv
+- set the items that you want to appear in your dock
 
 ## Quickstart
 
@@ -126,21 +147,20 @@ This setup has been tested on:
 Once the above is complete, I like to perform the following tasks:
 
 - restart computer
-- setup default browser
-- set the items that you want to appear in your dock
+- set default browser
 - set the [capslock key to be the modifier key](https://coderwall.com/p/cq_lkg/remapping-caps-lock-key-to-something-more-natural-on-mac-os-x)
 - [setup your screensave/lock](https://it.cornell.edu/device-security/set-your-macs-screen-lock-automatically) to occur after 2 min (security)
 - setup custom [beautiful screen savers](https://github.com/JohnCoates/Aerial)
-- turn off spotlight suggestions (security)
-- password storage (lastpass/1password)
-- update your screen resolution -> system preferences -> display -> scaled + "more space"
-- install [nvm](https://github.com/creationix/nvm) (mainly for JS developers)
+- switch spotlight to raycast
+- install [nvm](https://github.com/creationix/nvm)
 - setup [git ssh keys](https://help.github.com/articles/connecting-to-github-with-ssh/)
 - [sync atom](https://evanhahn.com/atom-apm-install-list/)
+- sync iterm2 preferences
 
 ## Setup Explained
 
-The `setup.sh` file is going to do all the heavy lifting and automate as many things as we can. It will perform the following tasks in order:
+The `setup.sh` file is going to do all the heavy lifting and automate as many
+hings as we can. It will perform the following tasks in order:
 
 - Install Brew
 - Brew install everything in the [Brewfile](https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew)
@@ -232,6 +252,10 @@ These are some helpful extras which I figure could be helpful to just show peopl
   alias repocount="git ls-files | grep '\.clj' | xargs wc -l"
   ```
 
+[Quickstart]: #quickstart
+[Post Setup]: #post-setup
+[Setup Explained]: #setup-explained
+[Gotchas]: #Gotchas
 [macos]: #macos
 [Extras]: #extras
 [Aliases]: #aliases
