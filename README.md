@@ -14,11 +14,10 @@ new mac for development.
   - [clojure]
 - [Dev Tools]
   - [Atom]
-  - [nvim]
+  - [Neovim]
   - [iterm2]
   - [duti]
   - [macos]
-- [Zsh Performance]
 - [Extras]
   - [Aliases]
 
@@ -112,7 +111,7 @@ The `setup.sh` file is going to do all the heavy lifting and automate as many
 hings as we can. It will perform the following tasks in order:
 
 - Install Brew
-- Brew install everything in the [Brewfile](https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew)
+- Brew install everything in the [Brewfile]
 - Symlink dotfiles
 - Set the default shell environment to zsh
 - Setup preferred macOS settings
@@ -120,25 +119,22 @@ hings as we can. It will perform the following tasks in order:
 ## Gotchas
 
 - iterm 2 syntax highlighting not displaying correctly?
-  - See [iterm2 launch with zsh](https://stackoverflow.com/questions/13476232/make-iterm2-launch-with-zsh)
+  - See [iterm2 launch with zsh]
 
 ## Language Details
 
 ### zsh
 
-The `zsh` setup that comes with these dotfiles are going to do the following
-things:
+Our `zsh` setup comes with the following configurations:
 
-- setup oh-my-zsh
-- A custom theme called "Thomas" (include my prompt setup)
-- Ability to load custom zsh settings via a file called `.extras` (see below for
-  more details)
+- initialization of oh-my-zsh
+- zsh prompt
+- A custom theme called "Thomas"
+- Support for custom zsh settings: `.extras`
 - Helpful, common aliases
-- Node - nvm initialization
-- Java - jenv initialization
-
-Aside from the above I keep it light because its my feeling that `.zshrc` is a
-personal thing
+- [Zsh Performance] optimizations
+  - Node - nvm initialization
+  - Java - jenv initialization
 
 **Custom Zsh Settings**
 
@@ -158,39 +154,62 @@ significantly worse.
 
 ### Clojure
 
-- jenv
-- basic java setup
+- jenv and java initialization
 
 ## Dev Tools
 
 ### Atom
 
-- [sync atom](https://evanhahn.com/atom-apm-install-list/)
-- make sure to install [package.sync](https://atom.io/packages/package-sync) to be able to make use of `package.cson` that I provide which is what I use to transfer my preferred atom settings from one computer to another.
+- [sync atom]
+- make sure to install [package.sync] to be able to make use of `package.cson` that
+  I provide which is what I use to transfer my preferred atom settings from one
+  scomputer to another.
 
-### nvim
+### Neovim
 
-Experimenting with this.  Not daily driver.
+I use nvim + atom, the following are some notes for getting up and running with
+nvim based on the configurations in these dotfiles.
 
-- Running nightly so we can use telescope
-- Install Rust Cargo (this is for parinfer-rust)
-- Install [vim-plugin](https://github.com/junegunn/vim-plugs)
-- If using `nvim-web-devicons` be sure to have [Nerd Font]
-- Installing plugins - type `:PlugInstall` into vim
-- Install and Build [parinfer-rust](https://github.com/eraserhd/parinfer-rust)
+- Install [vim-plugin]
+- Install [Rust and Cargo]
+  - This is required to use the `parinfer-rust` nvim plugin
+- Install and Build [parinfer-rust]
+- Install [Nerd Font]
+  - This is required to use the `nvim-web-devicons`
+- Open Nvim
+- Install Plugins
+  ```bash
+  :PlugInstall
+  ```
+  > The casing is important
+
+**Gotchas**
+
 - If `vim-prettier` can't find the prettier exe:
   - move to `~/.vim/plugin/vim-prettier`
   - run yarn install
+  > This should be a last resort though as our configuration of this plugin should
+  > just do this for us automatically
 
 ### iterm2
 
-- I activate scroll functionality so you can just use the trackpad for long pieces of text. For example, try typing `man defaults` into your terminal. When you have to scroll this kind of long document in your terminal, it can get janky. This helps to avoid that.
-- solarized color scheme - especially amazing if you ever code outside or in a room with a lot of sunlight
-- `command + d` will bring up iterm2 when in the background - very handy when you are an active terminal user - something I picked up from [guake terminal](https://github.com/Guake/guake)
+- I activate scroll functionality so you can just use the trackpad for long
+  pieces of text. For example, try typing `man defaults` into your terminal.
+  When you have to scroll this kind of long document in your terminal, it can
+  get janky. This helps to avoid that.
+- solarized color scheme
+  - especially amazing if you ever code outside or in a room with a lot of
+    sunlight
+- `command + d` will bring up iterm2 when in the background - very handy when
+  you are an active terminal user - something I picked up from
+  [guake terminal]
 
 ### duti
 
-- duti is a program built to make it easier to configure which filetypes are opened by which application. For example, lets say you want all `.html` files to be opened by `Atom` and not the default browser, we can configure this in Duti. For more info, see the `.duti` file.
+- duti is a program built to make it easier to configure which filetypes are
+  opened by which application. For example, lets say you want all `.html` files
+  to be opened by `Atom` and not the default browser, we can configure this in
+  Duti. For more info, see the `.duti` file.
 
 ### macos
 
@@ -219,7 +238,7 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [clojure]: #clojure
 [Dev Tools]: #dev-tools
 [Atom]: #atom
-[nvim]: #nvim
+[Neovim]: #Neovim
 [iterm2]: #iterm2
 [duti]: #duti
 [macos]: #macos
@@ -232,3 +251,11 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Zsh Performance]: https://htr3n.github.io/2018/07/faster-zsh/
 [local gitconfig]: https://coderwall.com/p/wkqf9q/local-global-git-config
 [nvm]: https://github.com/creationix/nvm
+[package.sync]: https://atom.io/packages/package-sync
+[vim-plugin]: https://github.com/junegunn/vim-plugs
+[Rust and Cargo]: https://doc.rust-lang.org/cargo/getting-started/installation.html
+[parinfer-rust]: https://github.com/eraserhd/parinfer-rust
+[guake terminal]: https://github.com/Guake/guake
+[Brewfile]: https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
+[iterm2 launch with zsh]: https://stackoverflow.com/questions/13476232/make-iterm2-launch-with-zsh
+[sync atom]: https://evanhahn.com/atom-apm-install-list/

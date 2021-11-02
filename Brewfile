@@ -21,6 +21,7 @@ brew "yarn"
 brew "tmux"
 brew "gh"
 brew "jenv"
+brew "neovim"
 
 # Install casks items (apps, fonts etc)
 cask "google-chrome"
