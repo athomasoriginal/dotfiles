@@ -2,9 +2,9 @@
 
 Welcome to my dotfiles; You are very welcome to use them :smile:
 
-I try to focus my dotfiles on the basics, thus attempting to avoid making anything overly specific to my own idiosyncrasies.
-
-You can take what you like from these dotfiles a la carte, or feel free to use my [Quickstart](#quickstart) which will walk you through how I setup a new mac for development.
+You can take what you like from these dotfiles a la carte, or feel free to use
+the [Quickstart](#quickstart) below which will walk you through how I setup a
+new mac for development.
 
 - [Quickstart](#quickstart)
 - [Post Setup](#post-setup)
@@ -33,152 +33,93 @@ This setup has been tested on:
 
 **Housekeeping**
 
-These instructions are very detailed and should be followed in order. I also assume that if you are working through this you have some understanding of the terminal. Any command prefixed with `$` means to run it in the terminal.
+> Any command prefixed with `$` means to run it in the terminal.
 
-**1. Update macOS**
-
-Nothing special here, just the [run-of-the-mill upgrade process](https://support.apple.com/en-ca/HT201541)
-
-> The reasoning here: we are making sure everything on your system is good to go :smile:
-
-**2. Install Xcode Command Line Tools**
-
-```bash
-$ xcode-select --install
-```
-
-> Xcode is needed to perform future development setup related tasks
-
-**3. move into your home directory**
-
-```bash
-$ cd ~/
-```
-
-> This is where you will install your dotfiles
-
-**4. clone this repo**
-
-```bash
-$ git clone https://github.com/tkjone/dotfiles
-```
-
-> This is you installing your dotfiles
-
-**5. create private files**
-
-```bash
-$ touch dotfiles/git/.gitconfig.local
-$ touch dotfiles/zsh/.extras
-```
-
-> These are called "private" files because they are where you will put code specific to your setup. you will see what `.gitconfig.local` does in the next step. For more info on `.extras` see the [zsh customization](#zsh) section further down.
-
-**6. Setup diff-highlighter - Optional**
-
-> NOTE: I don't actively use this anymore, but leaving as an example for how to use
-
-`diff-highlight` is going to make your git diffs look pretty, but there is a little bit of a manual process involved in setting this up:
-
-> 1.  Find diff-highlight
-
-```bash
-$ find -L /usr -name diff-highlight -type f
-```
-
-The above command may respond with a `permission denied` and if it does try running this: `sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local`.
-
-> 2.  Choose the path with the highest git version
-
-```bash
-/usr/local/Cellar/git/2.31.1/share/git-core/contrib/diff-highlight/diff-highlight
-```
-
-The segment of the above path that matters is `2.30.1` as this is the version of git you are using locally.
-
-> 3.  Open `.gitconfig`
-
-```bash
-vim ~/dotfiles/git/.gitconfig
-```
-
-> 4.  Replace the path on line 13 in the `.gitconfig` with the path from `step 2`.
-
-```bash
-pager = /usr/local/Cellar/git/2.30.0/share/git-core/contrib/diff-highlight/diff-highlight | diff-so-fancy | less -r
-```
-
-**5. Optional - Install zsh-highlight**
-
-```bash
-see https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
-```
-
-**6. open .gitconfig.local in your favourite editor**
-
-```bash
-$ vim git/.gitconfig.local
-```
-
-> You can swap out `vim` for your fav' editor. For example, if you use atom the above would become `atom git/.gitconfig.local`
-
-**7. update .gitconfig.local**
-
-```bash
-[user]
-  name = <your-username>
-  email = <your-email>
-```
-
-> More details can be found [here](https://coderwall.com/p/wkqf9q/local-global-git-config)
-
-**8. .macOS paths**
-
-Please take a look at `~dotfiles/.macOS`. This is a file that configures your mac. Not sure what this means? Well, you know how when you get a mac you have to make decisions like the sensitivty level of your trackpad, or your display settings? Turns out you can automate this setup. This file is going to automate these things for you.
-
-With this in mind, these are preferences for how I like to work with my mac. Most are pretty good, but I feel that you want to specifically decide if the following are good for you:
-
-- section - iterm2
-
-  - This is going to tell iterm2 to use the preferences I have setup in these dotfiles. If you do not want them, comment this line out.
-
-- section - screen:
-  - where the screenshots are stored
-
-**9. Before you run setup scripts**
-
-Take a gander through the `brewfile`, this dotfiles sub dirs and make sure that what you setup is applicable. Its easy to go back and fix things, but this is a good time to remove things that might not be useful to you.
-
-**10. run the setup script**
-
-```bash
-$ source ~/dotfiles/setup.sh
-```
-
-> Please note that you will be prompted to enter your computer password while the brew apps are being installed. To see what this is doing, checkout the [Setup Explained](#setup-explained) section
-
-**11. optional - increase speed of cursor**
-
-- `system preferences` > `keyboard` > `key repeat - fast` and `daily until repeat - short (1 less than ma)`
-
-> These are my preferences in general and more of a reminder when setting up a new system
-
-**12. optional - replace spotlight with raycast**
-
-I am still experimenting with this, but for those interested the minimum steps to take to get started:
-
-- [Install Raycast]
-- [Disable spotlight hotkey]
-- Recast Hotkey in Raycast
-  - Open raycast
-  - Type `preferences`
-  - Click `About`
-  - Click `General`
-  - Click on the current hotkey and type `⌘` (command) + `space`
-
-Now you're off to the races and can start experimenting.
-
-> Fun fact: as of June 30, 2021 if you compare the scroll speed of raycast to spotlight by just pressing the down arrow spotlight will lose position (the cursor is lost), but raycast will always maintain the position.  This is a small, but illustrative example of improvements provided.
+- Update macOS
+  - [upgrade macos](https://support.apple.com/en-ca/HT201541)
+  > rationale: we're making sure everything on your system is good to go :smile:
+- Install Xcode Command Line Tools
+  ```bash
+  $ xcode-select --install
+  ```
+  > Xcode is needed to install dev tools
+- move into your home directory
+  ```bash
+  $ cd ~/
+  ```
+  > We will install dotfiles here
+- clone this repo
+  ```bash
+  $ git clone https://github.com/tkjone/dotfiles
+  ```
+  > This is you installing your dotfiles
+- create private files
+  ```bash
+  $ touch dotfiles/git/.gitconfig.local
+  $ touch dotfiles/zsh/.extras
+  ```
+  > These are called "private" files because they are where you will put code
+  > specific to your setup. you will see what `.gitconfig.local` does in the next
+  > step. For more info on `.extras` see the [zsh customization](#zsh) section
+  > further down.
+- Install zsh-highlight (optional)
+  ```bash
+  see https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
+  ```
+- open `.gitconfig.local` in your favourite editor
+  ```bash
+  $ vim git/.gitconfig.local
+  ```
+  > You can swap out `vim` for your fav' editor. For example, if you use atom the
+  > above would become `atom git/.gitconfig.local`
+- update `.gitconfig.local**`
+  ```bash
+  [user]
+    name = <your-username>
+    email = <your-email>
+  ```
+  > More details can be found [here](https://coderwall.com/p/wkqf9q/local-global-git-config)
+- `.macOS` paths
+  - Please take a look at `~dotfiles/.macOS`. This is a file that configures
+    your mac. Not sure what this means? Well, you know how when you get a mac
+    you have to make decisions like the sensitivty level of your trackpad, or
+    your display settings? Turns out you can automate this setup. This file is
+    going to automate these things for you.  With this in mind, these are
+    preferences for how I like to work with my mac. Most are pretty good, but I
+    feel that you want to specifically decide if the following are good for you:
+    - section - iterm2
+      - This is going to tell iterm2 to use the preferences I have setup in
+        these dotfiles. If you do not want them, comment this line out.
+    - section - screen:
+      - where the screenshots are stored
+- Before you run setup scripts
+  - Take a gander through the `brewfile`, this dotfiles sub dirs and make sure
+    that what you setup is applicable. It's easy to go back and fix things, but
+    this is a good time to remove things that might not be useful to you.
+- run the setup script
+  ```bash
+  $ source ~/dotfiles/setup.sh
+  ```
+  > Please note that you will be prompted to enter your computer password while
+  > the brew apps are being installed. To see what this is doing, checkout
+  > the [Setup Explained](#setup-explained) section
+- increase speed of cursor (Optional)
+  - `system preferences` > `keyboard` > `key repeat - fast` and `daily until repeat - short (1 less than ma)`
+  > These are my preferences in general and more of a reminder when setting up
+  > a new system
+- replace spotlight with raycast (optional)
+  - [Install Raycast]
+  - [Disable spotlight hotkey]
+  - Recast Hotkey in Raycast
+    - Open raycast
+    - Type `preferences`
+    - Click `About`
+    - Click `General`
+    - Click on the current hotkey and type `⌘` (command) + `space`
+  > Fun fact: as of June 30, 2021 if you compare the scroll speed of raycast to
+  > spotlight by just pressing the down arrow spotlight will lose position (the
+  > cursor is lost), but raycast will always maintain the position.  This is a
+  > small, but illustrative example of improvements provided.
 
 ## Post Setup
 
