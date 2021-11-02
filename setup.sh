@@ -32,7 +32,7 @@ info "Setting up your mac..."
 # =============================================================================
 
 info "Brew - Checking if brew is already installed"
-if [[ ! $(which brew) ]]; then
+if [[ $(which brew) == '' ]]; then
     # http://brew.sh/
     info "Brew - Install"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
