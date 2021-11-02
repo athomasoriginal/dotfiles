@@ -201,23 +201,25 @@ nvim based on the configurations in these dotfiles.
 
 ### iterm2
 
-- I activate scroll functionality so you can just use the trackpad for long
-  pieces of text. For example, try typing `man defaults` into your terminal.
-  When you have to scroll this kind of long document in your terminal, it can
-  get janky. This helps to avoid that.
-- solarized color scheme
-  - especially amazing if you ever code outside or in a room with a lot of
-    sunlight
-- `command + d` will bring up iterm2 when in the background - very handy when
-  you are an active terminal user - something I picked up from
-  [guake terminal]
+- Settings
+  - I activate scroll functionality so you can just use the trackpad for long
+    pieces of text. For example, try typing `man defaults` into your terminal.
+    When you have to scroll this kind of long document in your terminal, it can
+    get janky. This helps to avoid that.
+- Color Themes
+  - Solarized - especially amazing if you ever code outside or in a room with a
+    lot of sunlight
+- hotkeys
+  - `command + d` will bring up iterm2 when in the background - very handy when
+     you are an active terminal user - something I picked up from
+    [guake terminal]
 
 ### duti
 
-- duti is a program built to make it easier to configure which filetypes are
-  opened by which application. For example, lets say you want all `.html` files
-  to be opened by `Atom` and not the default browser, we can configure this in
-  Duti. For more info, see the `.duti` file.
+duti is a program built to make it easier to configure which filetypes are
+opened by which application. For example, lets say you want all `.html` files
+to be opened by `Atom` and not the default browser, we can configure this in
+Duti. For more info, see the `.duti` file.
 
 ### macos
 

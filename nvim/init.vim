@@ -108,7 +108,7 @@ call plug#begin('~/.vim/plugged')
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'markdown', 'css', 'json'. 'html'] }
 call plug#end()
-
+:
 colorscheme gruvbox
 set bg=dark
 
@@ -151,6 +151,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 "" Save file
 "" ---------------
 nnoremap <C-S> :update<cr>
+
+"" Nerdtree Config
+"" ----------------------------------------------------------------------------
+
+let NERDTreeShowHidden=1
 
 """ Markdown Syntax Configuration
 """ ----------------------------------------------------------------------------
