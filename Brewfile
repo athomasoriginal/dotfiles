@@ -5,6 +5,7 @@ tap "cask-fonts"
 
 # Developer Tools
 brew "git"
+brew "clojure/tools/clojure"
 brew "tree"
 brew "zsh"
 brew "mas"
