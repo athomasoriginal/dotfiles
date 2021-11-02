@@ -95,20 +95,6 @@ ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
 
 
-# python
-# =============================================================================
-info "python - installing virtualenvwrapper"
-pip3 install virtualenvwrapper
-
-# java
-# =============================================================================
-
-info "java - add jdk to jenv"
-jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home
-
-info "java - set the global version of Java with jenv"
-jenv global oracle64-1.8.0.112
-
 # node
 # =============================================================================
 
