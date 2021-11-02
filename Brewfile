@@ -20,6 +20,7 @@ brew "duti"
 brew "yarn"
 brew "tmux"
 brew "gh"
+brew "jenv"
 
 # Install casks items (apps, fonts etc)
 cask "google-chrome"

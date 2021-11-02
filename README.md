@@ -7,10 +7,9 @@ the [Quickstart] below which will walk you through how I setup a
 new mac for development.
 
 - [Quickstart]
-- [Post Setup]
 - [Setup Explained]
 - [Gotchas]
-- [Customization](#customization)
+- [Customization]
   - [vim](#vim)
   - [Dev Environments](#dev-environments)
     - [node](#node)
@@ -25,36 +24,13 @@ new mac for development.
 - [Extras]
   - [Aliases]
 
-## New Mac
-
-- Install non development apps
-  - password storage (lastpass/1password)
-  - cleanmymac
-  - karibner-elements
-  - magent
-  - obs link
-  - pandan
-  - docker
-  - dv
-  - screenflow
-  - folx
-  - wireshark
-  - ipvanish
-  - muzzle
-  - dozer
-  - java
-  - jenv
-- set the items that you want to appear in your dock
 
 ## Quickstart
 
-This setup has been tested on:
-
-- macOS 10.12.x Sierra and up
-
-**Housekeeping**
-
-> Any command prefixed with `$` means to run it in the terminal.
+> This setup has been tested on macOS **10.12.x** Sierra and up.  Some of the
+> commands belows might be specific to my tastes.  When this is the case I have
+> added an "optional" label to the step.  You can ignore these if you like.
+> Commands beginning with `$` are meant to be run in the terminal.
 
 - Update macOS
   - [upgrade macos](https://support.apple.com/en-ca/HT201541)
@@ -74,88 +50,63 @@ This setup has been tested on:
   $ git clone https://github.com/tkjone/dotfiles
   ```
   > This is you installing your dotfiles
-- create private files
+- create your own private dotfiles
   ```bash
   $ touch dotfiles/git/.gitconfig.local
   $ touch dotfiles/zsh/.extras
   ```
-  > These are called "private" files because they are where you will put code
-  > specific to your setup. you will see what `.gitconfig.local` does in the next
-  > step. For more info on `.extras` see the [zsh customization](#zsh) section
-  > further down.
+  > Our dotfiles are generally public.  However, sometimes you will want to have
+  > configurations which are specific to your local setup.  These files give
+  > you the space to have yoru private configurations.
 - Install zsh-highlight (optional)
   ```bash
   see https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
   ```
-- open `.gitconfig.local` in your favourite editor
+- Install [nvm] (optional)
+- open `.gitconfig.local` in your editor of choice
   ```bash
   $ vim git/.gitconfig.local
   ```
-  > You can swap out `vim` for your fav' editor. For example, if you use atom the
-  > above would become `atom git/.gitconfig.local`
-- update `.gitconfig.local**`
+  > I have `vim`  selected here because it will be on most peoples machines.
+- Configure your `.gitconfig.local**`
   ```bash
   [user]
-    name = <your-username>
+    name = <your-git-username>
     email = <your-email>
   ```
-  > More details can be found [here](https://coderwall.com/p/wkqf9q/local-global-git-config)
-- `.macOS` paths
-  - Please take a look at `~dotfiles/.macOS`. This is a file that configures
+  > More details can be found in [local gitconfig]
+- verify the `.macOS` file
+  - This step is really about choosing what you like and don't like in my `.macos`
+    file.  This file, located at `~dotfiles/.macOS`, is a file that configures
     your mac. Not sure what this means? Well, you know how when you get a mac
     you have to make decisions like the sensitivty level of your trackpad, or
     your display settings? Turns out you can automate this setup. This file is
     going to automate these things for you.  With this in mind, these are
-    preferences for how I like to work with my mac. Most are pretty good, but I
-    feel that you want to specifically decide if the following are good for you:
-    - section - iterm2
-      - This is going to tell iterm2 to use the preferences I have setup in
+    preferences for how I like to work with my mac. Most are pretty good!  The
+    ones that I think may be specific to me are listed below.  You should take
+    a look and verify that you want to keep them.  Just delete or comment out
+    the stuff you don't want.
+  - section - iterm2
+    - This is going to tell iterm2 to use the preferences I have setup in
         these dotfiles. If you do not want them, comment this line out.
-    - section - screen:
-      - where the screenshots are stored
-- Before you run setup scripts
-  - Take a gander through the `brewfile`, this dotfiles sub dirs and make sure
-    that what you setup is applicable. It's easy to go back and fix things, but
-    this is a good time to remove things that might not be useful to you.
-- run the setup script
+  - section - screen:
+    - where the screenshots are stored
+- verify the `brewfile` file
+  - The `brewfile` contains programs I usually always need.  Delete or comment
+    out what you don't need.
+- Run the setup script
   ```bash
   $ source ~/dotfiles/setup.sh
   ```
   > Please note that you will be prompted to enter your computer password while
   > the brew apps are being installed. To see what this is doing, checkout
-  > the [Setup Explained](#setup-explained) section
-- increase speed of cursor (Optional)
-  - `system preferences` > `keyboard` > `key repeat - fast` and `daily until repeat - short (1 less than ma)`
-  > These are my preferences in general and more of a reminder when setting up
-  > a new system
-- replace spotlight with raycast (optional)
-  - [Install Raycast]
-  - [Disable spotlight hotkey]
-  - Recast Hotkey in Raycast
-    - Open raycast
-    - Type `preferences`
-    - Click `About`
-    - Click `General`
-    - Click on the current hotkey and type `⌘` (command) + `space`
-  > Fun fact: as of June 30, 2021 if you compare the scroll speed of raycast to
-  > spotlight by just pressing the down arrow spotlight will lose position (the
-  > cursor is lost), but raycast will always maintain the position.  This is a
-  > small, but illustrative example of improvements provided.
+  > the [Setup Explained] section
 
-## Post Setup
-
-Once the above is complete, I like to perform the following tasks:
+Once you have completed the above steps, I like to perform the following steps
+just as a sanity check:
 
 - restart computer
-- set default browser
-- set the [capslock key to be the modifier key](https://coderwall.com/p/cq_lkg/remapping-caps-lock-key-to-something-more-natural-on-mac-os-x)
-- [setup your screensave/lock](https://it.cornell.edu/device-security/set-your-macs-screen-lock-automatically) to occur after 2 min (security)
-- setup custom [beautiful screen savers](https://github.com/JohnCoates/Aerial)
-- switch spotlight to raycast
-- install [nvm](https://github.com/creationix/nvm)
-- setup [git ssh keys](https://help.github.com/articles/connecting-to-github-with-ssh/)
-- [sync atom](https://evanhahn.com/atom-apm-install-list/)
-- sync iterm2 preferences
+- verify iterm2 preferences are read from dotfiles
 
 ## Setup Explained
 
@@ -170,29 +121,32 @@ hings as we can. It will perform the following tasks in order:
 
 ## Gotchas
 
-**iterm 2 syntax highlighting not displaying correctly**
-
-See [iterm2 launch with zsh](https://stackoverflow.com/questions/13476232/make-iterm2-launch-with-zsh)
+- iterm 2 syntax highlighting not displaying correctly?
+  - See [iterm2 launch with zsh](https://stackoverflow.com/questions/13476232/make-iterm2-launch-with-zsh)
 
 ## Customization
 
 ### zsh
 
-The `zsh` setup that comes with these dotfiles are going to do the following things:
+The `zsh` setup that comes with these dotfiles are going to do the following
+things:
 
 - setup oh-my-zsh
 - A custom theme called "Thomas" (include my prompt setup)
-- Ability to load custom zsh settings via a file called `.extras` (see below for more details)
+- Ability to load custom zsh settings via a file called `.extras` (see below for
+  more details)
 - A few custom aliases that I find generally useful
-- Python config setup - virtualenvwrapper
 - Node - nvm setup
 - Java - jenv
 
-Aside from the above I keep it light because its my feeling that `.zshrc` is a personal thing
+Aside from the above I keep it light because its my feeling that `.zshrc` is a
+personal thing
 
 **Custom Zsh Settings**
 
-There may be `.zshrc` aliases or configurations that you may want to keep private, you can create a file called `.extras` in the `zsh` directory and this will be picked up by `.zsh_profile`.
+There may be `.zshrc` aliases or configurations that you may want to keep private,
+you can create a file called `.extras` in the `zsh` directory and this will be
+picked up by `.zsh_profile`.
 
 ### Dev Environments
 
@@ -211,6 +165,7 @@ Isn't this cumbersome?  Doubling the time it takes to start your shell is signif
 
 ### Atom
 
+- [sync atom](https://evanhahn.com/atom-apm-install-list/)
 - make sure to install [package.sync](https://atom.io/packages/package-sync) to be able to make use of `package.cson` that I provide which is what I use to transfer my preferred atom settings from one computer to another.
 
 ### nvim
@@ -256,11 +211,16 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Post Setup]: #post-setup
 [Setup Explained]: #setup-explained
 [Gotchas]: #Gotchas
+[Customization]: #customization
 [macos]: #macos
 [Extras]: #extras
 [Aliases]: #aliases
+
+
 [Preferences by the commandline]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
 [Nerd Font]: https://www.nerdfonts.com/
 [Install Raycast]: https://raycast.com/
 [Disable spotlight hotkey]: https://www.notion.so/Hotkey-56103210375b4fc78b63a7c5e7075fb7
 [Zsh Performance]: https://htr3n.github.io/2018/07/faster-zsh/
+[local gitconfig]: https://coderwall.com/p/wkqf9q/local-global-git-config
+[nvm]: https://github.com/creationix/nvm
