@@ -55,10 +55,6 @@ new mac for development.
   > Our dotfiles are generally public.  However, sometimes you will want to have
   > configurations which are specific to your local setup.  These files give
   > you the space to have yoru private configurations.
-- Install zsh-highlight (optional)
-  ```bash
-  see https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
-  ```
 - Install [nvm] (optional)
 - open `.gitconfig.local` in your editor of choice
   ```bash
@@ -106,12 +102,19 @@ new mac for development.
   > Please note that you will be prompted to enter your computer password while
   > the brew apps are being installed. To see what this is doing, checkout
   > the [Setup Explained] section
+- Install zsh-highlight (optional)
+  ```bash
+  see https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
+  ```
+- Open new terminal tab and make sure there are no warnings
 
 Once you have completed the above steps, I like to perform the following steps
 just as a sanity check:
 
 - restart computer
 - verify iterm2 preferences are read from dotfiles
+  - load preferences from custom folder
+  - path/to/profiles
 
 ## Setup Explained
 
