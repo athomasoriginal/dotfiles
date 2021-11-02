@@ -205,7 +205,6 @@ The `setup.sh` file is going to do all the heavy lifting and automate as many th
 - Brew install everything in the [Brewfile](https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew)
 - Symlink dotfiles
 - Set the default shell environment to zsh
-- Setup Sublime Text - Specifically, setup `subl` and replace the default icon
 - Setup preferred macOS settings
 
 ## Gotchas

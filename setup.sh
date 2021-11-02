@@ -94,17 +94,6 @@ ln -sf ~/dotfiles/.emacs.d                     ~/.emacs.d
 ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
 
-# sublime text
-# =============================================================================
-
-info "sublime text - setup shortcut: subl"
-ln -sf /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-
-info "sublime text - replace default sublime text icon"
-rm -rf /Applications/Sublime\ Text.app/Contents/Resources/Sublime\ Text.icns
-ln -sf ~/dotfiles/sublime/Sublime\ Text.icns /Applications/Sublime\ Text.app/Contents/Resources/
-open ~/dotfiles/sublime
-killall -KILL Dock
 
 # python
 # =============================================================================
