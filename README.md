@@ -115,6 +115,9 @@ just as a sanity check:
 - verify iterm2 preferences are read from dotfiles
   - load preferences from custom folder
   - path/to/profiles
+- Custom theme
+  - ensure the symlink was executed correctly
+- Make sure .zshrc is symlinked correctly 
 
 ## Setup Explained
 
