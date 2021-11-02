@@ -1,7 +1,8 @@
 # Taps
-tap "caskroom/cask"
+tap "homebrew/cask"
 tap "homebrew/bundle"
-tap "cask-fonts"
+tap "homebrew/cask-fonts"
+tap "clojure/tools"
 
 # Developer Tools
 brew "git"

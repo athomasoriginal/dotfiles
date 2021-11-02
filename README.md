@@ -98,9 +98,10 @@ new mac for development.
 - verify the `brewfile` file
   - The `brewfile` contains programs I usually always need.  Delete or comment
     out what you don't need.
+- Move into dotfiles
 - Run the setup script
   ```bash
-  $ source ~/dotfiles/setup.sh
+  $ source setup.sh
   ```
   > Please note that you will be prompted to enter your computer password while
   > the brew apps are being installed. To see what this is doing, checkout
