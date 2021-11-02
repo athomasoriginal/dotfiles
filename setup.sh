@@ -74,7 +74,6 @@ rm -rf ~/.gitconfig.local
 rm -rf ~/.emacs.d
 rm -rf ~/.clojure/deps.edn
 rm -rf ~/.config/nvim
-rm -rf ~/.config/vim/init.vim
 
 info "dotfiles - symlinking dotfiles"
 ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
@@ -86,7 +85,6 @@ ln -sf ~/dotfiles/git/.gitconfig               ~/.gitconfig
 ln -sf ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
 ln -sf ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
 ln -sf ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
-ln -sf ~/dotfiles/vim/.vimrc                   ~/.vimrc
 ln -sf ~/dotfiles/zsh/.extras                  ~/.extras
 ln -sf ~/dotfiles/.duti                        ~/.duti
 ln -sf ~/dotfiles/tmux/.tmux.conf              ~/.tmux.conf
