@@ -62,7 +62,7 @@ new mac for development.
 - Install [nvm] (optional)
 - open `.gitconfig.local` in your editor of choice
   ```bash
-  $ vim git/.gitconfig.local
+  $ vim dotfiles/git/.gitconfig.local
   ```
   > I have `vim`  selected here because it will be on most peoples machines.
 - Configure your `.gitconfig.local**`
@@ -73,16 +73,23 @@ new mac for development.
   ```
   > More details can be found in [local gitconfig]
 - verify the `.macOS` file
-  - This step is really about choosing what you like and don't like in my `.macos`
-    file.  This file, located at `~dotfiles/.macOS`, is a file that configures
-    your mac. Not sure what this means? Well, you know how when you get a mac
-    you have to make decisions like the sensitivty level of your trackpad, or
-    your display settings? Turns out you can automate this setup. This file is
-    going to automate these things for you.  With this in mind, these are
-    preferences for how I like to work with my mac. Most are pretty good!  The
-    ones that I think may be specific to me are listed below.  You should take
-    a look and verify that you want to keep them.  Just delete or comment out
-    the stuff you don't want.
+  - Open `.macOS` file
+  - Update the 3 variables at the top:
+    ```bash
+    COMPUTERNAME="your-comp-name"
+    HOSTNAME='your-host-name'
+    LOCALHOSTNAME='your-local-host-name'
+    ```
+  > This step is really about choosing what you like and don't like in my `.macos`
+  > file.  This file, located at `~dotfiles/.macOS`, is a file that configures
+  > your mac. Not sure what this means? Well, you know how when you get a mac
+  > you have to make decisions like the sensitivty level of your trackpad, or
+  > your display settings? Turns out you can automate this setup. This file is
+  > going to automate these things for you.  With this in mind, these are
+  > preferences for how I like to work with my mac. Most are pretty good!  The
+  > ones that I think may be specific to me are listed below.  You should take
+  > a look and verify that you want to keep them.  Just delete or comment out
+  > the stuff you don't want.
   - section - iterm2
     - This is going to tell iterm2 to use the preferences I have setup in
         these dotfiles. If you do not want them, comment this line out.
