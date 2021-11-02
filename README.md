@@ -9,16 +9,14 @@ new mac for development.
 - [Quickstart]
 - [Setup Explained]
 - [Gotchas]
-- [Customization]
-  - [vim](#vim)
-  - [Dev Environments](#dev-environments)
-    - [node](#node)
-    - [clojure](#clojure)
-  - [Dev Tools](#dev-tools)
-    - [Atom](#atom)
-    - [nvim](#nvim)
-    - [iterm2](#iterm2)
-    - [duti](#duti)
+- [Language Details]
+  - [node]
+  - [clojure]
+- [Dev Tools]
+  - [Atom]
+  - [nvim]
+  - [iterm2]
+  - [duti]
   - [macos]
 - [Zsh Performance]
 - [Extras]
@@ -124,7 +122,7 @@ hings as we can. It will perform the following tasks in order:
 - iterm 2 syntax highlighting not displaying correctly?
   - See [iterm2 launch with zsh](https://stackoverflow.com/questions/13476232/make-iterm2-launch-with-zsh)
 
-## Customization
+## Language Details
 
 ### zsh
 
@@ -135,9 +133,9 @@ things:
 - A custom theme called "Thomas" (include my prompt setup)
 - Ability to load custom zsh settings via a file called `.extras` (see below for
   more details)
-- A few custom aliases that I find generally useful
-- Node - nvm setup
-- Java - jenv
+- Helpful, common aliases
+- Node - nvm initialization
+- Java - jenv initialization
 
 Aside from the above I keep it light because its my feeling that `.zshrc` is a
 personal thing
@@ -148,20 +146,22 @@ There may be `.zshrc` aliases or configurations that you may want to keep privat
 you can create a file called `.extras` in the `zsh` directory and this will be
 picked up by `.zsh_profile`.
 
-### Dev Environments
+### Node
 
-This section will outline different development languages / environments that this setup supports. These are the languages that I tend to work with. However, you will notice that the setups are usually package managers. This is because I use vagrant or docker and do not need specific versions of the following languages installed.
+The only thing that is node specific for our setup is `nvm`.  This is a great
+tool for managing version of node.  The issue though is this tool is slow in zsh!
+So instead of loading it on init, we add a `loadnvm` alias and you run this when
+you want to use it.
 
-#### Node
+Isn't this cumbersome?  Doubling the time it takes to start your shell is
+significantly worse.
 
-The only thing that is node specific for our setup is `nvm`.  This is a great tool for managing version of node.  The issue though is this tool is slow in zsh!  So instead of loading it on init, we add a `loadnvm` alias and you run this when you want to use it.
-
-Isn't this cumbersome?  Doubling the time it takes to start your shell is significantly worse.
-
-#### Clojure
+### Clojure
 
 - jenv
 - basic java setup
+
+## Dev Tools
 
 ### Atom
 
@@ -211,10 +211,18 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Post Setup]: #post-setup
 [Setup Explained]: #setup-explained
 [Gotchas]: #Gotchas
-[Customization]: #customization
+[Language Details]: #language-details
 [macos]: #macos
 [Extras]: #extras
 [Aliases]: #aliases
+[node]: #node
+[clojure]: #clojure
+[Dev Tools]: #dev-tools
+[Atom]: #atom
+[nvim]: #nvim
+[iterm2]: #iterm2
+[duti]: #duti
+[macos]: #macos
 
 
 [Preferences by the commandline]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
