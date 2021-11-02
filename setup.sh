@@ -55,7 +55,7 @@ brew bundle
 
 info "oh-my-zsh - installing oh-my-zsh"
 # @todo add condition around this!
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # dotfile setup
 # =============================================================================
