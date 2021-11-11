@@ -7,6 +7,8 @@ tap "clojure/tools"
 # Developer Tools
 brew "git"
 brew "clojure/tools/clojure"
+brew "borkdude/brew/babashka"
+brew "borkdude/brew/clj-kondo"
 brew "tree"
 brew "zsh"
 brew "mas"

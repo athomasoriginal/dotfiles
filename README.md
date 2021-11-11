@@ -117,7 +117,7 @@ just as a sanity check:
   - path/to/profiles
 - Custom theme
   - ensure the symlink was executed correctly
-- Make sure .zshrc is symlinked correctly 
+- Make sure .zshrc is symlinked correctly
 
 ## Setup Explained
 
@@ -276,7 +276,7 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [local gitconfig]: https://coderwall.com/p/wkqf9q/local-global-git-config
 [nvm]: https://github.com/creationix/nvm
 [package.sync]: https://atom.io/packages/package-sync
-[vim-plugin]: https://github.com/junegunn/vim-plugs
+[vim-plugin]: https://github.com/junegunn/vim-plug
 [Rust and Cargo]: https://doc.rust-lang.org/cargo/getting-started/installation.html
 [parinfer-rust]: https://github.com/eraserhd/parinfer-rust
 [guake terminal]: https://github.com/Guake/guake

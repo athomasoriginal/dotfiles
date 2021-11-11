@@ -12,7 +12,7 @@
 [core]
   # insanely beautiful diffs
   pager = diff-so-fancy | less --tabs=4 -r
-	editor = /usr/local/bin/nvim
+	editor = /opt/homebrew/bin/nvim
   ignorecase = false
 
 [color]
