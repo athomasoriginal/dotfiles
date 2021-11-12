@@ -1,7 +1,8 @@
+-- ----------------------------------------------------------------------------
 -- Telescope Config
-
--- vimgrep_arguments >> used by live_grep and live_search
--- find_files is a builtin which projects calls under the hood --
+-- ----------------------------------------------------------------------------
+-- vimgrep_arguments -> used by live_grep and live_search
+-- find_files        -> is a builtin which projects calls under the hood --
 
 -- none of this stuff seems to be being picked up
 require('telescope').setup {
