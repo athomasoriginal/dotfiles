@@ -128,7 +128,7 @@ let mapleader = "\<Space>"
 "" Find files using Telescope command-line sugar.
 "" @testing - idea - searching through all projects I have recorded
 nnoremap <leader>p <cmd>Telescope project<cr>
-nnoremap <leader>f <cmd>Telescope find_files find_command=rg,--files,-uu<cr>
+nnoremap <leader>f <cmd>Telescope find_files<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 
 "" @testing - g - meant to replace ctrl+shift+f that im used to
