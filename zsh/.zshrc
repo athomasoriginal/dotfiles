@@ -38,7 +38,7 @@ plugins=(
     # syntax higlight by file extension
     colorize
     # shortcuts like `hidefiles` & `showfiles`
-    osx
+    macos
     # syntax hilight cli commands as you're typing
     zsh-syntax-highlighting
 )
