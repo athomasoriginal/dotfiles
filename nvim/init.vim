@@ -54,7 +54,7 @@ set nowrap
 set number
 
 "" Add space to the left column when signs are used e.g. git
-set signcolumn=yes
+set signcolumn=yes:2
 
 "" Use colorschemes you set
 set termguicolors
@@ -117,6 +117,10 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 :
 colorscheme gruvbox
+
+"" has to be above bg being set below
+let g:gruvbox_sign_column = 'bg0'
+
 set bg=dark
 
 " lsp needs to be set after the colorscheme
