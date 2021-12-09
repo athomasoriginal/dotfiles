@@ -114,8 +114,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'markdown', 'css', 'json'. 'html'] }
+
+  "" Better bars
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
-:
+
 colorscheme gruvbox
 
 "" has to be above bg being set below
@@ -157,6 +161,20 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+"" airline
+"" ---
+
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+
+"let g:airline_left_sep = ''
+"let g:airline_right_sep = ''
+
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = ' '
+
+set noshowmode
 
 " Remove Trailing Whitespace
 " --------------------------
