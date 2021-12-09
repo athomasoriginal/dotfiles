@@ -6,10 +6,10 @@
 filetype indent on
 
 "" Keep 10 characters visible above and below the cursor
-set scrolloff=10
+set scrolloff=8
 
 "" Keep 20 characters visible to the right and left of the cursor
-set sidescrolloff=20
+set sidescrolloff=8
 
 "" show a vertical bar at 80 characters
 set colorcolumn=80
