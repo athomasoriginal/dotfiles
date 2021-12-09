@@ -21,7 +21,7 @@ telescope.setup {
   },
   pickers = {
     find_files = {
-      find_command = {'rg', '--files', '-L', '-uu', '--hidden'},
+      find_command = {'rg', '--files', '-L', '--hidden'},
     }
   },
   extensions = {
