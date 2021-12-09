@@ -127,15 +127,23 @@ let g:gruvbox_sign_column = 'bg0'
 
 set bg=dark
 
+
 " lsp needs to be set after the colorscheme
 lua require('init')
+
+
 
 " Enable vim-iced's default key mapping
 " This is recommended for newbies
 let g:iced_enable_default_key_mappings = v:true
 
-"" press space for glory!
+"" press space for glory!  Notice it's spelled out
 let mapleader = "\<Space>"
+
+
+nmap <leader>dl :edit ~/code/projects/jagged-edges/docs/dev-log.md<cr>
+nmap <leader>ve :edit ~/dotfiles/nvim/init.vim<cr>
+nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
 
 "" Find files using Telescope command-line sugar.
 "" @testing - idea - searching through all projects I have recorded
