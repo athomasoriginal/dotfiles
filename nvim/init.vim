@@ -39,6 +39,10 @@ set mouse+=a
 "" prevent bell noise when things go wrong
 set noerrorbells
 
+set spell
+
+set title
+
 "" remove swapfiles - annoying
 set noswapfile
 set nobackup
