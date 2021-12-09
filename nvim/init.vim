@@ -61,8 +61,6 @@ set signcolumn=yes:2
 "" Use colorschemes you set
 set termguicolors
 
-"" Turn of highlighting searches after search
-set nohlsearch
 
 "" Search as we type
 set incsearch
@@ -146,6 +144,9 @@ nnoremap <leader>g <cmd>Telescope live_grep<cr>
 
 "" @testing
 nnoremap <leader>h <cmd>Telescope help_tags<cr>
+
+"" quickly remove highlight after search
+nmap <leader>k :nohlsearch<CR>
 
 "" Project File Navigation
 map <leader>n :NERDTreeToggle<cr>
