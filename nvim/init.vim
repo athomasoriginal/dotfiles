@@ -50,6 +50,8 @@ set nobackup
 "" infinite horizontal typing
 set nowrap
 
+set splitright
+
 "" Show line numbers
 set number
 
