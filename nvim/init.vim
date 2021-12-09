@@ -163,6 +163,9 @@ nmap <leader>k :nohlsearch<CR>
 "" Project File Navigation
 map <leader>n :NERDTreeToggle<cr>
 
+"" paste visual selection without copying it
+vnoremap <leader>p "_dP
+
 "" Window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -241,3 +244,7 @@ hi link mkdCodeDelimiter GruvboxOrange
 highlight link commentTag Todo
 autocmd Syntax * syn match commentTag "@todo" containedin=.*Comment,vimCommentTitle
 autocmd Syntax * syn match commentTag "@note" containedin=.*Comment,vimCommentTitle
+
+" Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
