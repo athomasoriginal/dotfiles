@@ -141,7 +141,7 @@ let g:iced_enable_default_key_mappings = v:true
 let mapleader = "\<Space>"
 
 
-nmap <leader>dl :edit ~/code/projects/jagged-edges/docs/dev-log.md<cr>
+nmap <leader>dl :edit ~/code/dev-log.md<cr>
 nmap <leader>ve :edit ~/dotfiles/nvim/init.vim<cr>
 nmap <leader>vr :source ~/.config/nvim/init.vim<cr>
 

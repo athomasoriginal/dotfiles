@@ -59,7 +59,7 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sb
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
+# * ~/.extras can be used for other settings you don’t want to commit.
 for file in ~/.{path,extras}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
