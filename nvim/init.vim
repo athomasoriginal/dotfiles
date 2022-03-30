@@ -68,13 +68,13 @@ set incsearch
 "" Escape using jk which feels more ergonomic
 inoremap jk <ESC>
 
-let g:gruvbox_italic=1
+let g:alabaster_italic=1
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 "" The plugins begin
 call plug#begin('~/.vim/plugged')
-  Plug 'gruvbox-community/gruvbox'
+  Plug 'athomasoriginal/vim-alabaster'
   Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 
   "" Telescope main plugins
@@ -120,10 +120,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-colorscheme gruvbox
+colorscheme alabaster
 
 "" has to be above bg being set below
-let g:gruvbox_sign_column = 'bg0'
+let g:alabaster_sign_column = 'bg0'
 
 set bg=dark
 
@@ -175,15 +175,25 @@ nnoremap <C-l> <C-w>l
 "" airline
 "" ---
 
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
-"let g:airline_left_sep = ''
-"let g:airline_right_sep = ''
+let g:airline_theme = 'alabaster'
 
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = ' '
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ' '
 
 set noshowmode
 
@@ -228,16 +238,16 @@ hi htmlItalic gui=italic guifg=#076678
 
 "" [link text]: https://hi-there - for regular markdown
 
-hi link mkdLinkDef GruvboxAqua
-hi link mkdDelimiter GruvboxAqua
-hi link mkdLinkDefTarget  GruvboxBlue
+hi link mkdLinkDef AlabasterAqua
+hi link mkdDelimiter AlabasterAqua
+hi link mkdLinkDefTarget  AlabasterBlue
 
 "" make the `#` and `heading text` the same color - less noise
-hi link htmlH1 GruvboxRedBold
+hi link htmlH1 AlabasterRedBold
 
 "" make the back tickss and `inline-code` the same color
-hi link mkdCode GruvboxOrange
-hi link mkdCodeDelimiter GruvboxOrange
+hi link mkdCode AlabasterOrange
+hi link mkdCodeDelimiter AlabasterOrange
 
 " Custom Syntax Highlighting
 " -----------------------------------------------------------------------------
