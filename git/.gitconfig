@@ -22,18 +22,18 @@
 	current = green
 
 [color "diff"]
-  meta = yellow bold
-  commit = green bold
-  frag = cyan bold
-  old = red bold
-  new = green bold
+  meta = yellow
+  commit = green
+  frag = cyan
+  old = red
+  new = green
   whitespace = red reverse
 
 [color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = magenta bold
-  newNormal = green bold
-  newHighlight = cyan bold
+  oldNormal = red
+  oldHighlight = magenta
+  newNormal = green
+  newHighlight = cyan
 
 [color "status"]
   added = green
