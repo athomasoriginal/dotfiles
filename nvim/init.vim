@@ -120,17 +120,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+
+" Syntax Colors
+set bg=light
 colorscheme alabaster
-
-"" has to be above bg being set below
-let g:alabaster_sign_column = 'bg0'
-
-set bg=dark
 
 
 " lsp needs to be set after the colorscheme
 lua require('init')
-
 
 
 " Enable vim-iced's default key mapping
@@ -207,6 +204,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 "" ---------------
 nnoremap <C-S> :update<cr>
 
+
 "" Nerdtree Config
 "" ----------------------------------------------------------------------------
 
@@ -223,31 +221,6 @@ let g:vim_markdown_folding_disabled = 1
 
 "" Prevent highlighting spaces in markdown files
 hi link mkdLineBreak Normal
-
-"" ****
-hi mkdBold gui=bold guifg=#8f3f71
-hi htmlBold gui=bold guifg=#8f3f71
-
-"" strike through
-hi mkdStrike gui=italic guifg=#af3a03
-hi htmlStrike gui=italic guifg=#af3a03
-
-"" italics
-hi mkdItalic gui=italic guifg=#076678
-hi htmlItalic gui=italic guifg=#076678
-
-"" [link text]: https://hi-there - for regular markdown
-
-hi link mkdLinkDef AlabasterAqua
-hi link mkdDelimiter AlabasterAqua
-hi link mkdLinkDefTarget  AlabasterBlue
-
-"" make the `#` and `heading text` the same color - less noise
-hi link htmlH1 AlabasterRedBold
-
-"" make the back tickss and `inline-code` the same color
-hi link mkdCode AlabasterOrange
-hi link mkdCodeDelimiter AlabasterOrange
 
 " Custom Syntax Highlighting
 " -----------------------------------------------------------------------------
