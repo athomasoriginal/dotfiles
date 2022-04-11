@@ -68,8 +68,6 @@ set incsearch
 "" Escape using jk which feels more ergonomic
 inoremap jk <ESC>
 
-let g:alabaster_italic=1
-
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 "" The plugins begin
@@ -122,8 +120,8 @@ call plug#end()
 
 
 " Syntax Colors
-set bg=light
-colorscheme alabaster
+set bg=dark
+colorscheme alabaster-dark
 
 
 " lsp needs to be set after the colorscheme
