@@ -7,7 +7,6 @@ the [Quickstart] below which will walk you through how I setup a
 new mac for development.
 
 - [Quickstart]
-- [Setup Explained]
 - [Gotchas]
 - [Language Details]
   - [node]
@@ -22,12 +21,28 @@ new mac for development.
   - [Aliases]
 
 
-## Quickstart
+## Quickstart Explained
 
 > This setup has been tested on macOS **10.12.x** Sierra and up.  Some of the
 > commands belows might be specific to my tastes.  When this is the case I have
 > added an "optional" label to the step.  You can ignore these if you like.
 > Commands beginning with `$` are meant to be run in the terminal.
+
+
+This quickstart is going to run through all the steps required to start using
+these dotfiles.  As much of the process as we're comfortable with automating
+has been automated.  At a high level, here is what you will do (don't worry,
+it's all explained below in detail):
+
+- Download the dotfiles
+- Install Brew
+- Brew install everything in the [Brewfile]
+- Symlink dotfiles
+- Set the default shell environment to zsh
+- Run the `setup.sh` script
+- preferred macOS settings
+
+And with that, let's start with setting up the dotfiles:
 
 - Update macOS
   - [upgrade macos](https://support.apple.com/en-ca/HT201541)
@@ -91,13 +106,12 @@ new mac for development.
         these dotfiles. If you do not want them, comment this line out.
   - section - screen:
     - where the screenshots are stored
-- verify the `brewfile` file
+- verify the `brewfile`
   - The `brewfile` contains programs I usually always need.  Delete or comment
     out what you don't need.
-- Move into dotfiles
 - Run the setup script
   ```bash
-  $ source setup.sh
+  $ source dotfiles/setup.sh
   ```
   > Please note that you will be prompted to enter your computer password while
   > the brew apps are being installed. To see what this is doing, checkout
@@ -112,23 +126,14 @@ Once you have completed the above steps, I like to perform the following steps
 just as a sanity check:
 
 - restart computer
-- verify iterm2 preferences are read from dotfiles
-  - load preferences from custom folder
-  - path/to/profiles
-- Custom theme
-  - ensure the symlink was executed correctly
-- Make sure .zshrc is symlinked correctly
+- verify iterm2 preferences are read from dotfiles.  To do this:
+  - Open `iterm2`
+  - load preferences from custom folder and enter the `path/to/profiles`
+  - Custom theme
+    - ensure the symlink was executed correctly
+- verify `.zshrc` is symlinked correctly
 
-## Setup Explained
 
-The `setup.sh` file is going to do all the heavy lifting and automate as many
-hings as we can. It will perform the following tasks in order:
-
-- Install Brew
-- Brew install everything in the [Brewfile]
-- Symlink dotfiles
-- Set the default shell environment to zsh
-- Setup preferred macOS settings
 
 ## Gotchas
 
