@@ -105,7 +105,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
 
   "" Clojure
-  Plug 'guns/vim-sexp',    {'for': 'clojure'}
   Plug 'liquidz/vim-iced', {'for': 'clojure'}
 
   "" JavaScript
