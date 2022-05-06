@@ -44,7 +44,7 @@ new mac for development.
   > We will install dotfiles here
 - clone this repo
   ```bash
-  $ git clone https://github.com/tkjone/dotfiles
+  $ git clone https://github.com/athomasoriginal/dotfiles.git
   ```
   > This is you installing your dotfiles
 - create your own private dotfiles
