@@ -228,3 +228,6 @@ autocmd Syntax * syn match commentTag "@note" containedin=.*Comment,vimCommentTi
 " Reselect visual selection after indenting
 vnoremap < <gv
 vnoremap > >gv
+
+" Restrict markdown files to 80 chars
+au BufRead,BufNewFile *.md setlocal textwidth=80
