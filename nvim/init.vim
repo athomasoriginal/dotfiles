@@ -43,8 +43,6 @@ set mouse+=a
 "" prevent bell noise when things go wrong
 set noerrorbells
 
-set spell
-
 set title
 
 "" remove swapfiles - annoying
@@ -233,5 +231,10 @@ autocmd Syntax * syn match commentTag "@note" containedin=.*Comment,vimCommentTi
 vnoremap < <gv
 vnoremap > >gv
 
-" Restrict markdown files to 80 chars
-au BufRead,BufNewFile *.md setlocal textwidth=80
+" Restrict markdown files to 80 chars and enable spell check by default
+augroup markdownSpell
+    autocmd!
+    autocmd FileType markdown setlocal spell
+    autocmd BufRead,BufNewFile *.md setlocal spell
+    autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+augroup END
