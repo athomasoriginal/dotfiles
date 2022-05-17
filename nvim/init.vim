@@ -27,6 +27,10 @@ set shiftwidth=2
 "" automatically indent at the same lvl as the previous
 set smartindent
 
+"" type in lower case or be specific about casing
+:set ignorecase
+:set smartcase
+
 ""
 set softtabstop=2
 
