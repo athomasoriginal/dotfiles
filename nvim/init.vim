@@ -227,7 +227,7 @@ highlight link commentTag Todo
 autocmd Syntax * syn match commentTag "@todo" containedin=.*Comment,vimCommentTitle
 autocmd Syntax * syn match commentTag "@note" containedin=.*Comment,vimCommentTitle
 
-" Reselect visual selection after indenting
+" Reselect visual selection after indenting (shift + <)
 vnoremap < <gv
 vnoremap > >gv
 
