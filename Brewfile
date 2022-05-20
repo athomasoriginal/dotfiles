@@ -25,8 +25,12 @@ brew "yarn"
 brew "tmux"
 brew "gh"
 brew "jenv"
+
+# nvim
 brew "neovim"
-brew "font-meslo-lg-nerd-font"
+brew "fd"
+brew "ripgrep"
+cask "font-meslo-lg-nerd-font"
 
 # Install casks items (apps, fonts etc)
 cask "google-chrome"
