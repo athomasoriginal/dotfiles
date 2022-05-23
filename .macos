@@ -16,9 +16,9 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Set computer name
-COMPUTERNAME="Thomas's MBP"
-HOSTNAME='mbp'
-LOCALHOSTNAME='mbp'
+COMPUTERNAME="Thomas"
+HOSTNAME='thomas-mbp'
+LOCALHOSTNAME='thomas-mbp'
 
 
 # =============================================================================
