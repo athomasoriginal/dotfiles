@@ -19,6 +19,11 @@ git/.gitconfig.local
 # private configs
 .extras
 
+# clojure stuffs
+.clojure/.clj-kondo
+.clojure/.cpcache
+.clojure/.lsp
+
 # atom
 atom/packages/
 atom/storage/
