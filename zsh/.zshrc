@@ -19,6 +19,8 @@ export GPG_TTY=$(tty)           # GPG git commit signing
 # ZSH Config
 # ------------------------------------------------------------------------------
 
+export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
+
 # https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2308206 speed
 # up the zsh load time by only checking if zcompdump needs regenerating once a
 # day
@@ -149,3 +151,10 @@ export PATH=$PATH:/Applications/Wireshark.app/Contents/MacOS$PATH
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# ------------------------------------------------------------------------------
+# Odin
+# ------------------------------------------------------------------------------
+
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
