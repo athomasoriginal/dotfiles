@@ -28,8 +28,8 @@ set shiftwidth=2
 set smartindent
 
 "" type in lower case or be specific about casing
-:set ignorecase
-:set smartcase
+set ignorecase
+set smartcase
 
 ""
 set softtabstop=2
