@@ -66,6 +66,8 @@ set signcolumn=yes:2
 "" Use colorschemes you set
 set termguicolors
 
+"" Hide the mode you're currently in (status bar)
+set noshowmode
 
 "" Search as we type
 set incsearch
@@ -116,10 +118,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'markdown', 'css', 'json'. 'html'] }
-
-  "" Better bars
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 
@@ -171,30 +169,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"" airline
-"" ---
-
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-let g:airline_powerline_fonts = 1
-let g:airline_skip_empty_sections = 1
-
-let g:airline_theme = 'alabaster'
-
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = ' '
-
-set noshowmode
 
 " Remove Trailing Whitespace
 " --------------------------
