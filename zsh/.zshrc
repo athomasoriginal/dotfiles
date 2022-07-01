@@ -148,3 +148,4 @@ export PATH=$PATH:/Applications/Wireshark.app/Contents/MacOS$PATH
 
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
