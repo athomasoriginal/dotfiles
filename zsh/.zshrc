@@ -1,11 +1,14 @@
-# @profiling this is enabled when you want to see what is taking a long time to
-# load.  To use:
+# @profiling enable the following when you want to see what is taking a long
+#            time to load.  To use:
 #   - Change this file
 #   - Reload by running `exec zsh`
 #   - Run `zprof` to see the results
+#
 # and another way to track this is
+#
 #   - /usr/bin/time zsh -i -c exit
 #   - for i in $(seq 1 10); do /usr/bin/time /bin/zsh -i -c exit; done;
+#
 # zmodload zsh/zprof
 
 export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
