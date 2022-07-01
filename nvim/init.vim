@@ -34,6 +34,9 @@ set smartcase
 ""
 set softtabstop=2
 
+"" set statusline to be global status line
+set laststatus=3
+
 "" Tab width
 set tabstop=2
 
