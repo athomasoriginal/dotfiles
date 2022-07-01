@@ -13,6 +13,7 @@
 
 export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
 export DOTFILES=$HOME/dotfiles  # path to dotfiles
+export GPG_TTY=$(tty)           # GPG git commit signing
 
 # ------------------------------------------------------------------------------
 # ZSH Config
