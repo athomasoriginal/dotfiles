@@ -11,6 +11,10 @@
 #
 # zmodload zsh/zprof
 
+# Add `~/bin` to the `$PATH`
+#export PATH="/usr/local/bin:$PATH"
+
+
 export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
 export DOTFILES=$HOME/dotfiles  # path to dotfiles
 export GPG_TTY=$(tty)           # GPG git commit signing
@@ -53,8 +57,7 @@ plugins=(
 # not work as expected
 source $ZSH/oh-my-zsh.sh
 
-# export MANPATH="/usr/local/man:$MANPATH" and also invlude .jenv
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/.jenv/bin:$PATH"
+
 
 # ------------------------------------------------------------------------------
 # USER SETTINGS
@@ -63,7 +66,7 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sb
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Load the shell dotfiles, and then some:
+# Load shell dotfiles, and user specific configs:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extras can be used for other settings you don’t want to commit.
 for file in ~/.{path,extras}; do
@@ -72,8 +75,6 @@ done;
 unset file;
 
 
-# Add `~/bin` to the `$PATH`
-export PATH="/usr/local/bin:$PATH"
 
 
 # ------------------------------------------------------------------------------
@@ -99,7 +100,7 @@ alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
 # JAVA
 # ------------------------------------------------------------------------------
 
-# @performance jenv is slow.  This is a lazy loading technique I stole from
+# @performance jenv is slow.  This is a lazy loading technique we learned from
 # https://github.com/shihyuho/zsh-jenv-lazy/blob/master/jenv-lazy.plugin.zsh
 # I have no idea why I didn't just install as a custom plugin.  Likely, I was
 # frustrated that jenv was taking 50% of the total load time.
