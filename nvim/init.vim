@@ -110,7 +110,7 @@ call plug#begin('~/.vim/plugged')
   "" File Navigation
   Plug 'preservim/nerdtree'
 
-  "" Clojure
+  "" Clojure REPL
   Plug 'liquidz/vim-iced', {'for': 'clojure'}
 
   "" JavaScript
