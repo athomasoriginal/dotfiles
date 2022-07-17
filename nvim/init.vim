@@ -105,7 +105,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdcommenter'
 
   "" Nunjucks syntax highlighting
-  Plug 'sheerun/vim-polyglot'
   Plug 'lepture/vim-jinja'
 
   "" File Navigation
