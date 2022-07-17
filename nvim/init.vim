@@ -188,6 +188,9 @@ let NERDTreeShowHidden=1
 """ Markdown Syntax Configuration
 """ ----------------------------------------------------------------------------
 
+"" syntax highlight contents of code blocks in md files
+let g:markdown_fenced_languages = ['html', 'javascript', 'command=bash', 'bash', 'vim', 'clojure', 'njk']
+
 "" au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 let g:markdown_flavor = 'github'
 
