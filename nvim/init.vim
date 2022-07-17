@@ -213,7 +213,10 @@ vnoremap > >gv
 " Restrict markdown files to 80 chars and enable spell check by default
 augroup markdownSpell
     autocmd!
+    "" Enable spell check in markdown files
     autocmd FileType markdown setlocal spell
+    "" Enabled soft wrapping in markdown files
+    autocmd FileType markdown setlocal wrap linebreak nolist
     autocmd BufRead,BufNewFile *.md setlocal spell
     autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
