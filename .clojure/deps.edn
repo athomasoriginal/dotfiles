@@ -29,10 +29,10 @@
                                              ;:sha     "5bfcef59a2c92102b7ff491542e143d481083556"}}}
 
 
-  ;; create-reagent-app - create a new clojurescript/reagent app
+  ;; create app - create a new clojurescript/reagent app
   ;; ---------------------------------------------------------------------------
-  ;; usage:   clj -X:create-reagent-app create :name <org-name>/<ns-name>
-  :create-reagent-app
-  {:extra-deps {com.github.seancorfield/clj-new {:mvn/version "1.2.362"}}
+  ;; usage: clj -X:new :name nike/nike-app
+  :new
+  {:extra-deps {com.github.seancorfield/clj-new {:mvn/version "1.2.399"}}
    :exec-fn    clj-new/create
-   :exec-args  {:template "https://github.com/athomasoriginal/create-reagent-app@9765fdd8020887ed5caad49729d42ab9643a0793"}}}}
+   :exec-args  {:template "https://github.com/athomasoriginal/create-reagent-app@d844d4119f81ad15757a975655992704dedf3046"}}}}
