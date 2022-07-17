@@ -2,9 +2,6 @@
 "" Base Settings
 "" -----------------------------------------------------------------------------
 
-"" Enable filetype plugins
-filetype indent on
-
 "" Keep 10 characters visible above and below the cursor
 set scrolloff=8
 
@@ -213,10 +210,8 @@ vnoremap > >gv
 " Restrict markdown files to 80 chars and enable spell check by default
 augroup markdownSpell
     autocmd!
-    "" Enable spell check in markdown files
-    autocmd FileType markdown setlocal spell
     "" Enabled soft wrapping in markdown files
-    autocmd FileType markdown setlocal wrap linebreak nolist
+    autocmd FileType markdown setlocal wrap linebreak nolist spell
     autocmd BufRead,BufNewFile *.md setlocal spell
     autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
