@@ -202,6 +202,7 @@ nvim based on the configurations in these dotfiles.
 - Install [Rust and Cargo]
   - This is required to use the `parinfer-rust` nvim plugin
 - Install and Build [parinfer-rust]
+- Install [ripgrep] for live_search with telescope
 - Install [Nerd Font]
   - This is required to use the `nvim-web-devicons`
 - Open Nvim
@@ -214,10 +215,11 @@ nvim based on the configurations in these dotfiles.
 **Gotchas**
 
 - If `vim-prettier` can't find the prettier exe:
-  - move to `~/.vim/plugin/vim-prettier`
+  - move to `~/.vim/plugged/vim-prettier`
   - run yarn install
   > This should be a last resort though as our configuration of this plugin should
-  > just do this for us automatically
+  > just do this for us automatically.  Also note that if you don't autoload nvm
+  > like me, run that first.
 
 ### iterm2
 
@@ -289,3 +291,4 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Brewfile]: https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
 [iterm2 launch with zsh]: https://stackoverflow.com/questions/13476232/make-iterm2-launch-with-zsh
 [sync atom]: https://evanhahn.com/atom-apm-install-list/
+[ripgrep]: https://github.com/BurntSushi/ripgrep
