@@ -203,6 +203,9 @@ nvim based on the configurations in these dotfiles.
   - This is required to use the `parinfer-rust` nvim plugin
 - Install and Build [parinfer-rust]
 - Install [ripgrep] for live_search with telescope
+- Install zprint
+  - This is for Clojure development
+  - `brew install zprint`
 - Install [Nerd Font]
   - This is required to use the `nvim-web-devicons`
 - Open Nvim
