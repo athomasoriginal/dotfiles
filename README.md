@@ -12,13 +12,13 @@ new mac for development.
   - [node]
   - [clojure]
 - [Dev Tools]
-  - [Atom]
   - [Neovim]
   - [iterm2]
   - [duti]
   - [macos]
 - [Extras]
   - [Aliases]
+- [Graveyard]
 
 
 ## Quickstart Explained
@@ -186,12 +186,6 @@ Yes, the Dotfiles installed these things, but there is a little further to go.
 Why not automate?  That requires more testing and maintenance cost than I want
 to think about right now.
 
-### Atom
-
-- [sync atom]
-- Install [package.sync]
-  - This tool allows me to easily move between computers and easily install
-    plugins
 
 ### Neovim
 
@@ -243,7 +237,7 @@ nvim based on the configurations in these dotfiles.
 
 duti is a program built to make it easier to configure which filetypes are
 opened by which application. For example, lets say you want all `.html` files
-to be opened by `Atom` and not the default browser, we can configure this in
+to be opened by `Sublime` and not the default browser, we can configure this in
 Duti. For more info, see the `.duti` file.
 
 ### macos
@@ -261,6 +255,15 @@ These are some helpful extras which I figure could be helpful to just show peopl
   alias repocount="git ls-files | grep '\.clj' | xargs wc -l"
   ```
 
+## Graveyard
+
+> This section is for my fallen Homies. 🪦 🍻
+
+- Atom - Mid 2022
+  - started to transition for the speed, simplicity and flexibility.  This is
+    in the time where big IDE has taken over.  Yes, I'm looking at you VS Code,
+    Jet Brains etc.
+
 [Quickstart]: #quickstart
 [Post Setup]: #post-setup
 [Setup Explained]: #setup-explained
@@ -272,12 +275,11 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [node]: #node
 [clojure]: #clojure
 [Dev Tools]: #dev-tools
-[Atom]: #atom
 [Neovim]: #Neovim
 [iterm2]: #iterm2
 [duti]: #duti
 [macos]: #macos
-
+[Graveyard]: #Graveyard
 
 [Preferences by the commandline]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
 [Nerd Font]: https://www.nerdfonts.com/
