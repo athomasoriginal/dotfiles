@@ -45,7 +45,7 @@ it's all explained below in detail):
 And with that, let's start with setting up the dotfiles:
 
 - Update macOS
-  - [upgrade macos](https://support.apple.com/en-ca/HT201541)
+  - [upgrade macos]
   > rationale: we're making sure everything on your system is good to go :smile:
 - Install Xcode Command Line Tools
   ```bash
@@ -297,3 +297,4 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [iterm2 launch with zsh]: https://stackoverflow.com/questions/13476232/make-iterm2-launch-with-zsh
 [sync atom]: https://evanhahn.com/atom-apm-install-list/
 [ripgrep]: https://github.com/BurntSushi/ripgrep
+[upgrade macos]: https://support.apple.com/en-ca/HT201541
