@@ -116,6 +116,9 @@ call plug#begin('~/.vim/plugged')
     \ 'for': ['javascript', 'markdown', 'css', 'json'. 'html'] }
 call plug#end()
 
+" Disable vim-sexp auto inserts.  We only used vim-sexp because vim-iced
+" requires it
+let g:sexp_enable_insert_mode_mappings = 0
 
 " Syntax Colors
 set bg=dark
