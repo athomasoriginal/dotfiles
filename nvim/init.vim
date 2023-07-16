@@ -199,7 +199,6 @@ hi link mkdLineBreak Normal
 
 " Custom Syntax Highlighting
 " -----------------------------------------------------------------------------
-highlight link commentTag Todo
 autocmd Syntax * syn match commentTag "@todo" containedin=.*Comment,vimCommentTitle
 autocmd Syntax * syn match commentTag "@note" containedin=.*Comment,vimCommentTitle
 
