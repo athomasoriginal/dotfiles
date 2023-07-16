@@ -218,6 +218,16 @@ nvim based on the configurations in these dotfiles.
   > just do this for us automatically.  Also note that if you don't autoload nvm
   > like me, run that first.
 
+
+**Delete Nvim**
+
+> Assumes it's installed via brew
+
+- uninstall
+  ```command
+  brew uninstall nvim
+  ```
+
 ### iterm2
 
 - Settings
