@@ -76,8 +76,9 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 "" The plugins begin
 call plug#begin('~/.vim/plugged')
-  Plug 'athomasoriginal/vim-alabaster'
   Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+
+  Plug 'athomasoriginal/vim-alabaster'
 
   "" Telescope main plugins
   Plug 'nvim-lua/popup.nvim'
@@ -86,17 +87,20 @@ call plug#begin('~/.vim/plugged')
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
   "" Telescope optional plugins
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-telescope/telescope-project.nvim'
-  Plug 'nvim-treesitter/playground'
+
+  "" Text icons
   Plug 'kyazdani42/nvim-web-devicons'
+
+  "" Syntax Highlighting
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/playground'
+
+  "" Markdown
+  Plug 'plasticboy/vim-markdown'
 
   "" LSP client
   Plug 'neovim/nvim-lspconfig'
-
-  "" Markdown stuffs
-  Plug 'godlygeek/tabular'
-  Plug 'plasticboy/vim-markdown'
 
   "" Improved commenting
   Plug 'preservim/nerdcommenter'
@@ -108,6 +112,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
 
   "" Clojure REPL
+  Plug 'guns/vim-sexp',    {'for': 'clojure'}
   Plug 'liquidz/vim-iced', {'for': 'clojure'}
 
   "" JavaScript
