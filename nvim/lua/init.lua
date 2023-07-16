@@ -56,6 +56,14 @@ require("nvim-treesitter.configs").setup {
 
 local nvim_lsp = require('lspconfig')
 
+
+local server_settings = {
+  clojure_lsp = {
+    ['semantic-tokens?'] = true,
+  }
+}
+
+
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -93,15 +101,27 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
+
+---- Start
+---- Loop through all servers conveniently and apply local bindings, settings
+---- etc the the servers
 local servers = { 'clojure_lsp' }
+
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+  -- Global LSP Options to be aplied to all lsp servers
+  local lsp_opts = {
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
-    }
+    },
+    init_options = {}
   }
-end
 
+  -- LSP Specific Settings to apply
+  if server_settings[lsp] then
+    lsp_opts.init_options = server_settings[lsp]
+  end
+
+  -- Start LSP Server
+  nvim_lsp[lsp].setup(lsp_opts)
+end
