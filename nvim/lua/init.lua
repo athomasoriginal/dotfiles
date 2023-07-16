@@ -37,7 +37,17 @@ telescope.load_extension("project")
 telescope.load_extension("fzy_native")
 require("nvim-treesitter.configs").setup {
   highlight = { enable = true },
-  ensure_installed = {"html", "css", "vim", "lua", "javascript", "clojure", "rust", "markdown"},
+  ensure_installed = {
+    "html",
+    "css",
+    "vim",
+    "lua",
+    "javascript",
+    "clojure",
+    "rust",
+    "markdown",
+    "markdown_inline"
+  },
 }
 
 -- ----------------------------------------------------------------------------
