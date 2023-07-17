@@ -198,7 +198,7 @@ to think about right now.
 The following are some notes for getting up and running with nvim based on the
 configurations in these dotfiles.
 
-- Install [vim-plugin]
+- Install [packer]
 - Install [Rust and Cargo]
   - This is required to use the `parinfer-rust` nvim plugin
 - Install and Build [parinfer-rust]
@@ -308,7 +308,8 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Zsh Performance]: https://htr3n.github.io/2018/07/faster-zsh/
 [local gitconfig]: https://coderwall.com/p/wkqf9q/local-global-git-config
 [nvm]: https://github.com/creationix/nvm
-[vim-plugin]: https://github.com/junegunn/vim-plug
+[package.sync]: https://atom.io/packages/package-sync
+[packer]: https://github.com/wbthomason/packer.nvim
 [Rust and Cargo]: https://doc.rust-lang.org/cargo/getting-started/installation.html
 [parinfer-rust]: https://github.com/eraserhd/parinfer-rust
 [guake terminal]: https://github.com/Guake/guake
