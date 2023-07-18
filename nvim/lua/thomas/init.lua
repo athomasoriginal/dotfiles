@@ -129,6 +129,23 @@ vim.keymap.set('v', '>', ">gv")
 vim.keymap.set('n', '<C-S>', "<cmd>:update<CR>")
 
 
+-- move line of text down
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+
+-- move line of text up
+
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- bring line of text below, up, but keep cursor in position
+
+vim.keymap.set("n", "J", "mzJ`z")
+
+-- don't lose your copied text while pasting
+
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+
 -- ----------------------------------------------------------------------------
 -- Packer
 -- ----------------------------------------------------------------------------
