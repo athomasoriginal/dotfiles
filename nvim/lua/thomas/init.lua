@@ -191,49 +191,49 @@ require('packer').startup(function(use)
   }
 
   -- Pretty Icons
-  
+
   use 'kyazdani42/nvim-web-devicons'
 
   -- Markdown Tooling
-  
+
   use 'plasticboy/vim-markdown'
 
   -- Lsp
-  
+
   use 'neovim/nvim-lspconfig'
 
   -- Commenting
-  
+
   use 'preservim/nerdcommenter'
 
   -- Folder/File GUI
-  
+
   use 'preservim/nerdtree'
 
   -- Clojure
 
   use {
-    'eraserhd/parinfer-rust', 
-    ft = "clojure", 
+    'eraserhd/parinfer-rust',
+    ft = "clojure",
     run = 'cargo build --release'
   }
 
-  use { 
-    'guns/vim-sexp', 
+  use {
+    'guns/vim-sexp',
     ft = "clojure"
   }
 
   use {
-    'liquidz/vim-iced', 
+    'liquidz/vim-iced',
     ft = "clojure"
   }
 
   -- formatting
 
-  use { 
+  use {
     'prettier/vim-prettier',
     run = 'yarn install',
-    ft = {'javascript', 'markdown', 'css', 'json', 'html'} 
+    ft = {'javascript', 'markdown', 'css', 'json', 'html'}
   }
 end)
 
@@ -376,12 +376,12 @@ end
 -- syntax highlight contents of code blocks in md files
 
 vim.g.markdown_fenced_languages = {
-  'html', 
-  'javascript', 
-  'command=bash', 
-  'bash', 
-  'vim', 
-  'clojure', 
+  'html',
+  'javascript',
+  'command=bash',
+  'bash',
+  'vim',
+  'clojure',
   'njk'
 }
 
