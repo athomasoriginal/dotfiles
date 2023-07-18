@@ -50,7 +50,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 
 -- infinite horizontal typing
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.splitright = true
 
@@ -69,7 +69,7 @@ vim.opt.showmode = true
 -- Search as we type
 vim.opt.incsearch = true
 
--- 
+--
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 -- ----------------------------------------------------------------------------
