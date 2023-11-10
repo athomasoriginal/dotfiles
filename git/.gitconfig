@@ -57,3 +57,5 @@
 [user]
 	name = athomasoriginal
 	email = thomasmattacchione@gmail.com
+[init]
+	defaultBranch = main
