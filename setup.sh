@@ -63,7 +63,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 info "dotfiles - removing existing dotfiles"
 rm -rf ~/.zprofile
 rm -rf ~/.zshrc
-rm -rf ~/.atom
 rm -rf ~/.gitconfig
 rm -rf ~/.gitignore
 rm -rf ~/.gitcommitmessage
@@ -79,7 +78,6 @@ rm -rf ~/.config/nvim
 info "dotfiles - symlinking dotfiles"
 ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zprofile
 ln -sf ~/dotfiles/zsh/.zshrc                   ~/.zshrc
-ln -sf ~/dotfiles/atom/                        ~/.atom
 ln -sf ~/dotfiles/zsh/themes/thomas.zsh-theme  ~/.oh-my-zsh/themes/thomas.zsh-theme
 ln -sf ~/dotfiles/git/.gitignore               ~/.gitignore
 ln -sf ~/dotfiles/git/.gitconfig               ~/.gitconfig

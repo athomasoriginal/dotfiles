@@ -189,8 +189,8 @@ to think about right now.
 
 ### Neovim
 
-I use nvim + atom, the following are some notes for getting up and running with
-nvim based on the configurations in these dotfiles.
+The following are some notes for getting up and running with nvim based on the
+configurations in these dotfiles.
 
 - Install [vim-plugin]
 - Install [Rust and Cargo]
@@ -272,9 +272,10 @@ These are some helpful extras which I figure could be helpful to just show peopl
 > This section is for my fallen Homies. 🪦 🍻
 
 - Atom - Mid 2022
-  - started to transition for the speed, simplicity and flexibility.  This is
-    in the time where big IDE has taken over.  Yes, I'm looking at you VS Code,
-    Jet Brains etc.
+  - I transitioned away from Atom because Github decided to end its life once
+    Github was bought by Microsoft.  Additionally though, it was getting long
+    in the tooth regarding speed.  Either way though, it was, and still is,
+    a better IDE than VScode.
 
 [Quickstart]: #quickstart
 [Post Setup]: #post-setup
@@ -300,13 +301,11 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Zsh Performance]: https://htr3n.github.io/2018/07/faster-zsh/
 [local gitconfig]: https://coderwall.com/p/wkqf9q/local-global-git-config
 [nvm]: https://github.com/creationix/nvm
-[package.sync]: https://atom.io/packages/package-sync
 [vim-plugin]: https://github.com/junegunn/vim-plug
 [Rust and Cargo]: https://doc.rust-lang.org/cargo/getting-started/installation.html
 [parinfer-rust]: https://github.com/eraserhd/parinfer-rust
 [guake terminal]: https://github.com/Guake/guake
 [Brewfile]: https://robots.thoughtbot.com/brewfile-a-gemfile-but-for-homebrew
 [iterm2 launch with zsh]: https://stackoverflow.com/questions/13476232/make-iterm2-launch-with-zsh
-[sync atom]: https://evanhahn.com/atom-apm-install-list/
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [upgrade macos]: https://support.apple.com/en-ca/HT201541
