@@ -74,6 +74,7 @@ rm -rf ~/.duti
 rm -rf ~/.gitconfig.local
 rm -rf ~/.clojure/deps.edn
 rm -rf ~/.config/nvim
+rm -rf ~/.config/kitty
 
 info "dotfiles - symlinking dotfiles"
 ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zprofile
@@ -88,13 +89,7 @@ ln -sf ~/dotfiles/zsh/.extras                  ~/.extras
 ln -sf ~/dotfiles/.duti                        ~/.duti
 ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
-
-
-# kitty terminal
-# =============================================================================
-# add `kitty` shortcut
-
-ln -s /Applications/kitty.app/Contents/MacOS/kitty /usr/local/bin/kitty
+ln -sf ~/dotfiles/kitty                        ~/.config/kitty
 
 # node
 # =============================================================================
