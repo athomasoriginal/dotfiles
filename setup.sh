@@ -90,6 +90,12 @@ ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
 
 
+# kitty terminal
+# =============================================================================
+# add `kitty` shortcut
+
+ln -s /Applications/kitty.app/Contents/MacOS/kitty /usr/local/bin/kitty
+
 # node
 # =============================================================================
 

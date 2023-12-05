@@ -119,6 +119,12 @@ if type jenv > /dev/null; then
     }
 fi
 
+# ------------------------------------------------------------------------------
+# KITTY TERMINAL
+# ------------------------------------------------------------------------------
+# make `kitty` cmd available in terminal
+# see https://github.com/kovidgoyal/kitty/issues/3063
+export PATH=$PATH:/Applications/kitty.app/Contents/MacOS
 
 # ------------------------------------------------------------------------------
 # POSTGRES

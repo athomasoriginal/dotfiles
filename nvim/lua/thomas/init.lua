@@ -228,6 +228,9 @@ require('packer').startup(function(use)
     ft = "clojure"
   }
 
+  -- Kitty Config Syntax Highlighting Support
+  use "fladson/vim-kitty"
+
   -- formatting
 
   use {
