@@ -72,6 +72,9 @@ vim.opt.incsearch = true
 --
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
+-- Set the terminal tab title
+vim.opt.titlestring = "NVIM - %t"
+
 -- ----------------------------------------------------------------------------
 -- Remaps
 -- ----------------------------------------------------------------------------
