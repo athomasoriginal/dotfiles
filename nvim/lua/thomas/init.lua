@@ -289,6 +289,7 @@ telescope.load_extension("fzy_native")
 require("nvim-treesitter.configs").setup {
   highlight = { enable = true },
   ensure_installed = {
+    "c",
     "html",
     "css",
     "vim",
@@ -309,6 +310,7 @@ local nvim_lsp = require('lspconfig')
 
 
 local server_settings = {
+  ccls        = {},
   clojure_lsp = {
     ['semantic-tokens?'] = true,
   }
@@ -348,7 +350,7 @@ end
 ---- Start
 ---- Loop through all servers conveniently and apply local bindings, settings
 ---- etc the the servers
-local servers = { 'clojure_lsp' }
+local servers = { 'ccls', 'clojure_lsp' }
 
 for _, lsp in ipairs(servers) do
   -- Global LSP Options to be aplied to all lsp servers

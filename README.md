@@ -11,6 +11,7 @@ new mac for development.
 - [Language Details]
   - [node]
   - [clojure]
+  - [c languages]
 - [Dev Tools]
   - [Neovim]
   - [iterm2]
@@ -179,6 +180,11 @@ Similar to Node and nvm, we use jenv with Java.  Yes, this also slows down the
 initialization of your terminal so we apply a similar performance optimizing
 strategy.
 
+### c languages
+
+Be sure to have `ccls` installed or the `c` files won't connect to the ccls
+lsp server.
+
 ## Dev Tools
 
 This section outlines how to get started with some of the main tools in my kit.
@@ -287,6 +293,7 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Aliases]: #aliases
 [node]: #node
 [clojure]: #clojure
+[c languages]: #c-languages
 [Dev Tools]: #dev-tools
 [Neovim]: #Neovim
 [iterm2]: #iterm2

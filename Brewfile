@@ -6,6 +6,7 @@ tap "clojure/tools"
 
 # Developer Tools
 brew "git"
+brew "ccls"
 brew "clojure/tools/clojure"
 brew "borkdude/brew/babashka"
 brew "borkdude/brew/clj-kondo"
