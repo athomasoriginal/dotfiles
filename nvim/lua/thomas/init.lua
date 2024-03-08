@@ -184,13 +184,8 @@ require('packer').startup(function(use)
 
   -- Color Theme
 
-  use{
-    'athomasoriginal/vim-alabaster',
-    as = 'alabaster-dark',
-
-    config = function()
-      vim.cmd('colorscheme alabaster-dark')
-    end
+  use {
+    'athomasoriginal/vim-alabaster'
   }
 
   -- Pretty Icons
@@ -371,6 +366,11 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup(lsp_opts)
 end
 
+-- ----------------------------------------------------------------------------
+-- Set ColorScheme
+-- ----------------------------------------------------------------------------
+
+vim.cmd('colorscheme alabaster-dark')
 
 -- ----------------------------------------------------------------------------
 -- lasticboy/vim-markdown
