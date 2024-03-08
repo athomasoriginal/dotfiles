@@ -25,8 +25,8 @@
   ;; usage:   clj -M:deps
   ;; example: (require '[clojure.tools.deps.alpha.repl :refer [add-lib]])
   :tda
-  {:extra-deps {org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"}}}
-                                             ;:sha     "5bfcef59a2c92102b7ff491542e143d481083556"}}}
+  {:extra-deps {org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
+                                              :sha     "5bfcef59a2c92102b7ff491542e143d481083556"}}}
 
 
   ;; create project from template
