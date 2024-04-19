@@ -1,5 +1,21 @@
 -- ----------------------------------------------------------------------------
--- Sets
+-- Notes
+-- ----------------------------------------------------------------------------
+
+-- * Strings - escapes in lua
+--   Example: `\e` -> `\\e`
+-- * Vim Functions
+--   Find them in `vim.fn.`
+-- * Vim Options
+--   `vim.o` sets global vim options
+--   `vim.wo` sets window scoped options
+--   `vim.bo` sets buffer scoped options
+--   `vim.g` sets global variables
+--   `vim.opt` sets global, window and buffer options.  Acts like `:set` in
+--   vimscript.
+
+-- ----------------------------------------------------------------------------
+-- Options
 -- ----------------------------------------------------------------------------
 
 -- Keep 10 characters visible above and below the cursor
@@ -37,9 +53,6 @@ vim.opt.laststatus = 3
 -- Tab width
 vim.opt.tabstop = 2
 
--- prevent copying of line numbers when using a mouse
-vim.opt.mouse = "a"
-
 -- prevent bell noise when things go wrong
 vim.opt.errorbells = true
 
@@ -69,11 +82,71 @@ vim.opt.showmode = true
 -- Search as we type
 vim.opt.incsearch = true
 
---
+-- True Color Support
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 -- Set the terminal tab title
 vim.opt.titlestring = "NVIM - %t"
+
+-- Mouse Support - prevent copying of line numbers when using a mouse (kitty)
+vim.opt.mouse = "a"
+
+-- Mouse Support - add terminal support for modern mouse codes (kitty support)
+vim.o.ttymouse = "sgr"
+
+-- Mouse Support - baloon popup support
+vim.o.balloonevalterm = true
+
+-- Call everything that follows before the theme is set
+
+-- Underline Support - Styled and Colored (kitty support)
+vim.o.t_AU = "\\e[58:5:%dm"
+vim.o.t_8u = "\\e[58:2:%lu:%lu:%lum"
+vim.o.t_Us = "\\e[4:2m"
+vim.o.t_Cs = "\\e[4:3m"
+vim.o.t_ds = "\\e[4:4m"
+vim.o.t_Ds = "\\e[4:5m"
+vim.o.t_Ce = "\\e[4:0m"
+
+-- Strikethrough Support
+vim.o.t_Ts = "\\e[9m"
+vim.o.t_Te = "\\e[29m"
+
+---- True Color Support
+vim.o.t_8f = "\\e[38:2:%lu:%lu:%lum"
+vim.o.t_8b = "\\e[48:2:%lu:%lu:%lum"
+vim.o.t_RF = "\\e]10;?\\e\\"
+vim.o.t_RB = "\\e]11;?\\e\\"
+
+---- Bracketed Paste
+vim.o.t_BE = "\\e[?2004h"
+vim.o.t_BD = "\\e[?2004l"
+vim.o.t_PS = "\\e[200~"
+vim.o.t_PE = "\\e[201~"
+
+---- Cursor Control
+vim.o.t_RC = "\\e[?12$p"
+vim.o.t_SH = "\\e[%d q"
+vim.o.t_RS = "\\eP$q q\\e\\"
+vim.o.t_SI = "\\e[5 q"
+vim.o.t_SR = "\\e[3 q"
+vim.o.t_EI = "\\e[1 q"
+vim.o.t_VS = "\\e[?12l"
+
+---- Focus Tracking
+vim.o.t_fe = "\\e[?1004h"
+vim.o.t_fd = "\\e[?1004l"
+
+---- Window Title
+vim.o.t_ST = "\\e[22;2t"
+vim.o.t_RT = "\\e[23;2t"
+
+---- vim hardcodes background color erase even if the terminfo file does
+---- not contain bce. This causes incorrect background rendering when
+---- using a color theme with a background color in terminals such as
+---- kitty that do not support background color erase.
+
+vim.o.t_ut = ""
 
 -- ----------------------------------------------------------------------------
 -- Remaps
