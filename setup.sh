@@ -32,10 +32,14 @@ info "Setting up your mac..."
 # =============================================================================
 
 info "Brew - Checking if brew is already installed"
-if [[ $(which brew) == '' ]]; then
+if [[ $(which brew) == 'brew not found' ]]; then
     # http://brew.sh/
     info "Brew - Install"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+    # add homebrew to path
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/dotfiles/zsh/.zprofile 
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 else
   echo "Homebrew is already installed...";
 fi
