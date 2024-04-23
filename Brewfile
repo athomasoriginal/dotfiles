@@ -36,8 +36,6 @@ cask "font-meslo-lg-nerd-font"
 # Install casks items (apps, fonts etc)
 cask "google-chrome"
 cask "firefox"
-cask "iterm2"
 cask "slack"
 cask "dropbox"
 cask "vlc"
-cask "thor"
