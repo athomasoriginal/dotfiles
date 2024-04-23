@@ -95,11 +95,6 @@ ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
 ln -sf ~/dotfiles/kitty                        ~/.config/kitty
 
-# node
-# =============================================================================
-
-info "node - installing nvm"
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | bash
 
 # macOS init
 # =============================================================================
