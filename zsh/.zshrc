@@ -41,6 +41,10 @@ ZSH_THEME="thomas"
 # auto-update zsh after 13 days
 export UPDATE_ZSH_DAYS=13
 
+# make zsh-syntax-highlighting available
+# syntax hilight cli commands as you're typing
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # zsh plugins to improve your workflow
 plugins=(
     # syntax highlight man pages for easier reading
@@ -49,8 +53,6 @@ plugins=(
     colorize
     # shortcuts like `hidefiles` & `showfiles`
     macos
-    # syntax hilight cli commands as you're typing
-    zsh-syntax-highlighting
 )
 
 # be sure to source this after you specify the plugins above or they will all

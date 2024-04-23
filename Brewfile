@@ -6,6 +6,7 @@ tap "clojure/tools"
 
 # Developer Tools
 brew "git"
+brew "zsh-syntax-highlighting"
 brew "ccls"
 brew "clojure/tools/clojure"
 brew "borkdude/brew/babashka"

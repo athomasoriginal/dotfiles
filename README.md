@@ -118,10 +118,6 @@ And with that, let's start with setting up the dotfiles:
   > Please note that you will be prompted to enter your computer password while
   > the brew apps are being installed. To see what this is doing, checkout
   > the [Setup Explained] section
-- Install zsh-highlight (optional)
-  ```bash
-  see https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh
-  ```
 - Open new terminal tab and make sure there are no warnings
 
 Once you have completed the above steps, I like to perform the following steps
