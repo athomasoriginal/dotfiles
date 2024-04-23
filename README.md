@@ -124,11 +124,6 @@ Once you have completed the above steps, I like to perform the following steps
 just as a sanity check:
 
 - restart computer
-- verify iterm2 preferences are read from dotfiles.  To do this:
-  - Open `iterm2`
-  - load preferences from custom folder and enter the `path/to/profiles`
-  - Custom theme
-    - ensure the symlink was executed correctly
 - verify `.zshrc` is symlinked correctly
 
 
