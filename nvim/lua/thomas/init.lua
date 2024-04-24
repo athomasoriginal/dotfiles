@@ -152,7 +152,7 @@ vim.o.t_ut = ""
 -- Remaps
 -- ----------------------------------------------------------------------------
 
--- press space for glory
+-- press space for glory - should be before lazy.nvim
 
 vim.g.mapleader = " "
 
@@ -223,94 +223,95 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 
 -- ----------------------------------------------------------------------------
--- Packer
+-- Lazy.nvim (package manager)
 -- ----------------------------------------------------------------------------
 
--- Only required if you have packer configured as `opt`
-vim.cmd.packadd('packer.nvim')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-require('packer').startup(function(use)
-  -- Packer can manage itself
-
-  use 'wbthomason/packer.nvim'
+require("lazy").setup({
+  -- Color Theme
+  {
+    -- package name
+    'athomasoriginal/vim-alabaster',
+    -- load during startup
+    lazy = false,
+    -- load before other plugins
+    priority = 1000,
+    -- run colorscheme
+    config = function ()
+      vim.cmd([[colorscheme alabaster-dark]])
+    end,
+  },
 
   -- Telescope
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.2',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-fzy-native.nvim'
+    }
+  },
 
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-
-  use 'nvim-telescope/telescope-project.nvim'
-  use 'nvim-telescope/telescope-fzy-native.nvim'
-
-  -- Treesitter
-
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
-    end
-  }
-  use 'nvim-treesitter/playground'
-
-  -- Color Theme
-
-  use {
-    'athomasoriginal/vim-alabaster'
-  }
+  -- Telescope Extension - Projects
+  'nvim-telescope/telescope-project.nvim',
 
   -- Pretty Icons
-
-  use 'kyazdani42/nvim-web-devicons'
+  'kyazdani42/nvim-web-devicons',
 
   -- Markdown Tooling
-
-  use 'plasticboy/vim-markdown'
+  'plasticboy/vim-markdown',
 
   -- Lsp
-
-  use 'neovim/nvim-lspconfig'
+  'neovim/nvim-lspconfig',
 
   -- Commenting
-
-  use 'preservim/nerdcommenter'
+  'preservim/nerdcommenter',
 
   -- Folder/File GUI
+  'preservim/nerdtree',
 
-  use 'preservim/nerdtree'
-
-  -- Clojure
-
-  use {
+  -- Clojure - structural formatting
+  {
     'eraserhd/parinfer-rust',
     ft = "clojure",
-    run = 'cargo build --release'
-  }
+    build = 'cargo build --release'
+  },
 
-  use {
+  -- Clojure - structural formatting
+  {
     'guns/vim-sexp',
     ft = "clojure"
-  }
+  },
 
-  use {
+  -- Clojure - integrated REPL
+  {
     'liquidz/vim-iced',
     ft = "clojure"
-  }
+  },
 
-  -- Kitty Config Syntax Highlighting Support
+  -- Kitty - Syntax Highlighting Support
+  "fladson/vim-kitty",
 
-  use "fladson/vim-kitty"
-
-  -- formatting
-
-  use {
+  -- JavaScript - formatting
+  {
     'prettier/vim-prettier',
     run = 'yarn install',
     ft = {'javascript', 'markdown', 'css', 'json', 'html'}
   }
-end)
+})
+
 
 -- ----------------------------------------------------------------------------
 -- Telescope Config
@@ -438,12 +439,6 @@ for _, lsp in ipairs(servers) do
   -- Start LSP Server
   nvim_lsp[lsp].setup(lsp_opts)
 end
-
--- ----------------------------------------------------------------------------
--- Set ColorScheme
--- ----------------------------------------------------------------------------
-
-vim.cmd('colorscheme alabaster-dark')
 
 -- ----------------------------------------------------------------------------
 -- lasticboy/vim-markdown
