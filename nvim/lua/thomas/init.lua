@@ -18,86 +18,73 @@
 -- Options
 -- ----------------------------------------------------------------------------
 
--- Keep 10 characters visible above and below the cursor
-vim.opt.scrolloff = 8
 
--- Keep 20 characters visible to the right and left of the cursor
-vim.opt.sidescrolloff = 8
+-- Text
+-- ----------------------------------------------------------------------------
+vim.opt.wrap = false       -- Don't automatically wrap text
+vim.opt.scrolloff = 8      -- Keep 10 char visible above and below cursor
+vim.opt.sidescrolloff = 8  -- Keep 20 char visible right and left of cursor
+vim.opt.colorcolumn = "80" -- Add a vertical bar at 80 characters
 
--- show a vertical bar at 80 characters
-vim.opt.colorcolumn = "80"
 
--- sync your clipboard with system clipboard
-vim.opt.clipboard = "unnamedplus"
+-- General
+-- ----------------------------------------------------------------------------
+vim.opt.errorbells = true  -- prevent bell noise when things go wrong
+vim.opt.title = true       -- show window title
+vim.opt.titlestring = "NVIM - %t" -- Set the terminal tab title
+vim.opt.hidden = true      -- hide the buffers in the background (don't close em)
+vim.opt.swapfile = false   -- remove swapfiles (they're annoying)
+vim.opt.backup = false     -- remove swapfiles (they're annoying)
+vim.opt.splitright = true  -- default to splitting windows to the right
+vim.opt.number = true      -- Show line numbers
+vim.opt.signcolumn = "yes" -- Add space to the left column (for signs like git)
 
--- hide the buffers in the background, but don't close them
-vim.opt.hidden = true
-vim.opt.expandtab = true
 
--- indentation formatting for new lines
-vim.opt.shiftwidth = 2
+-- Clipboard
+-- ----------------------------------------------------------------------------
+vim.opt.clipboard = "unnamedplus" -- sync your clipboard with system clipboard
 
--- automatically indent at the same lvl as the previous
-vim.opt.smartindent = true
 
--- type in lower case or be specific about casing
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+-- Tab & Indentation Formatting
+-- ----------------------------------------------------------------------------
+vim.opt.shiftwidth = 2     -- 2 spaces indent width
+vim.opt.softtabstop = 2    -- ...
+vim.opt.tabstop = 2        -- 2 spaces for tab width
+vim.opt.expandtab = true   -- Exapnd tabs to spaces
+vim.opt.smartindent = true -- Copy the indent from the current line to the next
 
---
-vim.opt.softtabstop = 2
 
--- set statusline to be global status line
-vim.opt.laststatus = 3
+-- Search Settings
+-- ----------------------------------------------------------------------------
+vim.opt.ignorecase = true  -- ignore case when searching
+vim.opt.smartcase = true   -- Mix cases to activate case sensitive search
+vim.opt.incsearch = true   -- Search as we type
 
--- Tab width
-vim.opt.tabstop = 2
 
--- prevent bell noise when things go wrong
-vim.opt.errorbells = true
+-- Statusline
+-- ----------------------------------------------------------------------------
+vim.opt.laststatus = 3  -- set statusline to be global status line
+vim.opt.showmode = true -- Hide the mode you're currently in (status bar)
 
-vim.opt.title = true
 
--- remove swapfiles - annoying
-vim.opt.swapfile = false
-vim.opt.backup = false
+-- Colors
+-- ----------------------------------------------------------------------------
+vim.opt.termguicolors = true           -- Use colorschemes you set
+vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1 -- True Color Support
 
--- infinite horizontal typing
-vim.opt.wrap = false
 
-vim.opt.splitright = true
+-- Mouse Enhancement - Kitty
+-- ----------------------------------------------------------------------------
 
--- Show line numbers
-vim.opt.number = true
+vim.opt.mouse = "a"          -- Mouse Support - prevent copying line numbers
+                             -- when using a mouse
+vim.o.ttymouse = "sgr"       -- Mouse Support - add terminal support for modern
+                             -- mouse codes
+vim.o.balloonevalterm = true -- Mouse Support - baloon popup support
 
--- Add space to the left column when signs are used e.g. git
-vim.opt.signcolumn = "yes"
-
--- Use colorschemes you set
-vim.opt.termguicolors = true
-
--- Hide the mode you're currently in (status bar)
-vim.opt.showmode = true
-
--- Search as we type
-vim.opt.incsearch = true
-
--- True Color Support
-vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
-
--- Set the terminal tab title
-vim.opt.titlestring = "NVIM - %t"
-
--- Mouse Support - prevent copying of line numbers when using a mouse (kitty)
-vim.opt.mouse = "a"
-
--- Mouse Support - add terminal support for modern mouse codes (kitty support)
-vim.o.ttymouse = "sgr"
-
--- Mouse Support - baloon popup support
-vim.o.balloonevalterm = true
-
--- Call everything that follows before the theme is set
+-- Color Enhancement - Kitty
+-- ----------------------------------------------------------------------------
+-- Call everything that follows before the color theme is set
 
 -- Underline Support - Styled and Colored (kitty support)
 vim.o.t_AU = "\\e[58:5:%dm"
