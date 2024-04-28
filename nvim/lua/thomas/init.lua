@@ -42,7 +42,7 @@ vim.opt.signcolumn = "yes" -- Add space to the left column (for signs like git)
 
 -- Clipboard
 -- ----------------------------------------------------------------------------
-vim.opt.clipboard = "unnamedplus" -- sync your clipboard with system clipboard
+vim.opt.clipboard:append("unnamedplus") -- user system clipboard as default reg
 
 
 -- Tab & Indentation Formatting
