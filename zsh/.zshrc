@@ -41,8 +41,7 @@ ZSH_THEME="thomas"
 # auto-update zsh after 13 days
 export UPDATE_ZSH_DAYS=13
 
-# make zsh-syntax-highlighting available
-# syntax hilight cli commands as you're typing
+# make zsh-syntax-highlighting available - highlight cli commands as typing
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh plugins to improve your workflow

@@ -36,9 +36,9 @@ if [[ $(which brew) == 'brew not found' ]]; then
     # http://brew.sh/
     info "Brew - Install"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    
+
     # add homebrew to path
-    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/dotfiles/zsh/.zprofile 
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/dotfiles/zsh/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
 else
   echo "Homebrew is already installed...";
@@ -65,6 +65,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # =============================================================================
 
 info "dotfiles - removing existing dotfiles"
+rm -rf ~/.zsh_profile
 rm -rf ~/.zprofile
 rm -rf ~/.zshrc
 rm -rf ~/.gitconfig
@@ -81,7 +82,8 @@ rm -rf ~/.config/nvim
 rm -rf ~/.config/kitty
 
 info "dotfiles - symlinking dotfiles"
-ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zprofile
+ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
+ln -sf ~/dotfiles/zsh/.zprofile                ~/.zprofile
 ln -sf ~/dotfiles/zsh/.zshrc                   ~/.zshrc
 ln -sf ~/dotfiles/zsh/themes/thomas.zsh-theme  ~/.oh-my-zsh/themes/thomas.zsh-theme
 ln -sf ~/dotfiles/git/.gitignore               ~/.gitignore
