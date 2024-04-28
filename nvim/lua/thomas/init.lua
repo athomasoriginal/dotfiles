@@ -213,7 +213,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 
 -- ----------------------------------------------------------------------------
--- Lazy.nvim (package manager)
+-- Package Manager (Lazy.nvim)
 -- ----------------------------------------------------------------------------
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -230,69 +230,82 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- Color Theme
+  -- Color Theme & Styles
+  -- --------------------------------------------------------------------------
+
+  -- Custome color theme
   {
-    -- package name
     'athomasoriginal/vim-alabaster',
-    -- load during startup
-    lazy = false,
-    -- load before other plugins
-    priority = 1000,
-    -- run colorscheme
-    config = function ()
+    lazy = false,                    -- load during startup
+    priority = 1000,                 -- load before other plugins
+    config = function ()             -- run colorscheme
       vim.cmd([[colorscheme alabaster-dark]])
     end,
   },
 
-  -- Telescope
+  -- Pretty icons
+  'kyazdani42/nvim-web-devicons',
+
+  -- Kitty - Syntax Highlighting Support
+  "fladson/vim-kitty",
+
+
+  -- File Search & Navigation
+  -- --------------------------------------------------------------------------
+
+  -- Search files/folders
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.6',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-fzy-native.nvim'
-    }
+      { 'nvim-telescope/telescope-fzy-native.nvim', build = "make" },
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = function ()
+
+    end
   },
 
-  -- Telescope Extension - Projects
+  -- Telescope extension projects
   'nvim-telescope/telescope-project.nvim',
 
-  -- Pretty Icons
-  'kyazdani42/nvim-web-devicons',
-
-  -- Markdown Tooling
-  'plasticboy/vim-markdown',
-
-  -- Lsp
-  'neovim/nvim-lspconfig',
-
-  -- Commenting
-  'preservim/nerdcommenter',
-
-  -- Folder/File GUI
+  -- File/Folder UI
   'preservim/nerdtree',
 
-  -- Clojure - structural formatting
+
+  -- Language Support
+  -- --------------------------------------------------------------------------
+  -- LSP
+  'neovim/nvim-lspconfig',
+
+  -- Markdown
+  'plasticboy/vim-markdown',
+
+  -- Clojure - auto structural editing
   {
     'eraserhd/parinfer-rust',
     ft = "clojure",
     build = 'cargo build --release'
   },
 
-  -- Clojure - structural formatting
+  -- Clojure - manual structural editing
   {
     'guns/vim-sexp',
     ft = "clojure"
   },
 
-  -- Clojure - integrated REPL
+  -- Clojure - integrated repl
   {
     'liquidz/vim-iced',
     ft = "clojure"
   },
 
-  -- Kitty - Syntax Highlighting Support
-  "fladson/vim-kitty",
+  -- Convenience
+  -- --------------------------------------------------------------------------
+
+  -- Commenting
+  'preservim/nerdcommenter',
 
   -- JavaScript - formatting
   {
