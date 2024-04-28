@@ -140,17 +140,17 @@ vim.o.t_ut = ""
 -- ----------------------------------------------------------------------------
 
 -- press space for glory - should be before lazy.nvim
-
+-- ----------------------------------------------------------------------------
 vim.g.mapleader = " "
 
 
 -- escape shortcut
-
+-- ----------------------------------------------------------------------------
 vim.keymap.set('i', 'jk', "<ESC>")
 
 
 -- folder/file navigation
-
+-- ----------------------------------------------------------------------------
 vim.keymap.set('n', '<leader>n', "<cmd>NERDTreeToggle<CR>")
 
 vim.keymap.set('n', '<leader>p', "<cmd>Telescope project<CR>")
@@ -165,12 +165,12 @@ vim.keymap.set('n', '<leader>dl', "<cmd>edit ~/code/dev-log.md<CR>")
 
 
 -- remove active highlights
-
+-- ----------------------------------------------------------------------------
 vim.keymap.set('n', '<leader>k', "<cmd>nohlsearch<CR>")
 
 
 -- window navigation
-
+-- ----------------------------------------------------------------------------
 vim.keymap.set('n', '<C-h>', "<C-w>h")
 
 vim.keymap.set('n', '<C-j>', "<C-w>j")
@@ -181,31 +181,34 @@ vim.keymap.set('n', '<C-l>', "<C-w>l")
 
 
 -- visual reselect after indenting
-
+-- ----------------------------------------------------------------------------
 vim.keymap.set('v', '<', "<gv")
 
 vim.keymap.set('v', '>', ">gv")
 
 
 -- save file
-
+-- ----------------------------------------------------------------------------
 vim.keymap.set('n', '<C-S>', "<cmd>:update<CR>")
 
 
 -- move line of text down
-
+-- ----------------------------------------------------------------------------
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
--- move line of text up
 
+-- move line of text up
+-- ----------------------------------------------------------------------------
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- bring line of text below, up, but keep cursor in position
 
+-- bring line of text below, up, but keep cursor in position
+-- ----------------------------------------------------------------------------
 vim.keymap.set("n", "J", "mzJ`z")
 
--- don't lose your copied text while pasting
 
+-- don't lose your copied text while pasting
+-- ----------------------------------------------------------------------------
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 
