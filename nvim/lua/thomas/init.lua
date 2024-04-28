@@ -249,6 +249,34 @@ require("lazy").setup({
   -- Kitty - Syntax Highlighting Support
   "fladson/vim-kitty",
 
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    event  = { "BufReadPre", "BufNewFile" },
+    build  = ":TSUpdate",
+    config = function()
+      local treesitter = require("nvim-treesitter.configs")
+
+      treesitter.setup({
+        highlight = {
+          enable = true,
+        },
+        ensure_installed = {
+          "c",
+          "html",
+          "css",
+          "vim",
+          "lua",
+          "json",
+          "javascript",
+          "clojure",
+          "rust",
+          "markdown",
+          "markdown_inline",
+        },
+      })
+    end,
+  },
 
   -- File Search & Navigation
   -- --------------------------------------------------------------------------
@@ -354,25 +382,6 @@ telescope.setup {
 telescope.load_extension("project")
 telescope.load_extension("fzy_native")
 
-
--- ----------------------------------------------------------------------------
--- Treesitter
--- ----------------------------------------------------------------------------
-require("nvim-treesitter.configs").setup {
-  highlight = { enable = true },
-  ensure_installed = {
-    "c",
-    "html",
-    "css",
-    "vim",
-    "lua",
-    "javascript",
-    "clojure",
-    "rust",
-    "markdown",
-    "markdown_inline"
-  },
-}
 
 -- ----------------------------------------------------------------------------
 -- LSP Config
