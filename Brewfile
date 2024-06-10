@@ -26,6 +26,9 @@ brew "tmux"
 brew "gh"
 brew "jenv"
 
+# C Language Programming
+brew "clang-format"
+
 # nvim
 brew "neovim"
 brew "fd"
