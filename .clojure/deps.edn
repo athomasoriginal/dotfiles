@@ -39,6 +39,6 @@
   ;;   * clj -T:new :template athomasoriginal/c-app :name native-app
   :new
   {:replace-deps {io.github.seancorfield/deps-new     {:git/tag "v0.7.1" :git/sha "c1e42aa"}
-                  io.github.athomasoriginal/templates {:git/sha "4d43512d559db951580b546cac9640a2410a8879"}}
+                  io.github.athomasoriginal/templates {:git/sha "563bf2f656a3b22ff75d55cbf624c59bfacaf89a"}}
    :exec-fn      org.corfield.new/create
    :exec-args    {:template athomasoriginal/reagent}}}}
