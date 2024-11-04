@@ -425,13 +425,13 @@ vim.g.vim_markdown_folding_disabled = 1
 vim.g.sexp_enable_insert_mode_mappings = 0
 
 -- ----------------------------------------------------------------------------
--- guns/vim-sexp
+-- liquidz/vim-iced
 -- ----------------------------------------------------------------------------
 
 vim.g.iced_enable_default_key_mappings = true
 
 -- ----------------------------------------------------------------------------
--- liquidz/vim-iced
+-- preservim/nerdtree
 -- ----------------------------------------------------------------------------
 
 vim.g.NERDTreeShowHidden = 1
