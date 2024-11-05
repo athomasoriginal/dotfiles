@@ -252,9 +252,6 @@ require("lazy").setup({
   -- LSP
   'neovim/nvim-lspconfig',
 
-  -- Markdown
-  'plasticboy/vim-markdown',
-
   -- Clojure - auto structural editing
   {
     'eraserhd/parinfer-rust',
@@ -396,27 +393,6 @@ for _, lsp in ipairs(servers) do
   -- Start LSP Server
   nvim_lsp[lsp].setup(lsp_opts)
 end
-
--- ----------------------------------------------------------------------------
--- lasticboy/vim-markdown
--- ----------------------------------------------------------------------------
-
--- syntax highlight contents of code blocks in md files
-
-vim.g.markdown_fenced_languages = {
-  'html',
-  'javascript',
-  'command=bash',
-  'bash',
-  'vim',
-  'clojure',
-  'njk'
-}
-
-vim.g.markdown_flavor = 'github'
-
-vim.g.vim_markdown_folding_disabled = 1
-
 
 -- ----------------------------------------------------------------------------
 -- guns/vim-sexp
