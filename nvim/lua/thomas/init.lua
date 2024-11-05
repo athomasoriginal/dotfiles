@@ -80,7 +80,7 @@ vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1 -- True Color Support
 -- ----------------------------------------------------------------------------
 
 vim.opt.mouse = "a"          -- Mouse Support - prevent copying line numbers
-                             -- when using a mouse                             
+                             -- when using a mouse
 
 
 -- ----------------------------------------------------------------------------
@@ -274,6 +274,7 @@ require("lazy").setup({
     ft = "clojure"
   },
 
+
   -- Convenience
   -- --------------------------------------------------------------------------
 
@@ -428,3 +429,12 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   command = [[:%s/\s\+$//e]],
   group = TrimWhiteSpaceGrp,
 })
+
+
+-- ----------------------------------------------------------------------------
+-- markdown
+-- ----------------------------------------------------------------------------
+
+-- remove vim's default options
+vim.g.markdown_recommended_style = 0
+
