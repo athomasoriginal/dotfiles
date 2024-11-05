@@ -412,6 +412,10 @@ vim.g.sexp_enable_insert_mode_mappings = 0
 
 vim.keymap.set("n", "<leader>'", "<cmd>ElinConnect<CR>")
 
+vim.keymap.set("n", "<leader>ss", "<cmd>ElinToggleInfoBuffer<CR>")
+
+vim.keymap.set("n", "<leader>ep", "<cmd>ElinPrintLastResult<CR>")
+
 vim.keymap.set("n", "<leader>ee", "<cmd>ElinEvalCurrentList<CR>")
 
 -- ----------------------------------------------------------------------------
