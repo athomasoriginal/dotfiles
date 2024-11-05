@@ -13,11 +13,14 @@
 --   `vim.g` sets global variables
 --   `vim.opt` sets global, window and buffer options.  Acts like `:set` in
 --   vimscript.
+-- * Report a setting's value
+--   `:set shiftwidth?`
+-- * Report where a setting was set
+--   `:verbose set shiftwidth?`
 
 -- ----------------------------------------------------------------------------
 -- Options
 -- ----------------------------------------------------------------------------
-
 
 -- Text
 -- ----------------------------------------------------------------------------
