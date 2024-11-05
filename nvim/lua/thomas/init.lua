@@ -270,7 +270,7 @@ require("lazy").setup({
 
   -- Clojure - integrated repl
   {
-    'liquidz/vim-iced',
+    'liquidz/elin',
     ft = "clojure"
   },
 
@@ -425,10 +425,14 @@ vim.g.vim_markdown_folding_disabled = 1
 vim.g.sexp_enable_insert_mode_mappings = 0
 
 -- ----------------------------------------------------------------------------
--- liquidz/vim-iced
+-- liquidz/elin
+--
+-- https://github.com/liquidz/elin/blob/ad692d01275500e479252a4c964d36c73b3064f8/plugin/elin.vim
 -- ----------------------------------------------------------------------------
 
-vim.g.iced_enable_default_key_mappings = true
+vim.keymap.set("n", "<leader>'", "<cmd>ElinConnect<CR>")
+
+vim.keymap.set("n", "<leader>ee", "<cmd>ElinEvalCurrentList<CR>")
 
 -- ----------------------------------------------------------------------------
 -- preservim/nerdtree
