@@ -50,18 +50,28 @@ vim.opt.clipboard:append("unnamedplus") -- user system clipboard as default reg
 
 -- Tab & Indentation Formatting
 -- ----------------------------------------------------------------------------
-vim.opt.shiftwidth = 2     -- 2 spaces indent width
-vim.opt.softtabstop = 2    -- ...
-vim.opt.tabstop = 2        -- 2 spaces for tab width
-vim.opt.expandtab = true   -- Exapnd tabs to spaces
+vim.opt.shiftwidth = 2     -- number of spaces to use when indententing
+vim.opt.softtabstop = 2    -- number of spaces to insert when the tab pressed
+vim.opt.tabstop = 2        -- number of spaces existing tabs are visualized
+vim.opt.expandtab = true   -- When tab pressed, insert ` ` instead of `\t` char
 vim.opt.smartindent = true -- Copy the indent from the current line to the next
+vim.opt.formatoptions = vim.opt.formatoptions
+	- 'a' -- avoid auto formatting
+	- 't' -- avoid auto formating code
+	+ 'c' -- comments respect textwidth
+	+ 'q' -- Allow formatting comments w/ gq
+	- 'o' -- O and o don't continue comments
+	+ 'r' -- continue comments when pressing enter.
+	+ 'n' -- Indent past the formatlistpat, not underneath it.
+	+ 'j' -- Auto-remove comments if possible.
+--vim.opt.formatlistpat = "^\\s*\\d\\+[\\]:.)}\\t ]\\s*"
 
 
 -- Search Settings
 -- ----------------------------------------------------------------------------
-vim.opt.ignorecase = true  -- ignore case when searching
-vim.opt.smartcase = true   -- Mix cases to activate case sensitive search
-vim.opt.incsearch = true   -- Search as we type
+vim.opt.ignorecase = true  -- Ignore case when searching
+vim.opt.smartcase  = true  -- Mix cases to activate case sensitive search
+vim.opt.incsearch  = true  -- Search as we type
 
 
 -- Statusline
