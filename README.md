@@ -189,7 +189,7 @@ to think about right now.
 The following are some notes for getting up and running with nvim based on the
 configurations in these dotfiles.
 
-- Install [packer]
+- Install [lazy]
 - Install [Rust and Cargo]
   - This is required to use the `parinfer-rust` nvim plugin
 - Install and Build [parinfer-rust]
@@ -204,9 +204,10 @@ configurations in these dotfiles.
 - Open Nvim
 - Install Plugins
   ```bash
-  :PlugInstall
+  :Lazy
   ```
-  > The casing is important
+  > This opens the `Lazy` (package manager) modal and from there you can `I`
+  > (Install) or `U` (update).
 
 **Gotchas**
 
@@ -299,8 +300,7 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Zsh Performance]: https://htr3n.github.io/2018/07/faster-zsh/
 [local gitconfig]: https://coderwall.com/p/wkqf9q/local-global-git-config
 [nvm]: https://github.com/creationix/nvm
-[package.sync]: https://atom.io/packages/package-sync
-[packer]: https://github.com/wbthomason/packer.nvim
+[lazy]: https://lazy.folke.io/installation
 [Rust and Cargo]: https://doc.rust-lang.org/cargo/getting-started/installation.html
 [parinfer-rust]: https://github.com/eraserhd/parinfer-rust
 [guake terminal]: https://github.com/Guake/guake
