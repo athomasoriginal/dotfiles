@@ -80,6 +80,7 @@ rm -rf ~/.gitconfig.local
 rm -rf ~/.clojure/deps.edn
 rm -rf ~/.config/nvim
 rm -rf ~/.config/kitty
+rm -rf ~/.config/ghostty
 
 info "dotfiles - symlinking dotfiles"
 ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
@@ -96,6 +97,7 @@ ln -sf ~/dotfiles/.duti                        ~/.duti
 ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
 ln -sf ~/dotfiles/kitty                        ~/.config/kitty
+ln -sf ~/dotfiles/ghostty                      ~/.config/ghostty
 
 
 # macOS init
