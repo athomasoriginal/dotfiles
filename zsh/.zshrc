@@ -166,3 +166,14 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # ------------------------------------------------------------------------------
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+
+# ------------------------------------------------------------------------------
+# Kamal
+# ------------------------------------------------------------------------------
+# we install Ruby here because Kamal is ruby. Yes, this makes us sad that so
+# much config is required
+# https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/
+source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.4.1
