@@ -26,6 +26,10 @@ brew "tmux"
 brew "gh"
 brew "jenv"
 
+# Ruby - kamal
+brew "ruby-install"
+brew "chruby"
+
 # C Language Programming
 brew "clang-format"
 

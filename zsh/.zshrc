@@ -171,9 +171,21 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 # ------------------------------------------------------------------------------
 # Kamal
 # ------------------------------------------------------------------------------
-# we install Ruby here because Kamal is ruby. Yes, this makes us sad that so
-# much config is required
+# run `loadruby` to install (only if needed) Ruby 3.4.1 and then source chruby
+# so we can use our version of Ruby in the current session.  The reason for
+# this is because I don't require Ruby in my regular work, so no need to add
+# to the session unless I call for it.
 # https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/
-source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.4.1
+alias loadruby='
+    version=3.4.1
+    source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+    source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+    output=$(chruby ${version} 2>&1)
+    if echo "$output" | grep -q "chruby: unknown Ruby:"; then
+        echo "Ruby ${version} not found, installing..."
+        ruby-install ruby-${version}
+        echo "Ruby ${version} installed. Now enabling..."
+        chruby ${version}
+    else
+        echo "Ready to Ruby ${version}"
+    fi'

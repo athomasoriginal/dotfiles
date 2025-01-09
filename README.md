@@ -16,6 +16,7 @@ new mac for development.
   * [Neovim]
   * [duti]
   * [macos]
+  * [shell]
 * [Extras]
   * [Aliases]
 * [Graveyard]
@@ -230,6 +231,17 @@ opened by which application. For example, lets say you want all `.html` files
 to be opened by `Sublime` and not the default browser, we can configure this in
 Duti. For more info, see the `.duti` file.
 
+### Shell
+
+Here are some of the shell tools **aliases**:
+
+* `loadnvm`
+  * setup nove env in the current shell.  It's a remarkably slow tool so I
+    manually call it when needed to keep the shall moving fast.
+* `loadruby`
+  * setup Ruby 3.4.1 in the current shell.  I only use Ruby for Kamal so this
+    is just a way to keep the shell clean.
+
 ### macos
 
 - [Preferences by the commandline]
@@ -287,6 +299,7 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Dev Tools]: #dev-tools
 [Neovim]: #Neovim
 [duti]: #duti
+[shell]: #shell
 [macos]: #macos
 [Graveyard]: #Graveyard
 
