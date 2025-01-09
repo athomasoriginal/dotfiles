@@ -14,7 +14,6 @@ new mac for development.
   - [c languages]
 - [Dev Tools]
   - [Neovim]
-  - [iterm2]
   - [duti]
   - [macos]
 - [Extras]
@@ -102,9 +101,6 @@ And with that, let's start with setting up the dotfiles:
   > ones that I think may be specific to me are listed below.  You should take
   > a look and verify that you want to keep them.  Just delete or comment out
   > the stuff you don't want.
-  - section - iterm2
-    - This is going to tell iterm2 to use the preferences I have setup in
-        these dotfiles. If you do not want them, comment this line out.
   - section - screen:
     - where the screenshots are stored
 - verify the `brewfile`
@@ -130,8 +126,7 @@ just as a sanity check:
 
 ## Gotchas
 
-- iterm 2 syntax highlighting not displaying correctly?
-  - See [iterm2 launch with zsh]
+N/A atm.
 
 ## Language Details
 
@@ -228,21 +223,6 @@ configurations in these dotfiles.
   brew uninstall nvim
   ```
 
-### iterm2
-
-- Settings
-  - I activate scroll functionality so you can just use the trackpad for long
-    pieces of text. For example, try typing `man defaults` into your terminal.
-    When you have to scroll this kind of long document in your terminal, it can
-    get janky. This helps to avoid that.
-- Color Themes
-  - Solarized - especially amazing if you ever code outside or in a room with a
-    lot of sunlight
-- hotkeys
-  - `command + d` will bring up iterm2 when in the background - very handy when
-     you are an active terminal user - something I picked up from
-    [guake terminal]
-
 ### duti
 
 duti is a program built to make it easier to configure which filetypes are
@@ -269,11 +249,29 @@ These are some helpful extras which I figure could be helpful to just show peopl
 
 > This section is for my fallen Homies. 🪦 🍻
 
-- Atom - Mid 2022
-  - I transitioned away from Atom because Github decided to end its life once
+* iterm2
+  * Died whenever I switched over to Kitty.  The following is setup information
+    which I'm keeping around for reference.
+  * Settings
+    * I activate scroll functionality so you can just use the trackpad for long
+      pieces of text. For example, try typing `man defaults` into your terminal.
+      When you have to scroll this kind of long document in your terminal, it can
+      get janky. This helps to avoid that.
+  * Color Themes
+    * Solarized - especially amazing if you ever code outside or in a room with a
+      lot of sunlight
+  * hotkeys
+    * `command + d` will bring up iterm2 when in the background - very handy when
+       you are an active terminal user - something I picked up from
+      [guake terminal]
+  * iterm 2 syntax highlighting not displaying correctly?
+    * See [iterm2 launch with zsh]
+* Atom - Mid 2022
+  * I transitioned away from Atom because Github decided to end its life once
     Github was bought by Microsoft.  Additionally though, it was getting long
     in the tooth regarding speed.  Either way though, it was, and still is,
     a better IDE than VScode.
+
 
 [Quickstart]: #quickstart
 [Post Setup]: #post-setup
@@ -288,7 +286,6 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [c languages]: #c-languages
 [Dev Tools]: #dev-tools
 [Neovim]: #Neovim
-[iterm2]: #iterm2
 [duti]: #duti
 [macos]: #macos
 [Graveyard]: #Graveyard
