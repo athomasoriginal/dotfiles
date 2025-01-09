@@ -1,4 +1,5 @@
 theme = alabaster-dark
+font-family = Berkeley Mono
 
 # -----------------------------------------------------------------------------
 # Keybindings
