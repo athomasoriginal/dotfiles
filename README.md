@@ -6,19 +6,19 @@ You can take what you like from these dotfiles a la carte, or feel free to use
 the [Quickstart] below which will walk you through how I setup a
 new mac for development.
 
-- [Quickstart]
-- [Gotchas]
-- [Language Details]
-  - [node]
-  - [clojure]
-  - [c languages]
-- [Dev Tools]
-  - [Neovim]
-  - [duti]
-  - [macos]
-- [Extras]
-  - [Aliases]
-- [Graveyard]
+* [Quickstart]
+* [Gotchas]
+* [Language Details]
+  * [node]
+  * [clojure]
+  * [c languages]
+* [Dev Tools]
+  * [Neovim]
+  * [duti]
+  * [macos]
+* [Extras]
+  * [Aliases]
+* [Graveyard]
 
 
 ## Quickstart Explained
