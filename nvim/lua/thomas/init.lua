@@ -117,7 +117,9 @@ vim.keymap.set('n', '<leader>f', "<cmd>Telescope find_files<CR>")
 
 vim.keymap.set('n', '<leader>b', "<cmd>Telescope buffers<CR>")
 
-vim.keymap.set('n', '<leader>g', "<cmd>Telescope live_grep<CR>")
+--vim.keymap.set('n', '<leader>g', "<cmd>Telescope live_grep<CR>")
+
+vim.keymap.set('n', '<leader>g', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 vim.keymap.set('n', '<leader>dl', "<cmd>edit ~/code/dev-log.md<CR>")
 
@@ -248,8 +250,9 @@ require("lazy").setup({
   -- Search files/folders
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.6',
+    tag = '0.1.8',
     dependencies = {
+      'nvim-telescope/telescope-live-grep-args.nvim',
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzy-native.nvim', build = "make" },
       'kyazdani42/nvim-web-devicons',
@@ -343,6 +346,7 @@ telescope.setup {
 
 telescope.load_extension("project")
 telescope.load_extension("fzy_native")
+telescope.load_extension("live_grep_args")
 
 
 -- ----------------------------------------------------------------------------
