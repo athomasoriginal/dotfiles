@@ -4,16 +4,15 @@ tap "clojure/tools"
 
 # Developer Tools
 brew "git"
+brew "zsh"
 brew "zsh-syntax-highlighting"
-brew "ccls"
+brew "zsh-completions"
 brew "clojure/tools/clojure"
 brew "borkdude/brew/babashka"
 brew "borkdude/brew/clj-kondo"
 brew "clojure-lsp/brew/clojure-lsp-native"
 brew "tree"
-brew "zsh"
 brew "mas"
-brew "zsh-completions"
 brew "coreutils"
 brew "findutils"
 brew "bash"
@@ -30,7 +29,8 @@ brew "jenv"
 brew "ruby-install"
 brew "chruby"
 
-# C Language Programming
+# C
+brew "ccls"
 brew "clang-format"
 
 # nvim
