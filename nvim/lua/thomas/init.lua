@@ -442,7 +442,7 @@ vim.keymap.set("n", "<leader>ee", "<cmd>ElinEvalCurrentList<CR>")
 vim.keymap.set("n", "<leader>et", "<cmd>ElinTestFocusedCurrentTesting<CR>")
 
 -- @note command chosen because `r` is closer than `t`
-vim.keymap.set("n", "<leader>er", "<cmd>ElinTestFocusedCurrentTesting<CR>")
+vim.keymap.set("n", "<leader>er", "<cmd>ElinEvalCurrentTopList<CR>")
 
 -- ----------------------------------------------------------------------------
 -- preservim/nerdtree
