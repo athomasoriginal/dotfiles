@@ -185,7 +185,7 @@ alias loadruby='
         echo "Ruby ${version} not found, installing..."
         ruby-install ruby-${version}
         echo "Ruby ${version} installed. Now enabling..."
-        chruby ${version}
+        chruby ruby-${version}
     else
         echo "Ready to Ruby ${version}"
     fi'
