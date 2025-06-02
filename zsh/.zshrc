@@ -174,12 +174,13 @@ alias loadruby='
     version=3.4.1
     source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
     source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
-    output=$(chruby ${version} 2>&1)
-    if echo "$output" | grep -q "chruby: unknown Ruby:"; then
+
+    if ! chruby | grep -q "ruby-${version}"; then
         echo "Ruby ${version} not found, installing..."
         ruby-install ruby-${version}
         echo "Ruby ${version} installed. Now enabling..."
         chruby ruby-${version}
     else
-        echo "Ready to Ruby ${version}"
+      echo "Ruby ${version} found, enabling..."
+      chruby ruby-${version}
     fi'
