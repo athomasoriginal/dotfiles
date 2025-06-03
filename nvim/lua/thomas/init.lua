@@ -316,7 +316,7 @@ require("lazy").setup({
 -- Telescope Config
 -- ----------------------------------------------------------------------------
 -- vimgrep_arguments -> used by live_grep and live_search
--- find_files        -> is a builtin which projects calls under the hood --
+-- find_files        -> is a builtin which projects calls under the hood
 
 local telescope = require('telescope')
 
@@ -325,7 +325,14 @@ telescope.setup {
     file_sorter          = require("telescope.sorters").get_fzy_sorter,
     prompt_prefix        = " >",
     color_devicons       = true,
-    file_ignore_patterns = { "node_modules", ".git", "target/.*", ".cpcache" },
+    file_ignore_patterns = { -- js
+                             "node_modules",
+                             -- general
+                             ".git",
+                             -- clojure
+                             "target/.*",
+                             ".cpcache/",
+                             ".clj%-kondo/"},
 
     -- https://www.mankier.com/1/rg#--files-with-matches
     -- search_dirs = { "$HOME/code/projects" },
