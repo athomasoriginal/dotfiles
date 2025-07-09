@@ -418,6 +418,13 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup(lsp_opts)
 end
 
+-- @note nvim disables these by default since 0.11.0
+vim.diagnostic.config({
+  virtual_text = true,  -- show inline messages
+  signs = true,         -- show signs in the gutter
+  update_in_insert = false, -- don't update diagnostics while typing
+})
+
 -- ----------------------------------------------------------------------------
 -- guns/vim-sexp
 -- ----------------------------------------------------------------------------
