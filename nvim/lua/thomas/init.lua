@@ -215,6 +215,9 @@ require("lazy").setup({
   -- Kitty - Syntax Highlighting Support
   "fladson/vim-kitty",
 
+  -- Jai Syntax Highlighting
+  "rluba/jai.vim",
+
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
