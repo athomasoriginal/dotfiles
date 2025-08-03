@@ -98,6 +98,7 @@ ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
 ln -sf ~/dotfiles/kitty                        ~/.config/kitty
 ln -sf ~/dotfiles/ghostty                      ~/.config/ghostty
+ln -sf ~/dotfiles/xcode/.lldbinit-Xcode        ~/.lldbinit-Xcode
 
 
 # macOS init
