@@ -291,9 +291,13 @@ require("lazy").setup({
   },
 
   -- Clojure - integrated repl
+  --{
+    --'liquidz/elin',
+    --ft = "clojure"
+  --},
+
   {
-    'liquidz/elin',
-    ft = "clojure"
+    "Olical/conjure"
   },
 
 
@@ -442,24 +446,35 @@ vim.diagnostic.config({
 vim.g.sexp_enable_insert_mode_mappings = 0
 
 -- ----------------------------------------------------------------------------
--- liquidz/elin
+-- Clojure REPL Keymappings
+--
+-- liquidz/elin is still here for reference.
 --
 -- https://github.com/liquidz/elin/blob/ad692d01275500e479252a4c964d36c73b3064f8/plugin/elin.vim
+-- The above is a useful file to reference configurations
 -- ----------------------------------------------------------------------------
 
-vim.keymap.set("n", "<leader>'", "<cmd>ElinConnect<CR>")
+--vim.keymap.set("n", "<leader>'", "<cmd>ElinConnect<CR>")
+--vim.keymap.set("n", "<leader>ss", "<cmd>ElinToggleInfoBuffer<CR>")
+--vim.keymap.set("n", "<leader>ep", "<cmd>ElinPrintLastResult<CR>")
+--vim.keymap.set("n", "<leader>ee", "<cmd>ElinEvalCurrentList<CR>")
+---- @note command chosen because in my head it's like "evaluate test"
+--vim.keymap.set("n", "<leader>et", "<cmd>ElinTestFocusedCurrentTesting<CR>")
+---- @note command chosen because `r` is closer than `t`
+--vim.keymap.set("n", "<leader>er", "<cmd>ElinEvalCurrentTopList<CR>")
+--vim.g.elin_debug = true;
+--vim.g.elin_server_port = 51255;
+--vim.g.elin_server_auto_connect = true;
 
-vim.keymap.set("n", "<leader>ss", "<cmd>ElinToggleInfoBuffer<CR>")
+vim.g["conjure#mapping#disable_defaults"] = true;
 
-vim.keymap.set("n", "<leader>ep", "<cmd>ElinPrintLastResult<CR>")
-
-vim.keymap.set("n", "<leader>ee", "<cmd>ElinEvalCurrentList<CR>")
-
--- @note command chosen because in my head it's like "evaluate test"
-vim.keymap.set("n", "<leader>et", "<cmd>ElinTestFocusedCurrentTesting<CR>")
-
--- @note command chosen because `r` is closer than `t`
-vim.keymap.set("n", "<leader>er", "<cmd>ElinEvalCurrentTopList<CR>")
+vim.keymap.set('n', '<leader>ee', '<Cmd>ConjureEval<CR>')
+vim.keymap.set('v', '<leader>ee', '<Cmd>ConjureEval<CR>')
+vim.keymap.set('n', '<leader>er', '<Cmd>ConjureEvalRootForm<CR>')
+vim.keymap.set('n', '<leader>ew', '<Cmd>ConjureEvalWord<CR>')
+vim.keymap.set('n', '<leader>eb', '<Cmd>ConjureEvalBuffer<CR>')
+vim.keymap.set('n', '<leader>ls', '<Cmd>ConjureLogVSplit<CR>')
+vim.keymap.set('n', '<leader>lc', '<Cmd>ConjureLogClose<CR>')
 
 -- ----------------------------------------------------------------------------
 -- preservim/nerdtree
