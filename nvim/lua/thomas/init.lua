@@ -367,17 +367,6 @@ telescope.load_extension("live_grep_args")
 -- LSP Config
 -- ----------------------------------------------------------------------------
 
-local nvim_lsp = require('lspconfig')
-
-
-local server_settings = {
-  ccls        = {},
-  clojure_lsp = {
-    ['semantic-tokens?'] = true,
-  }
-}
-
-
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -392,9 +381,10 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 
   -- navigate to definition in current buffer
-  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gd',        '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+
   -- navigate to definition in new buffer + side-by-side for context
-  buf_set_keymap('n', 'gv', '<cmd>:vsplit | lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gv',        '<cmd>:vsplit | lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K',         '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', '<space>D',  '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<C-k>',     '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
@@ -407,30 +397,25 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>q',  '<cmd>lua vim.lsp.diagnostic.setloclist()<CR>', opts)
 end
 
+-- Global LSP Options applied to all LSP servers
+vim.lsp.config('*', {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  init_options = {}
+})
 
----- Start
----- Loop through all servers conveniently and apply local bindings, settings
----- etc the the servers
-local servers = { 'ccls', 'clojure_lsp' }
-
-for _, lsp in ipairs(servers) do
-  -- Global LSP Options to be aplied to all lsp servers
-  local lsp_opts = {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
-    init_options = {}
+-- Clojure LSP Options
+vim.lsp.config('clojure_lsp', {
+  init_options = {
+    ['semantic-tokens?'] = true,
   }
+})
 
-  -- LSP Specific Settings to apply
-  if server_settings[lsp] then
-    lsp_opts.init_options = server_settings[lsp]
-  end
+vim.lsp.enable('clojure_lsp')
 
-  -- Start LSP Server
-  nvim_lsp[lsp].setup(lsp_opts)
-end
+vim.lsp.enable('ccls')
 
 -- @note nvim disables these by default since 0.11.0
 vim.diagnostic.config({
