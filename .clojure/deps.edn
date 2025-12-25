@@ -38,7 +38,7 @@
   ;;   * clj -T:new :template athomasoriginal/spa :name nike/app-name
   ;;   * clj -T:new :template athomasoriginal/c-app :name native-app
   :new
-  {:replace-deps {io.github.seancorfield/deps-new     {:git/tag "v0.8.0" :git/sha "2f96530"}
-                  io.github.athomasoriginal/templates {:git/sha "4c67e8886b04f55dbd921cb2fbc7ce5654c2fb9f"}}
+  {:replace-deps {io.github.seancorfield/deps-new     {:git/tag "v0.10.3" :git/sha "2c012c4"}
+                  io.github.athomasoriginal/templates {:git/sha "fc3296e11c8ca819c14cc5d81b6df12d9ade0ed2"}}
    :exec-fn      org.corfield.new/create
    :exec-args    {:template athomasoriginal/reagent}}}}
